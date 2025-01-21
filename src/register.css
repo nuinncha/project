@@ -1,0 +1,134 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+} */
+
+/* LEFT */
+section .left-box {
+    padding: 50px;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-login {
+    color: #0e0e0e;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 350;
+    text-shadow: 3px 3px 3px rgba(22, 22, 22, 0.300);
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.text {
+    position: relative;
+    left: 7px;
+    margin-top: -5px;
+    text-align: left;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text2 {
+    position: relative;
+    left: -3px;
+    margin-top: -5px;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text3 {
+    color: #a3a2a2;
+    position: relative;
+    margin-top: -25px;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text4 {
+    color: #4d4a4a;
+    margin-top: -25px;
+}
+
+.button1 {
+    background-color: #ffffff; /* Green */
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #848789;;
+    border-radius: 12px;
+    text-align: left; /* ข้อความในกล่องชิดซ้าย */
+    font-size: 18px;
+    cursor: pointer;
+}
+  
+.button2 {
+    background-color: #03a9f4;
+    color: white;
+    width: 98%;
+    padding: 15px;
+    margin: 25px 0; /* ระยะห่างทั่วไปสำหรับปุ่ม */
+    border: 1px solid #848789;;
+    border-radius: 12px;
+    text-align: center; /* ข้อความในกล่องชิดซ้าย */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: #ffffff; /* Green */
+    width: 98%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #848789;;
+    border-radius: 12px;
+    text-align: center; /* ข้อความในกล่องชิดซ้าย */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+section .right-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.account-link {
+    font-family: 'Poppins', sans-serif;
+    display: flex; /* ใช้ flexbox เพื่อจัดข้อความและลิงก์ให้อยู่ในแถวเดียวกัน */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
+    margin-top: -5px; /* เพิ่มระยะห่างด้านบน */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    color: #0b0b0b;
+}
+
+img {
+    position: absolute;
+    right: 0; /* ให้รูปภาพไปทางขวาสุด */
+    top: 0px; /* ระยะห่างจากด้านบน */
+    width: 600px; /* กำหนดขนาดของรูปภาพ */
+    height: 645px; /* รักษาสัดส่วน */
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    object-fit: cover; /* ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
+       
+  }

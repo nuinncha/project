@@ -1,0 +1,30 @@
+.calendar {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .days, .cells {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .day, .cell {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .cell.disabled {
+    color: #aaa;
+    background-color: #f9f9f9;
+  }
+  

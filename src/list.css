@@ -1,0 +1,14 @@
+.button {
+    background-color: #ffffff; /* Green */
+    border: 1px solid #ccc; /* กรอบบางๆ สีเทา */
+    width: 30%;
+    padding: 6px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
