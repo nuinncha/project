@@ -8,6 +8,11 @@
     font-family: 'Prompt', sans-serif;
 } */
 
+.picture {
+    width: 40%;
+    height: 100%;
+}
+
 /* LEFT */
 section .left-box {
     padding: 50px;

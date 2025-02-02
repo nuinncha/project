@@ -3,6 +3,7 @@
   margin: 0 auto;
   /* text-align: left; */
   font-family: Arial, sans-serif;
+  padding-block-start: 50px;
 }
 
 .room-card {

@@ -2,6 +2,7 @@ import React from "react";
 import Calendar from "./components/calendar";
 import "./components/calendar.css";
 import './home.css'
+import Navbar from "./components/navbar";
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
 
 
@@ -9,6 +10,7 @@ import './home.css'
 function Home_Page() {
   return (
     <>
+    <Navbar />
       {/* Dashboard */}
       <div className="dashboard">
         <div className="dashboard-item green">
