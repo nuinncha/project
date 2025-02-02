@@ -1,30 +1,38 @@
 .calendar {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .days, .cells {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-  }
-  
-  .day, .cell {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  .cell.disabled {
-    color: #aaa;
-    background-color: #f9f9f9;
-  }
-  
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(115, 114, 114, 0.1);
+  margin-top: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: normal;
+  color: #00bcd4;
+}
+
+.day {
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px  #f9f9f9;
+  border-radius: 1px;
+}

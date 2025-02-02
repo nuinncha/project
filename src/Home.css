@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+.btn-purple {
+    background-color: #c441aa;
+    color: white;
+    width: 8%;
+    height: 35px;
+    /* padding: 5px;  */
+    border-radius: 5px;
+    border: 0.5px solid #ffffff;;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;  
+    margin-right: 10px;  
+}
+
+.btn-blue {
+    background-color: rgb(0, 162, 255);
+    color: white;
+    width: 8%;
+    height: 35px;
+    border-radius: 5px;
+    border: 0.5px solid #ffffff;;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;  
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400; /* ปกติ */
+}
+
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700; /* หนามาก */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 20px;
+}
