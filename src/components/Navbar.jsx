@@ -25,11 +25,6 @@ function Navbar() {
                 จองห้องประชุม  
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/contact">
-                เข้าสู่ระบบ
-              </a>
-            </li>
           </ul>
           <a href="/login" className="btn btn-primary">
             Login
