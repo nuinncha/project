@@ -1,55 +1,84 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
+import roombooking from './assets/roombooking.png'
 import './register.css'
 
 function Welcome_Page() {
-  const [count, setCount] = useState(0)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // ฟังก์ชันส่งข้อมูลไปยังเซิร์ฟเวอร์
+  const handleSignUp = async () => {
+    const userData = { email, password };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("Sign-up successful!");
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
+  };
 
   return (
-    <section >
+    <section>
       <div className="left-box">
         <div>
-          <div className="head-login">
-            WELCOME BACK!
-          </div>
-          <div className='text4'>
-            Welcome back! Please enter your details.
-          </div>
-          <div className="text">
-            Email
-          </div>
-          <input className="button1" type="text" placeholder="Enter your email" />
-          <div className="text" >
-            Password
-          </div>
-          <input className="button1" type="text" placeholder="**********" />
+          <div className="head-login">WELCOME BACK!</div>
+          <div className='text4'>Welcome back! Please enter your details.</div>
+
+          <div className="text">Email</div>
+          <input 
+            className="button1" 
+            type="email" 
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <div className="text">Password</div>
+          <input 
+            className="button1" 
+            type="password" 
+            placeholder="**********"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
           <br />
+          <div>Remember me</div>
+
           <div>
-            Remember me
-          </div>
-          <div>
-            <button className="button2">
+            <button className="button2" onClick={handleSignUp}>
               Sign up
             </button>
           </div>
+
           <div>
-            <button className="button3">Sign in with google</button>
-          </div>
-          <div className="account-link">
-            Have an account?
-            <a href="">Sign in</a>
-          </div>
-          <div>
-            <img src="https://cdn.discordapp.com/attachments/1306796011955683349/1310571879286964284/pexels-photo-1181395.png?ex=676b476d&is=6769f5ed&hm=070e00e55153c0e0f84a535cb5117f5280b8696b3a464a35cf3c99fca00e6b39&"
-              alt="roombooking" />
+            <button className="button3">Sign in with Google</button>
           </div>
 
+          <div className="account-link">
+            Have an account? <a href="">Sign in</a>
+          </div>
+
+          <div className='picture-container'>
+            <img src={roombooking} className='picture' alt="roombooking" />
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Welcome_Page
+export default Welcome_Page;

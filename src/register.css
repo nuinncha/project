@@ -87,7 +87,7 @@ section .left-box {
 .button2 {
     background-color: #03a9f4;
     color: white;
-    width: 98%;
+    width: 90%;
     padding: 15px;
     margin: 25px 0; /* ระยะห่างทั่วไปสำหรับปุ่ม */
     border: 1px solid #848789;;
@@ -99,7 +99,7 @@ section .left-box {
 
 .button3 {
     background-color: #ffffff; /* Green */
-    width: 98%;
+    width: 90%;
     padding: 15px;
     margin-bottom: 15px;
     border: 1px solid #848789;;
@@ -128,12 +128,12 @@ section .right-box {
 
 img {
     position: absolute;
-    right: 0; /* ให้รูปภาพไปทางขวาสุด */
-    top: 0px; /* ระยะห่างจากด้านบน */
-    width: 600px; /* กำหนดขนาดของรูปภาพ */
-    height: 645px; /* รักษาสัดส่วน */
+    right: 0; /*ให้รูปภาพไปทางขวาสุด*/
+    top: 0px; /*ระยะห่างจากด้านบน*/
+    width: 600px; /*กำหนดขนาดของรูปภาพ*/
+    height: 645px; /*รักษาสัดส่วน*/
     overflow: hidden;
     border-top-left-radius: 30px;
-    object-fit: cover; /* ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
-       
+     object-fit: cover; /*ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
   }
+

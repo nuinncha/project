@@ -1,14 +1,17 @@
 import React from 'react'
+import Navbar from "./components/navbar";
 import './list.css'
 
 
 function List_Page() {
   return (
+    <>
+    <Navbar />
     <div>
       <div className='container'>
         <div>
-          <p>เพิ่ม การจอง</p>
-          <p>รายละเอียดการจอง</p>
+          <h3>เพิ่ม การจอง</h3>
+          <h5>รายละเอียดการจอง</h5>
         </div>
         {/* ชื่อห้องและจำนวนผู้เข้าร่วม */}
         <div className="row">
@@ -125,6 +128,7 @@ function List_Page() {
         </div>
       </div>
     </div>
+    </>
   )
 
 }

@@ -6,7 +6,7 @@ import Register_Page from './register';
 import Welcome_Page from './welcome';
 import Reserve_Page from './reserve';
 import List_Page from './list';
-import Home_Page from './Home';
+import Home_Page from './Home.jsx';
 
 
 
@@ -20,9 +20,10 @@ function App() {
         <Routes>
         <Route path="/" element={<Home_Page />} />
         <Route path="/register" element={<Register_Page />} />
+        <Route path="/welcome" element={<Welcome_Page />} />
         <Route path="/list" element={<List_Page />} />
         <Route path="/reserve" element={<Reserve_Page />} />
-        {/* <Route path="/Calendar" element={<Calendar_Page />} /> */}
+        {/* <Route path="/register" element={<Register_Page />} /> */}
         {/* <Route path="/welcome" element={<Welcome_Page />} /> */}
       </Routes>
     </Router>
