@@ -7,6 +7,8 @@ import Welcome_Page from './welcome';
 import Reserve_Page from './reserve';
 import List_Page from './list';
 import Home_Page from './Home.jsx';
+import Check_Page from './check.jsx';
+
 
 
 
@@ -23,7 +25,7 @@ function App() {
         <Route path="/welcome" element={<Welcome_Page />} />
         <Route path="/list" element={<List_Page />} />
         <Route path="/reserve" element={<Reserve_Page />} />
-        {/* <Route path="/register" element={<Register_Page />} /> */}
+        <Route path="/check" element={<Check_Page />} />
         {/* <Route path="/welcome" element={<Welcome_Page />} /> */}
       </Routes>
     </Router>

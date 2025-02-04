@@ -1,0 +1,38 @@
+select {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px; /* ปรับค่านี้เพื่อขยับ dropdown ขึ้น */
+    margin-left: 10px; /* เว้นระยะห่างซ้าย */
+  }
+  
+label {
+    margin-left: 10px;
+}
+
+.input-calendar {
+    width: 100px;
+    height: 35px;
+    margin-left: 10px; 
+}
+
+.p1 {
+    margin-right: 10px;
+}
+
+.btn-go {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px; /* ปรับให้ปุ่มโค้ง */
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: -10px; /* ปรับค่านี้เพื่อขยับ dropdown ขึ้น */
+    margin-left: 10px; /* เว้นระยะห่างซ้าย */
+  }
+  

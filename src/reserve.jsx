@@ -10,21 +10,20 @@ function Reserve_Page() {
 
         <div className='container'>
           <div className='row'>
-            <div className='left'>ห้องประชุม/รายการ</div>
+            <div className=''>ห้องประชุม/รายการ</div>
             <div>รายการ ห้องประชุม</div>
             <div style={{ display: "flex" }}>
-
               <label>แสดง</label>
-              <div className='drop-down'>
+              <div className='dropdown-container'>
                 <select name="q" id="">
-                  <option value="5">5 รายการ</option>
-                  <option value="5">5 รายการ</option>
-                  <option value="5">5 รายการ</option>
-                  <option value="5">5 รายการ</option>
+                  <option value="1">1 รายการ</option>
+                  <option value="2">2 รายการ</option>
                 </select>
               </div>
               <button className="btn-go">Go</button>
             </div>
+            <div className="blue-bar">รายการ</div>
+
           </div>
         </div>
 

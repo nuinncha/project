@@ -2,6 +2,8 @@
   width: 90%;
   margin: 20px auto;
   font-family: Arial, sans-serif;
+  margin-top: 35px; /* ปรับค่าตามที่ต้องการ */
+  padding-top: 35px; /* เพิ่ม padding ถ้าต้องการให้ดูเป็นระเบียบ */
 }
 
 .drop-down {
@@ -9,14 +11,41 @@
   height: 100%;
 }
 
+select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  margin-top: -10px; /* ปรับค่านี้เพื่อขยับ dropdown ขึ้น */
+  margin-left: 10px; /* เว้นระยะห่างซ้าย */
+}
 
 .btn-go {
   background-color: red;
   color: white;
   border: none;
+  border-radius: 5px; /* ปรับให้ปุ่มโค้ง */
   padding: 5px 10px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: -10px; /* ปรับค่านี้เพื่อขยับ dropdown ขึ้น */
+  margin-left: 10px; /* เว้นระยะห่างซ้าย */
+}
+
+.blue-bar {
+  background-color: #3da4ee; /* สีฟ้า */
+  color: white; /* สีตัวอักษร */
+  padding: 10px 20px; /* ปรับระยะห่างด้านใน */
+  font-size: 18px;
+  font-weight: normal;  
+  text-align: left; 
+  width: fit-content; /* ปรับให้กว้างตามเนื้อหา */
+  margin-left: 10px; /* ขยับมาทางซ้าย */  
+  border-radius: 6px; /* ทำให้โค้งเล็กน้อย */
+  margin-bottom: 20px; /* เว้นระยะด้านล่าง */
 }
 
 
