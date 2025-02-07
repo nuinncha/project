@@ -2,6 +2,7 @@ import React from 'react'
 import './reserve.css'
 import room1 from './assets/room1.png';
 import Navbar from './components/navbar'
+import testpic from './assets/room2.png';
 
 function Reserve_Page() {
   return (
@@ -27,9 +28,30 @@ function Reserve_Page() {
 
           </div>
         </div>
-        <div className='room1'>
+        {/* <div className='room1'>
           <img src={room1} className='picture' alt="room1" />
-        </div>
+        </div> */}
+
+        <table>
+          <tr className='thead'>
+            <td></td>
+            <td>รายละเอียด</td>
+            <td style={{paddingLeft:""}}></td>
+          </tr>
+          <tr>
+            <td>
+              <img src={testpic} className='picture' alt="room1" />
+            </td>
+            <td>
+              <span className='txtroom'>ห้องประชุม</span><br />
+              <span>Lorem ipsum dolor sit,</span>
+            </td>
+            <td>
+              <button>ปุ่ม</button>
+              <button>ปุ่ม2</button>
+            </td>
+          </tr>
+        </table>
       </div>
     </>
   )

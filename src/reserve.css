@@ -47,16 +47,36 @@ select {
   border-radius: 6px; /* ทำให้โค้งเล็กน้อย */
   margin-bottom: 20px; /* เว้นระยะด้านล่าง */
 }
- .room1 {
+ /* .room1 {
   display: flex;
-  align-items: center; /* จัดให้เนื้อหาอยู่ตรงกลางแนวตั้ง */
- }
+  align-items: center; 
+ } */
 
- img {
-  width: 300px; /* กำหนดความกว้างของรูปภาพ */
-  height: 150px; /* กำหนดความสูงของรูปภาพ */
-  float: left; /* จัดรูปภาพให้อยู่ซ้าย */
-  margin-right: 10px; /* เพิ่มระยะห่างด้านขวาของรูปภาพ */
+
+
+ table {
+  width: 100%;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.thead{
+  background-color: gray;
+}
+td {
+  vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
+  text-align: left; /* ให้เนื้อหาชิดซ้าย */
+  height: 4rem;
+}
+
+img.picture {
+  max-height:5em;
+  max-width:9em;
+  border-radius: 0;
+  padding-left: 12px;
+  padding-top: 8px;
+  display: block; /* ป้องกัน margin หรือ padding แปลกๆ */
+  position: relative; /* ลบ position ที่ผิดพลาดออก */
 }
 
 
