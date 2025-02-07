@@ -1,5 +1,6 @@
 import React from 'react'
 import './reserve.css'
+import room1 from './assets/room1.png';
 import Navbar from './components/navbar'
 
 function Reserve_Page() {
@@ -26,7 +27,9 @@ function Reserve_Page() {
 
           </div>
         </div>
-
+        <div className='room1'>
+          <img src={room1} className='picture' alt="room1" />
+        </div>
       </div>
     </>
   )
