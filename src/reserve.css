@@ -55,9 +55,10 @@ select {
 
 
  table {
-  width: 100%;
+  align-content: center;
+  width: auto;
   margin-left: 4rem;
-  margin-right: 4rem;
+  /* margin-right: 4rem; */
 }
 
 .thead{
