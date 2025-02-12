@@ -36,3 +36,26 @@ label {
     margin-left: 10px; /* เว้นระยะห่างซ้าย */
   }
   
+  .teams {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #f0f0f0d7;
+    padding: 6px;
+  }
+
+  table {
+    align-content: center;
+    width: auto;
+    margin-left: 4rem;
+    /* margin-right: 4rem; */
+  }
+  
+  .thead{
+    background-color: gray;
+  }
+  td {
+    vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
+    text-align: left; /* ให้เนื้อหาชิดซ้าย */
+    height: 4rem;
+  }
+  

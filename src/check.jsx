@@ -43,16 +43,35 @@ function Check_Page() {
           <option value="it">กองช่าง</option>
           <option value="marketing">กองสาธารณสุข</option>
           <option value="finance">กองการศึกษา</option>
-          <option value="operations">กองคลัง</option>          
-          </select>
-          <label>สถานะ</label> &nbsp;
-          <select name="q" id="">
-            <option value="0">รอตรวจสอบ</option>
-            <option value="1">อนุมัติ</option>
-          </select>
-          <button className="btn-go">Go</button>
-
+          <option value="operations">กองคลัง</option>
+        </select>
+        <label>สถานะ</label> &nbsp;
+        <select name="q" id="">
+          <option value="0">รอตรวจสอบ</option>
+          <option value="1">อนุมัติ</option>
+        </select>
+        <button className="btn-go">Go</button>    
+        <section className='teams'>
+          <div className='teams-items'>
+            <p>หัวข้อ</p>
+          </div>
+          <div className='teams-items'>
+            <p>ชื่อห้อง</p>
+          </div>
+          <div className='teams-items'>
+            <p>ชื่อผู้จอง</p>
+          </div>
+          <div className='teams-items'>
+            <p>สร้างเมื่อ</p>
+          </div>
+          <div className='teams-items'>
+            <p>สถานะ</p>
+          </div>
+        </section>
+        <div>
+        </div>
       </div>
+
     </>
   )
 }

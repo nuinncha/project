@@ -25,6 +25,16 @@ function Navbar() {
                 จองห้องประชุม  
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/services">
+                ตรวจสอบ
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/services">
+                อนุมัติ
+              </a>
+            </li>
           </ul>
           <a href="/login" className="btn btn-primary">
             Login
