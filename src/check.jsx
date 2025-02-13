@@ -35,7 +35,7 @@ function Check_Page() {
         </div>
       </div>
 
-      <div>
+      <div className='top'>
         <label>แผนกที่ขอใช้</label> &nbsp;
         <select name="q" id="">
           <option value="0">ทั้งหมด</option>
@@ -50,7 +50,7 @@ function Check_Page() {
           <option value="0">รอตรวจสอบ</option>
           <option value="1">อนุมัติ</option>
         </select>
-        <button className="btn-go">Go</button>    
+        <button className="btn-go">Go</button>
         <section className='teams'>
           <div className='teams-items'>
             <p>หัวข้อ</p>
@@ -68,6 +68,16 @@ function Check_Page() {
             <p>สถานะ</p>
           </div>
         </section>
+        <tr>
+          <td>
+            <button className='button-purple'>รอตรวจสอบ</button>&nbsp; &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button className='button-purple'>รอตรวจสอบ</button>&nbsp; &nbsp;
+          </td>
+        </tr>
         <div>
         </div>
       </div>

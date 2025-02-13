@@ -24,7 +24,7 @@ function Reserve_Page() {
               </div>
               <button className="btn-go">Go</button>
             </div>
-            <div className="blue-bar">รายการ</div>
+            {/* <div className="blue-bar">รายการ</div> */}
 
           </div>
         </div>
@@ -47,8 +47,8 @@ function Reserve_Page() {
               <span>Lorem ipsum dolor sit,</span>
             </td>
             <td style={{alignItems:"center"}}>
-              <button>ปุ่ม</button>
-              <button>ปุ่ม2</button>
+              <button className='button-green'>จองห้องประชุม</button>&nbsp; &nbsp;
+              <button className='button-yellow'>รายละเอียด</button>
             </td>
           </tr>
           <tr>
@@ -60,8 +60,8 @@ function Reserve_Page() {
               <span>Lorem ipsum dolor sit,</span>
             </td>
             <td>
-              <button>ปุ่ม</button>
-              <button>ปุ่ม2</button>
+              <button className='button-green'>จองห้องประชุม</button>&nbsp; &nbsp;
+              <button className='button-yellow'>รายละเอียด</button>
             </td>
           </tr>
         </table>

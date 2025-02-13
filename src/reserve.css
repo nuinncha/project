@@ -62,7 +62,7 @@ select {
 }
 
 .thead{
-  background-color: gray;
+  background-color: rgb(86, 175, 248);
 }
 td {
   vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
@@ -78,6 +78,24 @@ img.picture {
   padding-top: 8px;
   display: block; /* ป้องกัน margin หรือ padding แปลกๆ */
   position: relative; /* ลบ position ที่ผิดพลาดออก */
+}
+
+.button-yellow {
+  background-color: rgb(255, 140, 0);
+  color: white;
+  border-radius: 4px; /* ปรับให้ปุ่มโค้ง */
+  cursor: pointer;
+  border: none;
+
+}
+
+.button-green {
+  background-color: rgb(122, 202, 43);
+  color: white;
+  border-radius: 4px; /* ปรับให้ปุ่มโค้ง */
+  cursor: pointer;
+  border: none;
+
 }
 
 
