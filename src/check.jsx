@@ -69,7 +69,7 @@ function Check_Page() {
           </div>
         </section>
         <tr>
-          <td>
+          <td className='td'>
             <button className='button-purple'>รอตรวจสอบ</button>&nbsp; &nbsp;
           </td>
         </tr>

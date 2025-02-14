@@ -56,9 +56,9 @@ label {
   border: none;
 }
 
-td {
-  vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
-  text-align: right; /* ให้เนื้อหาชิดซ้าย */
+.td {
+  vertical-align: top;
+  text-align: right; 
   height: 4rem;
   
 }
