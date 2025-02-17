@@ -50,11 +50,11 @@ body {
 }
 
 .dashboard-item {
-    width: 200px;/* กำหนดขนาดการ์ด */
-    height: 90px;
+    width: 250px; /* กำหนดขนาดการ์ด */
+    height: 100px;
     background: #fff;
     border-radius: 3px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);/* เพิ่มเงา */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,16 +69,22 @@ body {
     /* ระยะห่างระหว่างการ์ด */
     padding: 20px;
     justify-content: left;
-    
+
 }
 
 .green {
-    background-color: #4CAF50;
+    background-color: #65ea69;
     color: white;
 }
 
 .yellow {
     background-color: #FFA500;
     color: white;
+}
+
+.bg-green {
+    background-color: #08810c;
+    width: 70px; /* กำหนดขนาดการ์ด */
+    height: 300px;
 
 }

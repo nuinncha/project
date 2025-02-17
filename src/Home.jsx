@@ -14,10 +14,12 @@ function Home_Page() {
       {/* Dashboard */}
       <div className="dashboard">
         <div className="dashboard-item green">
+          <div className="bg-green"></div>
           {/* <i className="icon">&#128197;</i> */}
           <p className="font">จองห้องประชุม</p>
           <span>0 วัน</span>
         </div>
+
         <div className="dashboard-item yellow">
           {/* <i className="icon">&#128197;</i> */}
           <p>ห้องประชุม</p>
