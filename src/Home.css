@@ -4,8 +4,7 @@
     background-color: #c441aa;
     color: white;
     width: 8%;
-    height: 35px;
-    /* padding: 5px;  */
+    height: 35px; 
     border-radius: 5px;
     border: 0.5px solid #ffffff;
     ;
@@ -17,11 +16,10 @@
 .btn-blue {
     background-color: rgb(0, 162, 255);
     color: white;
-    width: 8%;
+    width: 15%;
     height: 35px;
     border-radius: 5px;
     border: 0.5px solid #ffffff;
-    ;
     font-size: 16px;
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
@@ -29,14 +27,12 @@
 
 p {
     font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    /* ปกติ */
+    font-weight: 400; /* ปกติ */
 }
 
 h1 {
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    /* หนามาก */
 }
 
 body {
@@ -44,47 +40,74 @@ body {
     margin: 20px;
 }
 
-.icon {
-    font-size: 32px;
-    margin-bottom: 8px;
-}
-
-.dashboard-item {
-    width: 250px; /* กำหนดขนาดการ์ด */
-    height: 100px;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
-    display: flex;
-    flex-direction: column;
+.wrapper-home {
+    display: flex; /* จัดวางให้อยู่ในบรรทัดเดียวกัน */
+    gap: 20px;  /* ระยะห่างระหว่าง container */
     align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+    margin-left: -120px;
+    margin-top: -50px;  /*ขยับขึ้นบน */
 }
 
-.dashboard {
+.container {
+    display: flex; /* จัดให้อยู่ในแนวนอน */
+    justify-content: flex-start;
+}
+
+.box-green,.box-yellow {
+    width: 80px;
+    height: 100px;
     display: flex;
-    gap: 16px;
-    /* ระยะห่างระหว่างการ์ด */
-    padding: 20px;
-    justify-content: left;
-
-}
-
-.green {
-    background-color: #65ea69;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
     color: white;
+    padding: 20px; /* ปรับระยะห่างภายในกล่อง */
+    position: relative;
 }
 
-.yellow {
+.box-brightgreen, .box-brighyellow {
+    width: 160px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: right;/* จัดฟอนต์ชิดขวา */
+}
+
+.box1 {
+    background-color: #24a228;
+}
+
+.box2 {
+    background-color: #42c447;
+}
+
+.box3 {
     background-color: #FFA500;
-    color: white;
 }
 
-.bg-green {
-    background-color: #08810c;
-    width: 70px; /* กำหนดขนาดการ์ด */
-    height: 300px;
-
+.box4 {
+    background-color: #f8ba47;
 }
+
+.text-position {
+    position: relative;
+    top: 5px;  
+    font-size: larger;
+  }
+  
+.icon-size {
+    font-size: 28px; /* กำหนดขนาดไอคอน */
+}
+
+.icon-inside-box {
+    font-size: 40px; /* ปรับขนาดไอคอน */
+    color: white; /* เปลี่ยนสีของไอคอน */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* จัดตำแหน่งไอคอนให้อยู่ตรงกลางกล่อง */
+  }

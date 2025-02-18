@@ -4,27 +4,44 @@ import "./components/calendar.css";
 import './home.css'
 import Navbar from "./components/navbar";
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
-
-
+import { FaCalendarAlt } from "react-icons/fa";
+import { BsGrid1X2Fill } from "react-icons/bs";
+import { LuCalendarDays } from "react-icons/lu";
+import { LuClipboardList } from "react-icons/lu";
 
 function Home_Page() {
   return (
     <>
-    <Navbar />
+      <Navbar />
       {/* Dashboard */}
-      <div className="dashboard">
-        <div className="dashboard-item green">
-          <div className="bg-green"></div>
-          {/* <i className="icon">&#128197;</i> */}
-          <p className="font">จองห้องประชุม</p>
-          <span>0 วัน</span>
-        </div>
+      <div  style={{ marginTop: "10px" }}>&nbsp;&nbsp;
+        <BsGrid1X2Fill className="icon-size" /> &nbsp;&nbsp;
+        <span className="text-position">Dashboard</span>
+      </div>
+      <div className="wrapper-home">
+        <div className="container">
+          <div class="box-green box1">
+          <LuCalendarDays  className="icon-inside-box" />  
+          </div>
+          <div class="box-brightgreen box2">
+             <p className="">จองห้องประชุม</p>
+            <span>0</span>
+            <p>วัน</p>
+          </div> &nbsp; &nbsp; &nbsp;
 
-        <div className="dashboard-item yellow">
-          {/* <i className="icon">&#128197;</i> */}
-          <p>ห้องประชุม</p>
-          <span>2 ห้องประชุมหมด</span>
+          <div class="box-yellow box3">
+          <LuClipboardList className="icon-inside-box" />   
+          </div>
+          <div class="box-brighyellow box4">
+            <p>ห้องประชุม</p>
+            <p>2</p>
+            <p>ห้องประชุมทั้งหมด</p>
+          </div>
         </div>
+      </div>
+      <div style={{ marginTop: "15px" }}> &nbsp;&nbsp;&nbsp;
+        <FaCalendarAlt className="icon-size" /> &nbsp;&nbsp;
+        <span className="text-position">ปฏิทินการจอง</span>
       </div>
 
       {/* ปฏิทิน */}
@@ -33,7 +50,7 @@ function Home_Page() {
       {/* ปุ่มห้องประชุม */}
       <div>
         <button className="btn-purple">ห้องประชุม 1</button>
-        <button className="btn-blue">ห้องประชุม 2</button>
+        <button className="btn-blue">อาคารเฉลิมพระเกียรติ</button>
       </div>
     </>
   );

@@ -16,6 +16,7 @@
 .calendar-header h3 {
   margin: 0;
   font-size: 18px;
+  margin-top: -10px;
 }
 
 .calendar-grid {
