@@ -34,9 +34,9 @@ function Reserve_Page() {
 
         <table>
           <tr className='thead'>
-            <td style={{paddingLeft:"400px"}}></td>
-            <td style={{paddingRight:"350px"}}>รายละเอียด</td>
-            <td style={{paddingLeft:"400px"}}></td>
+            <td style={{ paddingLeft: "400px" }}></td>
+            <td style={{ paddingRight: "350px" }}>รายละเอียด</td>
+            <td style={{ paddingLeft: "400px" }}></td>
           </tr>
           <tr>
             <td>
@@ -46,7 +46,7 @@ function Reserve_Page() {
               <span className='txtroom'>ห้องประชุม</span><br />
               <span>Lorem ipsum dolor sit,</span>
             </td>
-            <td style={{alignItems:"center"}}>
+            <td style={{ alignItems: "center" }}>
               <button className='button-green'>จองห้องประชุม</button>&nbsp; &nbsp;
               <button className='button-yellow'>รายละเอียด</button>
             </td>

@@ -5,9 +5,9 @@ import './home.css'
 import Navbar from "./components/navbar";
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
 import { FaCalendarAlt } from "react-icons/fa";
-import { BsGrid1X2Fill } from "react-icons/bs";
 import { LuCalendarDays } from "react-icons/lu";
 import { LuClipboardList } from "react-icons/lu";
+import { RiDashboardFill } from "react-icons/ri";
 
 function Home_Page() {
   return (
@@ -15,7 +15,7 @@ function Home_Page() {
       <Navbar />
       {/* Dashboard */}
       <div  style={{ marginTop: "10px" }}>&nbsp;&nbsp;
-        <BsGrid1X2Fill className="icon-size" /> &nbsp;&nbsp;
+        <RiDashboardFill className="icon-size" /> &nbsp;&nbsp;
         <span className="text-position">Dashboard</span>
       </div>
       <div className="wrapper-home">

@@ -36,7 +36,15 @@
   label {   
     margin-bottom: -1px;
     font-family: 'Nunito', sans-serif;
+    margin-bottom: 1px;
+    text-align: 50px; /* ทำให้ข้อความชิดซ้าย */
   }
+
+  .left label, .right label {
+  display: inline-block;
+  width: 150px; /* ปรับความกว้างของ label */
+  text-align: left; /* จัดข้อความชิดซ้าย */
+}
   
   body {
     font-family: 'Nunito', sans-serif;
@@ -46,7 +54,7 @@
   input, textarea, select {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0px;
   }
   
   textarea {
@@ -60,45 +68,126 @@
   
   .checkbox-group {
     display: flex; /* ใช้ Flexbox ในการจัดเรียง checkbox */
-    gap: 20px; /* ระยะห่างระหว่าง checkbox */
-  }
-  
-  .checkbox-group label {
-    display: flex; /* ทำให้ label ใช้การจัดการแบบ Flexbox */
-    align-items: center; /* จัดตำแหน่ง checkbox ให้อยู่กลาง label */
+    gap: 10px; /* ระยะห่างระหว่าง checkbox */
   }
 
   .equipment-box {
     border: 0.1px solid #d6d4d4; 
     padding: 8px; /* ระยะห่างภายในกรอบ */
     margin: 10px 0; /* ระยะห่างรอบนอก */
-    border-radius: 6px; /* มุมโค้งมน */
-  }
-
-  .details-textarea {
-    width: 100%; /* ทำให้กล่องกว้างเต็มความกว้างของ parent */
-    height: 150px; /* ตั้งค่าความสูงตามที่ต้องการ */
-    padding: 10px; /* เพิ่มระยะขอบภายในกล่อง */
-    font-size: 16px; /* ขนาดตัวอักษร */
-    border: 1px solid #ccc; /* ขอบกล่อง */
-    border-radius: 8px; /* มุมกล่องโค้งมน */
-    resize: vertical; /* อนุญาตให้ผู้ใช้ยืดเฉพาะแนวตั้ง */
+    border-radius: 0px; /* มุมโค้งมน */
   }
   
   .save-btn {
     background: #28a745;
     color: #fff;
     border: none;
-    width: 13%;
+    width: 10%;
     padding: 13px;
     margin-bottom: 20px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 22px;
-  
+    font-size: 18px;
+    margin-top: 10px;
   }
   
   .icon-inside-btn {
     margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
-    font-size: 1.8rem; /* ปรับขนาดไอคอน */
+    font-size: 1.2rem; /* ปรับขนาดไอคอน */
   }
+
+  .wrapper-list {
+    display: flex; /* จัดวางให้อยู่ในบรรทัดเดียวกัน */
+    gap: 20px;  /* ระยะห่างระหว่าง container */
+    align-items: center;
+    margin-left: -40px;
+    margin-top: 10px;  /*ขยับขึ้นบน */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* ระยะห่างระหว่างกล่องเปล่ากับ input */
+  box-sizing: border-box; /* ป้องกันไม่ให้ padding ขยายขนาดเกิน */
+  
+}
+
+.empty-box {
+  background-color: #dedcd9;
+  width: 40px; /* กำหนดขนาดกล่อง */
+  height: 40px;
+  margin-right: -8px; /* ปรับให้ชิด input */
+  display: flex;
+  justify-content: center; /* จัดไอคอนไปตรงกลาง */
+  align-items: center;
+
+}
+
+.icon-inside-empty {
+  font-size: 25px; /* ปรับขนาดไอคอน */
+  top: 30%;
+  left: 30%;
+}
+
+.icon-inside-empty2 {
+  font-size: 19px; /* ปรับขนาดไอคอน */
+  top: 30%;
+  left: 30%;
+}
+
+.select-list {
+  height: 40px; /* ปรับความสูง */
+  width: 95%; /* ทำให้ select กว้างเต็ม container */
+  padding: 8px; /* เพิ่มพื้นที่ภายใน */
+  font-size: 16px; /* ปรับขนาดตัวอักษร */
+  border: 1px solid #ccc;
+}
+
+.box-list {
+  height: 40px; /* ปรับความสูง */
+  width: 95%; /* ทำให้ select กว้างเต็ม container */
+  padding: 8px; /* เพิ่มพื้นที่ภายใน */
+  font-size: 16px; /* ปรับขนาดตัวอักษร */
+  border: 1px solid #ccc;
+}
+
+.no-icon {
+  -webkit-appearance: none; /* สำหรับเบราว์เซอร์ที่ใช้ Webkit (เช่น Chrome, Safari) */
+  -moz-appearance: none; /* สำหรับ Firefox */
+  appearance: none; /* สำหรับเบราว์เซอร์ทั้งหมด */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none; /* ซ่อนไอคอนปฏิทิน */
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none; /* ซ่อนไอคอนนาฬิกา */
+}
+
+.equipment-wrapper {
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้ทั้งกล่องเปล่าและ equipment-box อยู่ในแถวเดียวกัน */
+  align-items: center; /* จัดให้อยู่ในระดับเดียวกัน */
+  justify-content: space-between; /* จัดระยะห่างระหว่างกล่อง */
+}
+
+.equipment-box {
+  flex-grow: 1; /* ให้ `equipment-box` ขยายเต็มที่ */
+  flex: 1; /* ทำให้ทั้งสองกล่องขยายให้มีขนาดเท่ากัน */
+  height: 40px; /* กำหนดความสูงของกล่อง */
+  border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
+  padding: 5px;
+  align-items: center;
+
+}
+
+.long-time-input {
+  width: 500px; /* ปรับขนาดให้กว้างขึ้น */
+  height: 40px;
+}
+
+.long-input {
+  width: 1105px; /* ปรับขนาดให้กว้างขึ้น */
+  height: 40px;
+}
+
