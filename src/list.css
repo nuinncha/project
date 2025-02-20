@@ -14,7 +14,7 @@
 /* Layout */
 .container-list {
     max-width: 1200px; /* หรือขนาดที่เหมาะสม */
-    margin: auto; /* จัดให้อยู่ตรงกลาง */
+    margin-left: 5%; 
     padding: 20px;
     top: -10;
   }
