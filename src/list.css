@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Layout */
 .container-list {
@@ -68,14 +73,17 @@
   
   .checkbox-group {
     display: flex; /* ใช้ Flexbox ในการจัดเรียง checkbox */
-    gap: 10px; /* ระยะห่างระหว่าง checkbox */
+    gap: 20px; /* ระยะห่างระหว่าง checkbox */
   }
 
   .equipment-box {
-    border: 0.1px solid #d6d4d4; 
-    padding: 8px; /* ระยะห่างภายในกรอบ */
-    margin: 10px 0; /* ระยะห่างรอบนอก */
-    border-radius: 0px; /* มุมโค้งมน */
+    flex-grow: 1; /* ให้ขยายเต็มพื้นที่ที่เหลือ */
+    height: 50px; /* กำหนดความสูงให้เท่ากับ empty-box */
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
   }
   
   .save-btn {
@@ -115,7 +123,7 @@
 .empty-box {
   background-color: #dedcd9;
   width: 40px; /* กำหนดขนาดกล่อง */
-  height: 40px;
+  height: 35px;
   margin-right: -8px; /* ปรับให้ชิด input */
   display: flex;
   justify-content: center; /* จัดไอคอนไปตรงกลาง */
@@ -136,7 +144,7 @@
 }
 
 .select-list {
-  height: 40px; /* ปรับความสูง */
+  height: 35px; /* ปรับความสูง */
   width: 95%; /* ทำให้ select กว้างเต็ม container */
   padding: 8px; /* เพิ่มพื้นที่ภายใน */
   font-size: 16px; /* ปรับขนาดตัวอักษร */
@@ -144,28 +152,23 @@
 }
 
 .box-list {
-  height: 40px; /* ปรับความสูง */
+  height: 35px; /* ปรับความสูง */
   width: 95%; /* ทำให้ select กว้างเต็ม container */
   padding: 8px; /* เพิ่มพื้นที่ภายใน */
   font-size: 16px; /* ปรับขนาดตัวอักษร */
   border: 1px solid #ccc;
 }
 
-.no-icon {
-  -webkit-appearance: none; /* สำหรับเบราว์เซอร์ที่ใช้ Webkit (เช่น Chrome, Safari) */
-  -moz-appearance: none; /* สำหรับ Firefox */
-  appearance: none; /* สำหรับเบราว์เซอร์ทั้งหมด */
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none; /* ซ่อนไอคอนปฏิทิน */
-}
-
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none; /* ซ่อนไอคอนนาฬิกา */
-}
 
 .equipment-wrapper {
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้ทั้งกล่องเปล่าและ equipment-box อยู่ในแถวเดียวกัน */
+  align-items: center; /* จัดให้อยู่ในระดับเดียวกัน */
+  justify-content: space-between; /* จัดระยะห่างระหว่างกล่อง */
+}
+
+.equipment-wrapper2 {
+  width: 100px;
+  height: 40px;
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้ทั้งกล่องเปล่าและ equipment-box อยู่ในแถวเดียวกัน */
   align-items: center; /* จัดให้อยู่ในระดับเดียวกัน */
   justify-content: space-between; /* จัดระยะห่างระหว่างกล่อง */
@@ -178,16 +181,27 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
   padding: 5px;
   align-items: center;
+}
 
+.equipment-boxx2 {
+  flex-grow: 1; /* ให้ `equipment-box` ขยายเต็มที่ */
+  flex: 1; /* ทำให้ทั้งสองกล่องขยายให้มีขนาดเท่ากัน */
+  height: 40px; /* กำหนดความสูงของกล่อง */
+  border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
+  padding: 5px;
+  align-items: center;
 }
 
 .long-time-input {
   width: 500px; /* ปรับขนาดให้กว้างขึ้น */
-  height: 40px;
+  height: 35px;
 }
 
 .long-input {
   width: 1105px; /* ปรับขนาดให้กว้างขึ้น */
-  height: 40px;
+  height: 35px;
 }
 
+.box-margin {
+  margin-left: 6px;
+}

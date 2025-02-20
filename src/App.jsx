@@ -12,7 +12,6 @@ import Check_Page from './check.jsx';
 
 
 
-
 function App() {
 
   return (

@@ -14,28 +14,32 @@ function Home_Page() {
     <>
       <Navbar />
       {/* Dashboard */}
-      <div  style={{ marginTop: "10px" }}>&nbsp;&nbsp;
+      <div style={{ marginTop: "10px" }}>&nbsp;&nbsp;
         <RiDashboardFill className="icon-size" /> &nbsp;&nbsp;
         <span className="text-position">Dashboard</span>
       </div>
       <div className="wrapper-home">
         <div className="container">
           <div class="box-green box1">
-          <LuCalendarDays  className="icon-inside-box" />  
+            <LuCalendarDays className="icon-inside-box" />
           </div>
           <div class="box-brightgreen box2">
-             <p className="">จองห้องประชุม</p>
-            <span>0</span>
-            <p>วัน</p>
+            <div className="text-dashboard-right">
+              <p className="">จองห้องประชุม</p>
+              <p>0</p>
+              <p>วัน</p>
+            </div>
           </div> &nbsp; &nbsp; &nbsp;
 
           <div class="box-yellow box3">
-          <LuClipboardList className="icon-inside-box" />   
+            <LuClipboardList className="icon-inside-box" />
           </div>
           <div class="box-brighyellow box4">
-            <p>ห้องประชุม</p>
-            <p>2</p>
-            <p>ห้องประชุมทั้งหมด</p>
+            <div className="text-dashboard-right">
+              <p>ห้องประชุม</p>
+              <p>2</p>
+              <p>ห้องประชุมทั้งหมด</p>
+            </div>
           </div>
         </div>
       </div>

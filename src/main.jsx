@@ -15,6 +15,7 @@ import Navbar from "./components/navbar";
 
 
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App/>

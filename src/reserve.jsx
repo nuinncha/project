@@ -7,11 +7,10 @@ import room2 from './assets/room2.png';
 function Reserve_Page() {
   return (
     <>
-      <Navbar />
       <div>
-
-        <div className='container'>
-          <div className='row'>
+      <Navbar />
+        <div className='container-reserve'>
+          <div className='row-reserve'>
             <div className=''>ห้องประชุม/รายการ</div>
             <div>รายการ ห้องประชุม</div>
             <div style={{ display: "flex" }}>

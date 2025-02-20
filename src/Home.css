@@ -71,7 +71,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     text-align: right;/* จัดฟอนต์ชิดขวา */
@@ -110,4 +110,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* จัดตำแหน่งไอคอนให้อยู่ตรงกลางกล่อง */
+  }
+
+  .text-dashboard-right {
+    display: flex;
+    flex-direction: column; /* แยกข้อความให้อยู่คนละบรรทัด */
+    align-items: flex-end; /* จัดข้อความให้ชิดขวา */
+    line-height: 0.5; /* ปรับระยะห่างระหว่างบรรทัด */
+    gap: 2px; /* กำหนดช่องว่างระหว่างบรรทัด (ใช้ได้กับ Flexbox) */
+    padding-top: 15px; /* ขยับข้อความลง */
   }

@@ -16,8 +16,8 @@ import { FaCalendarAlt } from "react-icons/fa";
 function List_Page() {
   return (
     <>
-      <Navbar />
       <div>
+      <Navbar />
         <div className='wrapper-list'>
           <div className='container-list'>
             <div style={{ marginTop: "15px" }}>
@@ -122,7 +122,7 @@ function List_Page() {
             {/* วันที่และเวลา */}
             <div className="row">
               <label>วันที่เริ่มต้น/เวลาเริ่มต้น</label>
-              <div className="datetime no-icon">
+              <div className="datetime ">
                 <div className='row'>
                   <div className="left">
                     <div className="input-group">
@@ -142,7 +142,7 @@ function List_Page() {
             {/* วันที่และเวลา */}
             <div className="row">
               <label>วันที่เริ่มต้น/เวลาเริ่มต้น</label>
-              <div className="datetime no-icon">
+              <div className="datetime">
                 <div className='row'>
                   <div className="left">
                     <div className="input-group">
@@ -164,11 +164,11 @@ function List_Page() {
 
             {/* อุปกรณ์ */}
             <div className="row">
-              <div className="left">
+              <div className="">
                 <label>อุปกรณ์</label>
                 <div className="equipment-wrapper">
                   <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
-                  <div className='equipment-box box-margin'>
+                  <div className='equipment-boxx2 box-margin'>
                     <div className="checkbox-group">
                       <label><input type="checkbox" /> เครื่องคอมพิวเตอร์</label>
                       <label><input type="checkbox" /> โปรเจ็กเตอร์</label>
