@@ -164,6 +164,7 @@
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้ทั้งกล่องเปล่าและ equipment-box อยู่ในแถวเดียวกัน */
   align-items: center; /* จัดให้อยู่ในระดับเดียวกัน */
   justify-content: space-between; /* จัดระยะห่างระหว่างกล่อง */
+  width: 97%;
 }
 
 .equipment-wrapper2 {
@@ -186,7 +187,7 @@
 .equipment-boxx2 {
   flex-grow: 1; /* ให้ `equipment-box` ขยายเต็มที่ */
   flex: 1; /* ทำให้ทั้งสองกล่องขยายให้มีขนาดเท่ากัน */
-  height: 40px; /* กำหนดความสูงของกล่อง */
+  height: 35px; /* กำหนดความสูงของกล่อง */
   border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
   padding: 5px;
   align-items: center;

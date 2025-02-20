@@ -33,7 +33,11 @@ function List_Page() {
                   <div className="empty-box icon-inside-empty2">
                     <RiTodoFill />
                   </div> {/* กล่องเปล่า */}
-                  <input className='long-time-input' type="text" placeholder="" />
+                  {/* <input className='long-time-input' type="text" placeholder="" /> */}
+                  <select className='long-time-input' name="roomName" id="roomName">
+                    <option value="1">ห้องประชุม 1</option>
+                    <option value="1">อาคารเฉลิมพระเกียรติ</option>
+                  </select>
                 </div>
               </div>
 
@@ -41,7 +45,7 @@ function List_Page() {
                 <label>จำนวนผู้เข้าประชุม</label>
                 <div className="input-group">
                   <div className="empty-box icon-inside-empty"> <TbNumber123 /> </div> {/* กล่องเปล่า */}
-                  <input className='long-time-input' type="number" placeholder="" />
+                  <input className='long-time-input' type="number" placeholder="1" />
                 </div>
               </div>
             </div>
