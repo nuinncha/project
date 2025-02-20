@@ -93,12 +93,16 @@ function List_Page() {
                 <div className="input-group">
                   <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
                   <select className='select-list'>
-                    <option value=""></option>
-                    <option value="hr">สำนักปลัด</option>
-                    <option value="it">กองช่าง</option>
-                    <option value="marketing">กองสาธารณสุข</option>
-                    <option value="finance">กองการศึกษา</option>
-                    <option value="operations">กองคลัง</option>
+                    <option value="">-- โปรดเลือก --</option>
+                    <option value=" ประชุมเจ้าหน้าที่"> ประชุมเจ้าหน้าที่</option>
+                    <option value="ประชุมสภาเทศบาล">ประชุมสภาเทศบาล</option>
+                    <option value="ประชุมหัวหน้าส่วนราชการ">ประชุมหัวหน้าส่วนราชการ</option>
+                    <option value="ประชาคมหมู่บ้าน ">ประชาคมหมู่บ้าน </option>
+                    <option value="ฝึกอบรมบุคลากร">ฝึกอบรมบุคลากร</option>
+                    <option value="อบรมอาสาสมัคร ">อบรมอาสาสมัคร </option>
+                    <option value="แถลงข่าวของเทศบาล">แถลงข่าวของเทศบาล</option>
+                    <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น</option>
+                    <option value="จัดหน่วยเลือกตั้ง">จัดหน่วยเลือกตั้ง</option>
                   </select>
                 </div>
               </div>
@@ -112,12 +116,12 @@ function List_Page() {
                 <div className="input-group">
                   <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
                   <select className='select-list'>
-                    <option value=""> </option>
-                    <option value="hr">สำนักปลัด</option>
-                    <option value="it">กองช่าง</option>
-                    <option value="marketing">กองสาธารณสุข</option>
-                    <option value="finance">กองการศึกษา</option>
-                    <option value="operations">กองคลัง</option>
+                    <option value="">-- โปรดเลือก -- </option>
+                    <option value="สำนักปลัด">สำนักปลัด</option>
+                    <option value="กองช่าง">กองช่าง</option>
+                    <option value="กองสาธารณสุข">กองสาธารณสุข</option>
+                    <option value="กองการศึกษา">กองการศึกษา</option>
+                    <option value="กองคลัง">กองคลัง</option>
                   </select>
                 </div>
               </div>

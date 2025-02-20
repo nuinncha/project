@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column; /* ให้ stack เป็นแนวตั้ง */
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -7,9 +13,9 @@
 
 /* Layout */
 .container-list {
-    width: 90%;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+    max-width: 1200px; /* หรือขนาดที่เหมาะสม */
+    margin: auto; /* จัดให้อยู่ตรงกลาง */
+    padding: 20px;
     top: -10;
   }
       
@@ -21,20 +27,25 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 10px;
   }
   
   .row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
     margin-bottom: 20px;
+    gap: 10px;
   }
   
   .left, .right {
     flex: 1;
+    min-width: 200px; /* ป้องกันช่องหดเกินไป */
     display: flex;
     flex-direction: column;
+    min-width: 200px; /* ป้องกันช่องหดเกินไป */
     gap: 5px;
   }
   
@@ -57,9 +68,10 @@
   }
 
   input, textarea, select {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 0px;
+    box-sizing: border-box;
   }
   
   textarea {
@@ -113,6 +125,7 @@
 }
 
 .input-group {
+  width: 100;
   display: flex;
   align-items: center;
   gap: 8px; /* ระยะห่างระหว่างกล่องเปล่ากับ input */
@@ -205,4 +218,9 @@
 
 .box-margin {
   margin-left: 6px;
+}
+
+.details-textarea {
+  height: 100px;
+  resize: vertical; /* ให้ขยายขึ้น-ลงได้ */
 }
