@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import roombooking from './assets/roombooking.png'
 import './register.css'
 
 function Welcome_Page() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,7 +13,7 @@ function Welcome_Page() {
     const userData = { email, password };
 
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -21,12 +23,19 @@ function Welcome_Page() {
 
       const result = await response.json();
       if (response.ok) {
-        alert("Sign-up successful!");
+        alert("Login successful!");
+
+        // 👉 เก็บ Token ลง localStorage
+        localStorage.setItem('token', result.token);
+
+        // 👉 เปลี่ยนหน้าไปที่ Home
+        navigate('/home');
+
       } else {
         alert("Error: " + result.message);
       }
     } catch (error) {
-      console.error("Error signing up:", error);
+      console.error("Error Loginng in:", error);
     }
   };
 

@@ -36,9 +36,15 @@ function Navbar() {
               </a>
             </li>
           </ul>
-          <a href="/login" className="btn btn-primary">
+          <a href="/welcome" className="btn btn-primary">
             Login
           </a>
+          <button onClick={() => {
+        localStorage.removeItem('token'); // ลบ token
+        navigate('/'); // กลับไปหน้า Login
+      }}>
+        Logout
+      </button>
         </div>
       </div>
     </nav>

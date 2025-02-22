@@ -8,8 +8,20 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { LuCalendarDays } from "react-icons/lu";
 import { LuClipboardList } from "react-icons/lu";
 import { RiDashboardFill } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 function Home_Page() {
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+    
+  //   if (!token) {
+  //     alert("Please log in first.");
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
+
   return (
     <>
       <Navbar />

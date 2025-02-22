@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import roombooking from './assets/roombooking.png';
 import './register.css';
+import { useNavigate } from 'react-router-dom';
 
 function Register_Page() {
   // State สำหรับเก็บค่าจาก input
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   // ฟังก์ชันส่งข้อมูลไปยังเซิร์ฟเวอร์
-  const handleSignUp = async () => {
+  const handleSignup = async () => {
     const userData = { name, email, password };
 
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -24,6 +26,7 @@ function Register_Page() {
       const result = await response.json();
       if (response.ok) {
         alert("Sign-up successful!");
+        navigate('/welcome');
       } else {
         alert("Error: " + result.message);
       }
@@ -67,7 +70,7 @@ function Register_Page() {
           />
 
           <br />
-          <button className="button2" onClick={handleSignUp}>Sign up</button>
+          <button className="button2" onClick={handleSignup}>Sign up</button>
           
           <div className='text3'>or</div>
           <button className="button3">Sign in with Google</button>

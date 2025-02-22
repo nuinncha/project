@@ -17,7 +17,6 @@ function App() {
   return (
 
     <Router>
-
         <Routes>
         <Route path="/" element={<Home_Page />} />
         <Route path="/register" element={<Register_Page />} />
@@ -25,7 +24,6 @@ function App() {
         <Route path="/list" element={<List_Page />} />
         <Route path="/reserve" element={<Reserve_Page />} />
         <Route path="/check" element={<Check_Page />} />
-        {/* <Route path="/welcome" element={<Welcome_Page />} /> */}
       </Routes>
     </Router>
   );
