@@ -9,7 +9,7 @@ function Reserve_Page() {
     <>
       <div>
       <Navbar />
-        <div className='container-reserve'>
+        <div className='conreserve'>
           <div className='row-reserve'>
             <div className=''>ห้องประชุม/รายการ</div>
             <div>รายการ ห้องประชุม</div>
@@ -32,7 +32,7 @@ function Reserve_Page() {
         </div> */}
 
         <table>
-          <tr className='thead'>
+          <tr className='thead-blue-reser'>
             <td style={{ paddingLeft: "400px" }}></td>
             <td style={{ paddingRight: "350px" }}>รายละเอียด</td>
             <td style={{ paddingLeft: "400px" }}></td>

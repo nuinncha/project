@@ -1,4 +1,4 @@
-.container {
+.conreserve {
   width: 90%;
   margin: 20px auto;
   font-family: Arial, sans-serif;
@@ -61,9 +61,14 @@ select {
   /* margin-right: 4rem; */
 }
 
-.thead{
-  background-color: rgb(86, 175, 248);
+.thead-blue-reserve {
+  background-color: #3498db; /* สีฟ้า */
+  color: white; /* สีตัวอักษรให้มองเห็นชัด */
+  text-align: center; /* จัดให้อยู่ตรงกลาง */
+  height: 10px; /* ลดความสูงของแถว */
+  white-space: nowrap;
 }
+
 td {
   vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
   text-align: left; /* ให้เนื้อหาชิดซ้าย */
