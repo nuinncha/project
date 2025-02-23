@@ -2,8 +2,8 @@
   width: 90%;
   margin: 20px auto;
   font-family: Arial, sans-serif;
-  margin-top: 35px; /* ปรับค่าตามที่ต้องการ */
-  padding-top: 35px; /* เพิ่ม padding ถ้าต้องการให้ดูเป็นระเบียบ */
+  margin-top: 35px; 
+  padding-top: 35px; /*
 }
 
 .drop-down {
@@ -20,8 +20,8 @@ select {
   display: flex;
   align-items: center;
   margin-top: -10px; /* ปรับค่านี้เพื่อขยับ dropdown ขึ้น */
-  margin-left: 10px; /* เว้นระยะห่างซ้าย */
-}
+  /* margin-left: 10px; /* เว้นระยะห่างซ้าย */
+} */
 
 .btn-go {
   background-color: red;
