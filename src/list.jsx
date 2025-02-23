@@ -28,12 +28,11 @@ function List_Page() {
   // }, [navigate]);
 
   const [formData, setFormData] = useState({
-    roomName: "",
+    roomName: localStorage.getItem("room"),
     participants: "",
     topic: "",
     bookerName: "",
     phone: "",
-    reason: "",
     department: "",
     purpose: "",
     startDate: "",
@@ -70,7 +69,7 @@ function List_Page() {
     console.log("📤 Sending data:", formData); // Debugging
 
     try {
-      const response = await fetch("/book-room", {
+      const response = await fetch("http://localhost:3000/book-room", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -112,12 +111,12 @@ function List_Page() {
                     <div className="empty-box icon-inside-empty2">
                       <RiTodoFill />
                     </div> {/* กล่องเปล่า */}
-                    {/* <input className='long-time-input' type="text" placeholder="" /> */}
-                    <select className='long-time-input' name="roomName" onChange={handleChange}>
+                    {/* <select className='long-time-input' name="roomName" onChange={handleChange}>
                       <option value="">เลือกห้อง</option>
                       <option value="ห้องประชุม 1">ห้องประชุม 1</option>
                       <option value="อาคารเฉลิมพระเกียรติ">อาคารเฉลิมพระเกียรติ</option>
-                    </select>
+                    </select> */}
+                    <input className='long-time-input' type="text" value={localStorage.getItem("room")}/>
                   </div>
                 </div>
 
@@ -172,7 +171,7 @@ function List_Page() {
                   <label>ใช้สำหรับ</label>
                   <div className="input-group">
                     <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
-                    <select className='select-list' name="reason" onChange={handleChange}>
+                    <select className='select-list' name="purpose" onChange={handleChange}>
                       <option value="">-- โปรดเลือก --</option>
                       <option value=" ประชุมเจ้าหน้าที่"> ประชุมเจ้าหน้าที่</option>
                       <option value="ประชุมสภาเทศบาล">ประชุมสภาเทศบาล</option>

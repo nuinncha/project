@@ -58,17 +58,20 @@ select {
   align-content: center;
   width: auto;
   margin-left: 4rem;
-  /* margin-right: 4rem; */
 }
 
 .thead{
-  background-color: rgb(86, 175, 248);
+  height: 7px;
+  background-color:blueviolet;
 }
+
+
 td {
   vertical-align: top; /* จัดให้เนื้อหาอยู่ด้านบนของ td */
   text-align: left; /* ให้เนื้อหาชิดซ้าย */
   height: 4rem;
 }
+
 
 img.picture {
   max-height:5em;
@@ -96,6 +99,12 @@ img.picture {
   cursor: pointer;
   border: none;
 
+}
+
+.container-reserve{
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-bottom: 20px;
 }
 
 
