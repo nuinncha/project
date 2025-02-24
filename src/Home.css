@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
-
 .btn-purple {
     background-color: #c441aa;
     color: white;
     width: 8%;
-    height: 35px; 
+    height: 35px;
     border-radius: 5px;
     border: 0.5px solid #ffffff;
     ;
@@ -27,7 +25,8 @@
 
 p {
     font-family: 'Nunito', sans-serif;
-    font-weight: 400; /* ปกติ */
+    font-weight: 400;
+    /* ปกติ */
 }
 
 h1 {
@@ -41,31 +40,31 @@ body {
 }
 
 .wrapper-home {
-    display: flex; /* จัดวางให้อยู่ในบรรทัดเดียวกัน */
-    gap: 20px;  /* ระยะห่างระหว่าง container */
-    align-items: center;
-    margin-left: -120px;
-    margin-top: -50px;  /*ขยับขึ้นบน */
+    margin-top: 1vh;
 }
 
 .container {
-    display: flex; /* จัดให้อยู่ในแนวนอน */
+    flex-wrap: wrap;
+    display: flex;
     justify-content: flex-start;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
-.box-green,.box-yellow {
+.box-green,
+.box-yellow {
     width: 80px;
     height: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-weight: bold;
     color: white;
     padding: 20px; /* ปรับระยะห่างภายในกล่อง */
     position: relative;
 }
 
-.box-brightgreen, .box-brighyellow {
+.box-brightgreen,
+.box-brighyellow {
     width: 160px;
     height: 100px;
     display: flex;
@@ -74,7 +73,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: white;
-    text-align: right;/* จัดฟอนต์ชิดขวา */
+    text-align: right; /* จัดฟอนต์ชิดขวา */
 }
 
 .box1 {
@@ -94,29 +93,27 @@ body {
 }
 
 .text-position {
-    position: relative;
-    top: 5px;  
-    font-size: larger;
-  }
-  
+    font-size: 1.2rem;
+}
+
 .icon-size {
-    font-size: 28px; /* กำหนดขนาดไอคอน */
+    font-size: 2rem; /* กำหนดขนาดไอคอน */
 }
 
 .icon-inside-box {
-    font-size: 40px; /* ปรับขนาดไอคอน */
+    font-size: 40px;
     color: white; /* เปลี่ยนสีของไอคอน */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* จัดตำแหน่งไอคอนให้อยู่ตรงกลางกล่อง */
-  }
+}
 
-  .text-dashboard-right {
+.text-dashboard-right {
     display: flex;
     flex-direction: column; /* แยกข้อความให้อยู่คนละบรรทัด */
     align-items: flex-end; /* จัดข้อความให้ชิดขวา */
     line-height: 0.5; /* ปรับระยะห่างระหว่างบรรทัด */
-    gap: 2px; /* กำหนดช่องว่างระหว่างบรรทัด (ใช้ได้กับ Flexbox) */
+    gap: 2px;  /* กำหนดช่องว่างระหว่างบรรทัด (ใช้ได้กับ Flexbox) */
     padding-top: 15px; /* ขยับข้อความลง */
-  }
+}
