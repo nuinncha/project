@@ -1,4 +1,4 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -36,4 +36,57 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+} */
+
+
+
+
+.container-check {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-card:hover {
+  background: #f1f1f1;
+}
+
+.booking-card h3 {
+  margin: 0;
+  color: #007bff;
+}
+
+.booking-card p {
+  margin: 5px 0;
+}
+
+.booking-card button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.booking-card button:hover {
+  background: #0056b3;
+}
+
