@@ -9,6 +9,8 @@ import List_Page from './list';
 import Home_Page from './Home.jsx';
 import Check_Page from './check.jsx';
 import Admin_Page from './admin.jsx';
+import History_Page from './history.jsx';
+import Profile_Page from './profile.jsx';
 
 
 
@@ -26,6 +28,8 @@ function App() {
         <Route path="/reserve" element={<Reserve_Page />} />
         <Route path="/check" element={<Check_Page />} />
         <Route path="/admin" element={<Admin_Page />} />
+        <Route path="/history" element={<History_Page />} />
+        <Route path="/profile" element={<Profile_Page />} />
 
       </Routes>
     </Router>

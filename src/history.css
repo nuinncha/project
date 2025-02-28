@@ -1,0 +1,87 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background: url('./assets/background.png') no-repeat center center fixed;
+    background-size: cover; /* ทำให้ภาพครอบคลุมพื้นที่ */
+    background-position: center 15%; /* ขยับภาพลงมาที่ 30% ของความสูง */
+    background-attachment: fixed; /* ภาพพื้นหลังจะไม่เลื่อนเมื่อเลื่อนหน้า */
+    margin: 0;
+    padding: 0;
+}
+
+.history_container {
+    max-width: 1200px; 
+    margin-left: 5%; 
+    padding: 20px;
+    margin-top: 20px; 
+    display: flex;
+    margin-left: 140px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+.kanit_font {
+    font-family: 'Kanit', sans-serif;
+    font-style: normal;
+}
+
+.headder-font {
+    font-size: 1.3em; 
+    margin-left: 10px; 
+    color: white;
+}
+
+.history_icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;    
+
+}
+
+.history-table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+
+.history-table th {
+    background-color: #4986ff;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+}
+
+.history-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* สไตล์สำหรับสถานะ */
+.status {
+    font-weight: bolder;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status.อนุมัติ {
+    color: green;
+}
+
+.status.รออนุมัติ {
+    color: orange;
+}
+
+.status.ยกเลิก {
+    color: red;
+}
+

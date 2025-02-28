@@ -61,7 +61,7 @@ function List_Page() {
     }));
   };
 
-
+  
 
   // ฟังก์ชันส่งข้อมูลไปยัง API
   const handleSubmit = async (e) => {
@@ -110,12 +110,7 @@ function List_Page() {
                   <div className="input-group">
                     <div className="empty-box icon-inside-empty2">
                       <RiTodoFill />
-                    </div> {/* กล่องเปล่า */}
-                    {/* <select className='long-time-input' name="roomName" onChange={handleChange}>
-                      <option value="">เลือกห้อง</option>
-                      <option value="ห้องประชุม 1">ห้องประชุม 1</option>
-                      <option value="อาคารเฉลิมพระเกียรติ">อาคารเฉลิมพระเกียรติ</option>
-                    </select> */}
+                    </div> 
                     <input className='long-time-input' type="text" value={localStorage.getItem("room")}/>
                   </div>
                 </div>

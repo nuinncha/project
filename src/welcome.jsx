@@ -40,7 +40,7 @@ function Welcome_Page() {
   };
 
   return (
-    <section>
+    <section className='top1'>
       <div className="left-box">
         <div>
           <div className="head-login">WELCOME BACK!</div>
@@ -73,16 +73,12 @@ function Welcome_Page() {
             </button>
           </div>
 
-          <div>
-            <button className="button3">Sign in with Google</button>
-          </div>
-
           <div className="account-link">
             Have an account? <a href="">Sign in</a>
           </div>
 
           <div className='picture-container'>
-            <img src={roombooking} className='picture' alt="roombooking" />
+            <img src={roombooking} className='img-register' alt="roombooking" />
           </div>
         </div>
       </div>

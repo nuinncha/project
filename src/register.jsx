@@ -37,7 +37,7 @@ function Register_Page() {
   };
 
   return (
-    <section>
+    <section >
       <div className="left-box">
         <div>
           <div className="head-login">Get Started Now</div>
@@ -73,14 +73,13 @@ function Register_Page() {
           <button className="button2" onClick={handleSignup}>Sign up</button>
           
           <div className='text3'>or</div>
-          <button className="button3">Sign in with Google</button>
 
           <div className="account-link">Have an account?
             <a href="">Sign in</a>
           </div>
 
           <div className='picture-container'>
-            <img src={roombooking} className='picture' alt="roombooking" />
+            <img src={roombooking} className='img-register' alt="roombooking" />
           </div>
         </div>
       </div>
