@@ -24,12 +24,14 @@ function Welcome_Page() {
       const result = await response.json();
       if (response.ok) {
         alert("Login successful!");
+        console.log(result)
 
         // 👉 เก็บ Token ลง localStorage
         localStorage.setItem('token', result.token);
+        localStorage.setItem('user', JSON.stringify(result.userData));
 
         // 👉 เปลี่ยนหน้าไปที่ Home
-        navigate('/home');
+        navigate('/');
 
       } else {
         alert("Error: " + result.message);
@@ -74,7 +76,7 @@ function Welcome_Page() {
           </div>
 
           <div className="account-link">
-            Have an account? <a href="">Sign in</a>
+            Don't have an account? <a href="/register">Sign in</a>
           </div>
 
           <div className='picture-container'>

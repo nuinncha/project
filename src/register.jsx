@@ -75,7 +75,7 @@ function Register_Page() {
           <div className='text3'>or</div>
 
           <div className="account-link">Have an account?
-            <a href="">Sign in</a>
+            <a href="/welcome">Sign in</a>
           </div>
 
           <div className='picture-container'>

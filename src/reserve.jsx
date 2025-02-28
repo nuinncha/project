@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './reserve.css';
 import room1 from './assets/room1.png';
 import Navbar from './components/navbar';
@@ -9,6 +9,18 @@ import { RiFileList3Fill } from "react-icons/ri";
 
 function Reserve_Page() {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+    useEffect(() => {
+    const token = localStorage.getItem('token');
+    const udata = localStorage.getItem('user')
+    setUser(JSON.parse(udata));
+
+  }, []);
+
+
+
+
 
   const handleBook1 = (e) => {
     localStorage.setItem('room', "ห้องประชุม 1");
@@ -16,8 +28,7 @@ function Reserve_Page() {
   };
 
   const handleBook2 = (e) => {
-    localStorage.setItem('room', "อาคารเฉลิมพระเกียรติ");
-    navigate('/list');
+    console.log(user.email)
   };
 
   const approve = () => {
@@ -89,7 +100,7 @@ function Reserve_Page() {
               </td>
               <td className='action-buttons'>
                 <button className='button-green' onClick={handleBook1}>จองห้องประชุม</button>
-                <button className='button-yellow'>รายละเอียด</button>
+                <button className='button-yellow' onClick={handleBook2} >รายละเอียด</button>
               </td>
             </tr>
             <tr>

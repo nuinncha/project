@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* ทำให้พื้นที่อย่างน้อยเต็มหน้าจอ */
+  /* min-height: 100vh; ทำให้พื้นที่อย่างน้อยเต็มหน้าจอ */
   flex-direction: column;
   padding: 20px;
 }
