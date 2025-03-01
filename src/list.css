@@ -8,6 +8,7 @@
 
 /* Layout */
 .container-list {
+    background: transparent !important; /* ลบพื้นหลังจากทุกองค์ประกอบ */
     max-width: 1200px; /* หรือขนาดที่เหมาะสม */
     margin-left: 5%; 
     padding: 20px;
@@ -27,6 +28,7 @@
   }
   
   .row {
+    background: transparent !important; /* ลบพื้นหลังจากทุกองค์ประกอบ */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

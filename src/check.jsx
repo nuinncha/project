@@ -73,23 +73,23 @@ function Check_Page() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
     })
-    .then(res => res.json())
-    .then(() => {
-      setBookings(bookings.map(b => (b._id === id ? { ...b, status } : b)));
-      Swal.fire({
-        icon: "success",
-        title: "สำเร็จ!",
-        text: `สถานะการจองเปลี่ยนเป็น "${status}"`,
+      .then(res => res.json())
+      .then(() => {
+        setBookings(bookings.map(b => (b._id === id ? { ...b, status } : b)));
+        Swal.fire({
+          icon: "success",
+          title: "สำเร็จ!",
+          text: `สถานะการจองเปลี่ยนเป็น "${status}"`,
+        });
+      })
+      .catch(err => {
+        console.error("Error updating status:", err);
+        Swal.fire({
+          icon: "error",
+          title: "เกิดข้อผิดพลาด",
+          text: "ไม่สามารถเปลี่ยนสถานะได้",
+        });
       });
-    })
-    .catch(err => {
-      console.error("Error updating status:", err);
-      Swal.fire({
-        icon: "error",
-        title: "เกิดข้อผิดพลาด",
-        text: "ไม่สามารถเปลี่ยนสถานะได้",
-      });
-    });
   };
 
   const handleFilterChange = (e) => {
@@ -105,37 +105,39 @@ function Check_Page() {
   return (
     <>
       <Navbar />
-      <div className="container-check">
-        <h5>รายการจองทั้งหมด</h5>  
-        <div className="filters">
-          <input type="date" name="startDate" value={filters.startDate} onChange={handleFilterChange} />
-          <select name="roomName" value={filters.roomName} onChange={handleFilterChange}>
-            <option value="">ทุกห้อง</option>
-            <option value="ห้องประชุม 1">ห้องประชุม 1</option>
-            <option value="อาคารเฉลิมพระเกียรติ">อาคารเฉลิมพระเกียรติ</option>
-          </select>
-          <select name="status" value={filters.status} onChange={handleFilterChange}>
-            <option value="">ทุกสถานะ</option>
-            <option value="pending">รอตรวจสอบ</option>
-            <option value="confirmed">อนุมัติ</option>
-            <option value="cancelled">ไม่อนุมัติ</option>
-          </select>
-        </div>
+      <div className='bg-check'>
+        <div className="container-check">
+          <h5>รายการจองทั้งหมด</h5>
+          <div className="filters">
+            <input type="date" name="startDate" value={filters.startDate} onChange={handleFilterChange} />
+            <select name="roomName" value={filters.roomName} onChange={handleFilterChange}>
+              <option value="">ทุกห้อง</option>
+              <option value="ห้องประชุม 1">ห้องประชุม 1</option>
+              <option value="อาคารเฉลิมพระเกียรติ">อาคารเฉลิมพระเกียรติ</option>
+            </select>
+            <select name="status" value={filters.status} onChange={handleFilterChange}>
+              <option value="">ทุกสถานะ</option>
+              <option value="pending">รอตรวจสอบ</option>
+              <option value="confirmed">อนุมัติ</option>
+              <option value="cancelled">ไม่อนุมัติ</option>
+            </select>
+          </div>
 
-        <div className="booking-list">
-          {filteredBookings.length === 0 ? (
-            <p>ไม่มีข้อมูลการจอง</p>
-          ) : (
-            filteredBookings.map((booking) => (
-              <div className="booking-card" key={booking._id} onClick={() => userRole === "admin" && showBookingDetails(booking)}>
-                <h3>{booking.roomName}</h3>
-                <p><strong>ผู้จอง:</strong> {booking.bookerName}</p>
-                <p><strong>วันเริ่ม:</strong> {booking.startDate} | <strong>เวลา:</strong> {booking.startTime}</p>
-                <p><strong>สถานะ:</strong> {booking.status}</p>
-                {userRole === "admin" && <button onClick={(e) => { e.stopPropagation(); showBookingDetails(booking); }}>รายละเอียด</button>}
-              </div>
-            ))
-          )}
+          <div className="booking-list">
+            {filteredBookings.length === 0 ? (
+              <p>ไม่มีข้อมูลการจอง</p>
+            ) : (
+              filteredBookings.map((booking) => (
+                <div className="booking-card" key={booking._id} onClick={() => userRole === "admin" && showBookingDetails(booking)}>
+                  <h3>{booking.roomName}</h3>
+                  <p><strong>ผู้จอง:</strong> {booking.bookerName}</p>
+                  <p><strong>วันเริ่ม:</strong> {booking.startDate} | <strong>เวลา:</strong> {booking.startTime}</p>
+                  <p><strong>สถานะ:</strong> {booking.status}</p>
+                  {userRole === "admin" && <button onClick={(e) => { e.stopPropagation(); showBookingDetails(booking); }}>รายละเอียด</button>}
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </>

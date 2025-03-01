@@ -34,36 +34,38 @@ function Register_Page() {
       console.error("Error signing up:", error);
       alert("Failed to sign up. Please try again.");
     }
+
+
   };
 
   return (
-    <section >
-      <div className="left-box">
+    <section className='bg-register'>
+      <div className='register-box'>
         <div>
-          <div className="head-login">Get Started Now</div>
-          
+          <div className="head-login">GET START NOW</div>
+
           <div className="text">Name</div>
-          <input 
-            className="button1" 
-            type="text" 
+          <input
+            className="button1"
+            type="text"
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
           <div className="text">Email address</div>
-          <input 
-            className="button1" 
-            type="email"    
+          <input
+            className="button1"
+            type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
           <div className="text">Password</div>
-          <input 
-            className="button1" 
-            type="password" 
+          <input
+            className="button1"
+            type="password"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -71,15 +73,11 @@ function Register_Page() {
 
           <br />
           <button className="button2" onClick={handleSignup}>Sign up</button>
-          
+
           <div className='text3'>or</div>
 
           <div className="account-link">Have an account?
             <a href="/welcome">Sign in</a>
-          </div>
-
-          <div className='picture-container'>
-            <img src={roombooking} className='img-register' alt="roombooking" />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ body {
     background-attachment: fixed; /* ภาพพื้นหลังจะไม่เลื่อนเมื่อเลื่อนหน้า */
     margin: 0;
     padding: 0;
+    background: transparent !important; /* ลบพื้นหลังของ body */
 }
 
 .history_container {
@@ -102,4 +103,13 @@ body {
 .error-container p {
     color: #555;
     font-size: 18px;
+}
+
+.bg-history {
+    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
+    background-size: cover; /* ให้ภาพครอบคลุมพื้นที่ */
+    background-position: center; /* จัดภาพให้อยู่กลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+    width: 100%; /* ให้กว้างเต็มหน้าจอ */
 }

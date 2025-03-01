@@ -91,7 +91,7 @@ function List_Page() {
 
   return (
     <>
-      <div>
+      <div >
         <Navbar />
         <div className='wrapper-list'>
           <div className='container-list'>

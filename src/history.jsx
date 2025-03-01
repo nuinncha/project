@@ -51,35 +51,37 @@ function History_Page() {
     return (
         <>
             <Navbar />
-            <div className="history_container">
-                <RiFileHistoryFill className="history_icon" />
-                <span className="header-font kanit_font">ประวัติการจอง</span>
-            </div>
+            <div className="bg-history">
+                <div className="history_container">
+                    <RiFileHistoryFill className="history_icon" />
+                    <span className="header-font kanit_font">ประวัติการจอง</span>
+                </div>
 
-            {/* Table to display booking data */}
-            <div className="table-container">
-                <table className="history-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>ห้องประชุม</th>
-                            <th>วันที่</th>
-                            <th>เวลา</th>
-                            <th>สถานะ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {bookingHistory.map((booking, index) => (
-                            <tr key={booking._id}>
-                                <td>{index + 1}</td>
-                                <td>{booking.roomName}</td> {/* เปลี่ยนจาก booking.room เป็น booking.roomName */}
-                                <td>{new Date(booking.startDate).toLocaleDateString()}</td> {/* แปลงวันที่ให้เป็นรูปแบบที่อ่านได้ */}
-                                <td>{booking.startTime} - {booking.endTime}</td> {/* ใช้ startTime และ endTime */}
-                                <td className={`status ${booking.status.toLowerCase()}`}>{booking.status}</td>
+                {/* Table to display booking data */}
+                <div className="table-container">
+                    <table className="history-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ห้องประชุม</th>
+                                <th>วันที่</th>
+                                <th>เวลา</th>
+                                <th>สถานะ</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {bookingHistory.map((booking, index) => (
+                                <tr key={booking._id}>
+                                    <td>{index + 1}</td>
+                                    <td>{booking.roomName}</td> {/* เปลี่ยนจาก booking.room เป็น booking.roomName */}
+                                    <td>{new Date(booking.startDate).toLocaleDateString()}</td> {/* แปลงวันที่ให้เป็นรูปแบบที่อ่านได้ */}
+                                    <td>{booking.startTime} - {booking.endTime}</td> {/* ใช้ startTime และ endTime */}
+                                    <td className={`status ${booking.status.toLowerCase()}`}>{booking.status}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     );

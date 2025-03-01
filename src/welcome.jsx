@@ -42,11 +42,11 @@ function Welcome_Page() {
   };
 
   return (
-    <section className='top1'>
-      <div className="left-box">
+    <section className='bg-register'>
+      <div className="register-box ">
         <div>
           <div className="head-login">WELCOME BACK!</div>
-          <div className='text4'>Welcome back! Please enter your details.</div>
+          <div className='text-welcome'>Welcome back! Please enter your details.</div> <br></br>
 
           <div className="text">Email</div>
           <input 
@@ -66,9 +66,6 @@ function Welcome_Page() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <br />
-          <div>Remember me</div>
-
           <div>
             <button className="button2" onClick={handleSignUp}>
               Sign up
@@ -77,10 +74,6 @@ function Welcome_Page() {
 
           <div className="account-link">
             Don't have an account? <a href="/register">Sign in</a>
-          </div>
-
-          <div className='picture-container'>
-            <img src={roombooking} className='img-register' alt="roombooking" />
           </div>
         </div>
       </div>

@@ -47,3 +47,11 @@
   background: #0056b3;
 }
 
+.bg-check {
+  background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
+  background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
+  background-position: center; /* จัดภาพให้อยู่กลาง */
+  background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+  margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
+  height: 100vh; /* ให้สูงเต็มหน้าจอ */
+}

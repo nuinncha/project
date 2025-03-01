@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './reserve.css';
 import room1 from './assets/room1.png';
 import Navbar from './components/navbar';
@@ -11,13 +11,12 @@ function Reserve_Page() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem('token');
     const udata = localStorage.getItem('user')
     setUser(JSON.parse(udata));
 
   }, []);
-
 
 
 
@@ -77,52 +76,54 @@ function Reserve_Page() {
   return (
     <>
       <Navbar />
-      <div className='reserve-container'>
-        <div className='reserve-header'>
-          <RiFileList3Fill />
-          <span>รายการ ห้องประชุม</span>
-        </div>
-        <div style={{ display: "flex" }}>
-          <h6 style={{ marginTop: "20px" }}>แสดง 2 รายการ</h6>
-        </div>
+      <div className='bg-reserve'>
+        <div className='reserve-container'>
+          <div className='reserve-header'>
+            <RiFileList3Fill />
+            <span>รายการ ห้องประชุม</span>
+          </div>
+          <div style={{ display: "flex" }}>
+            <h6 style={{ marginTop: "20px" }}>แสดง 2 รายการ</h6>
+          </div>
 
-        <table className='reserve-table'>
-          <thead>
-            <tr className='thead-blue-reserve'>
-              <th></th>
-              <th>รายละเอียด</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <img src={room1} className='picture' alt="room1" />
-              </td>
-              <td className='room-details'>
-                <span className='txtroom'>ห้องประชุม 1</span><br />
-                <span>ชั้น 3,</span>
-              </td>
-              <td className='action-buttons'>
-                <button className='button-green' onClick={handleBook1}>จองห้องประชุม</button>
-                <button className='button-yellow' onClick={handletest} >รายละเอียด</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src={room2} className='picture' alt="room2" />
-              </td>
-              <td className='room-details'>
-                <span className='txtroom'>อาคารเฉลิมพระเกียรติ</span><br />
-                <span>ห้องประชุมใหญ่,</span>
-              </td>
-              <td className='action-buttons'>
-                <button className='button-green' onClick={handleBook2}>จองห้องประชุม</button>
-                <button className='button-yellow' onClick={approve}>รายละเอียด</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <table className='reserve-table'>
+            <thead>
+              <tr className='thead-blue-reserve'>
+                <th></th>
+                <th>รายละเอียด</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src={room1} className='picture' alt="room1" />
+                </td>
+                <td className='room-details'>
+                  <span className='txtroom'>ห้องประชุม 1</span><br />
+                  <span>ชั้น 3,</span>
+                </td>
+                <td className='action-buttons'>
+                  <button className='button-green' onClick={handleBook1}>จองห้องประชุม</button>
+                  <button className='button-yellow' onClick={handletest} >รายละเอียด</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src={room2} className='picture' alt="room2" />
+                </td>
+                <td className='room-details'>
+                  <span className='txtroom'>อาคารเฉลิมพระเกียรติ</span><br />
+                  <span>ห้องประชุมใหญ่,</span>
+                </td>
+                <td className='action-buttons'>
+                  <button className='button-green' onClick={handleBook2}>จองห้องประชุม</button>
+                  <button className='button-yellow' onClick={approve}>รายละเอียด</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

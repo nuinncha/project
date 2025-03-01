@@ -1,28 +1,17 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Prompt', sans-serif;
-} */
-
 .picture {
     width: 40%;
     height: 100%;
 }
 
-/* LEFT */
-section .left-box {
-    padding: 50px;
+/* ทำให้คอนเทนต์อยู่กลางจอ */
+section {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    width: 50%;
-    height: 100%;
     justify-content: center;
     align-items: center;
-    margin-left: 25px;
 }
+
 
 .top1 {
     margin-top: 50px;
@@ -30,18 +19,18 @@ section .left-box {
 
 .head-login {
     color: #0e0e0e;
-    font-size: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 350;
-    text-shadow: 3px 3px 3px rgba(22, 22, 22, 0.300);
+    font-size: 45px;
+    font-weight: bolder;
+    /* font-family: Helvetica, sans-serif; */
     letter-spacing: 3px;
     margin-bottom: 30px;
     margin-top: -10px;
+    width: 500px;
 }
 
 .text {
     position: relative;
-    left: 7px;
+    left: 15px;
     margin-top: -5px;
     text-align: left;
     padding: 5px;
@@ -75,6 +64,13 @@ section .left-box {
 .text4 {
     color: #4d4a4a;
     margin-top: -25px;
+    left: 70px;
+}
+
+.text-welcome {
+    color: #4d4a4a;
+    margin-top: -25px;
+    margin-left: -110px;
 }
 
 .button1 {
@@ -114,12 +110,6 @@ section .left-box {
     cursor: pointer;
 }
 
-section .right-box {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    text-align: center;
-}
 
 .account-link {
     font-family: 'Poppins', sans-serif;
@@ -142,3 +132,39 @@ section .right-box {
      object-fit: cover; /*ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
   }
 
+  .register-box {
+    background-color: #ffffff; /* สีพื้นหลังขาว */
+    padding: 20px; /* การเว้นระยะภายในกล่อง */
+    border-radius: 10px; /* มุมโค้งมน */
+    width: 550px; /* ความกว้างของกล่อง */
+    height: 600px;
+    margin: auto; /* จัดกึ่งกลาง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* จัดแนวนอนให้ข้อมูลอยู่ตรงกลาง */
+    align-items: center; /* จัดแนวตั้งให้ข้อมูลอยู่ตรงกลาง */
+    flex-direction: column; /* ทำให้ข้อมูลเรียงในแนวตั้ง */
+    text-align: center;
+  }
+
+  .bg-register {
+    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
+    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
+    background-position: center; /* จัดภาพให้อยู่กลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+    width: 100%; /* ให้กว้างเต็มหน้าจอ */
+
+  }
+
+  .bg-register {
+    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
+    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
+    background-position: center; /* จัดภาพให้อยู่กลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+  }
+  
