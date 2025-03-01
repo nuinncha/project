@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from "./components/navbar";
 import Swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom';
 import './check.css';
 
 const API_URL = "http://localhost:3000/bookings";
 
 function Check_Page() {
+  const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
-  const [userRole, setUserRole] = useState("user");
+  const [userRole, setUserRole] = useState("admin");
   const [filters, setFilters] = useState({
     roomName: "",
     status: "",
@@ -15,11 +17,24 @@ function Check_Page() {
   });
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setBookings(data))
-      .catch((err) => console.error("Error fetching bookings:", err));
-  }, []);
+    const user = JSON.parse(localStorage.getItem('user')); // ดึงข้อมูลผู้ใช้จาก localStorage
+    if (!user || user.role !== "admin") {
+      // หากไม่มีผู้ใช้หรือไม่ใช่ admin
+      Swal.fire({
+        icon: "error",
+        title: "คุณไม่มีสิทธิ์เข้าถึงหน้านี้",
+        text: "กรุณาล็อกอินด้วยบัญชีผู้ดูแลระบบ",
+      }).then(() => {
+        navigate('/'); // นำทางกลับไปที่หน้า Login
+      });
+    } else {
+      setUserRole(user.role); // กำหนด role ของผู้ใช้
+      fetch(API_URL)
+        .then((res) => res.json())
+        .then((data) => setBookings(data))
+        .catch((err) => console.error("Error fetching bookings:", err));
+    }
+  }, [navigate]);
 
   const showBookingDetails = (booking) => {
     Swal.fire({
@@ -45,9 +60,9 @@ function Check_Page() {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed && userRole === "admin") {
-        updateBookingStatus(booking._id, "confirmed");
+        updateBookingStatus(booking._id, "อนุมัติ");
       } else if (result.isDenied) {
-        updateBookingStatus(booking._id, "cancelled");
+        updateBookingStatus(booking._id, "ไม่อนุมัติ");
       }
     });
   };

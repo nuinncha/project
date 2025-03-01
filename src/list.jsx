@@ -17,18 +17,19 @@ import { useNavigate } from 'react-router-dom';
 function List_Page() {
 
   const navigate = useNavigate();
+  // const [user, setUser] = useState(null);
 
-  // useEffect(() => {
+  //   useEffect(() => {
   //   const token = localStorage.getItem('token');
-    
-  //   if (!token) {
-  //     alert("Please log in first.");
-  //     navigate('/');
-  //   }
-  // }, [navigate]);
+  //   const udata = localStorage.getItem('user')
+  //   setUser(JSON.parse(udata));
+
+  // }, []);
+
 
   const [formData, setFormData] = useState({
     roomName: localStorage.getItem("room"),
+    email: JSON.parse(localStorage.getItem("user"))?.email || "", // ดึง email จาก localStorage
     participants: "",
     topic: "",
     bookerName: "",
@@ -77,6 +78,7 @@ function List_Page() {
 
       if (response.ok) {
         alert("จองห้องสำเร็จ!");
+        navigate('/')
       } else {
         alert("เกิดข้อผิดพลาดในการจองห้อง!");
       }
@@ -85,9 +87,6 @@ function List_Page() {
       alert("เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์");
     }
   };
-
-
-
 
 
   return (

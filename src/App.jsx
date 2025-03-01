@@ -11,6 +11,7 @@ import Check_Page from './check.jsx';
 import Admin_Page from './admin.jsx';
 import History_Page from './history.jsx';
 import Profile_Page from './profile.jsx';
+import Dashboard from './dashboard.jsx';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admin" element={<Admin_Page />} />
         <Route path="/history" element={<History_Page />} />
         <Route path="/profile" element={<Profile_Page />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
       </Routes>
     </Router>

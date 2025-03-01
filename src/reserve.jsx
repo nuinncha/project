@@ -28,6 +28,11 @@ function Reserve_Page() {
   };
 
   const handleBook2 = (e) => {
+    localStorage.setItem('room', "อาคารเฉลิมพระเกียรติ");
+    navigate('/list');
+  };
+
+  const handletest = (e) => {
     console.log(user.email)
   };
 
@@ -100,7 +105,7 @@ function Reserve_Page() {
               </td>
               <td className='action-buttons'>
                 <button className='button-green' onClick={handleBook1}>จองห้องประชุม</button>
-                <button className='button-yellow' onClick={handleBook2} >รายละเอียด</button>
+                <button className='button-yellow' onClick={handletest} >รายละเอียด</button>
               </td>
             </tr>
             <tr>
