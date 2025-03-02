@@ -11,10 +11,10 @@
     width: 8%;
     height: 35px;
     border-radius: 5px;
-    border: 0.5px solid #ffffff;
+    border: 0.5px solid #c441aa;
     margin-top: 20px;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sarabun', sans-serif;
     margin-right: 10px;
 }
 
@@ -24,25 +24,25 @@
     width: 15%;
     height: 35px;
     border-radius: 5px;
-    border: 0.5px solid #ffffff;
+    border: 0.5px solid rgb(0, 162, 255);
     font-size: 16px;
     font-weight: normal;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sarabun', sans-serif;
 }
 
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Sarabun', sans-serif;
     font-weight: 400;
     /* ปกติ */
 }
 
 h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Sarabun', sans-serif;
     font-weight: 700;
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Sarabun', sans-serif;
     margin: 20px;
 }
 

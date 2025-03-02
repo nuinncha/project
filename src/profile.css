@@ -1,6 +1,21 @@
-.profile-container {
+.profile-container {           
+    align-items: center;            /* จัดกลางในแนวตั้ง */
+    height: 100vh;                  /* ความสูงเต็มหน้าจอ */
+    text-align: center;             /* จัดข้อความให้อยู่กลาง */
     padding: 20px;
+    margin-left: 400px;
+}
+
+
+.profile-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
+    width: 400px;
+    height: 190px;
     text-align: center;
+    padding: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .profile-details {
@@ -10,4 +25,93 @@
 
 .profile-details p {
     margin: 10px 0;
+}
+
+.bg-history {
+    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
+    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
+    background-position: center; /* จัดภาพให้อยู่กลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+  }
+
+.profile-card-empty {
+    background: linear-gradient(135deg, #00aaff 0%, #0099ff 50%, #0088ff 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
+    width: 400px;
+    height: 250px;
+    padding: 30px;
+    margin-top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    align-items: center; /* จัดตรงกลางแนวแกน X */
+    justify-content: center; /* จัดตรงกลางแนวแกน Y */
+        
+    }
+
+  .circle {
+    font-size: 24px;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: bold;
+    width: 80px; /* กำหนดความกว้าง */
+    height: 80px; /* กำหนดความสูง */
+    background-color: rgb(255, 255, 255); /* สีของวงกลม */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center; /* จัดภาพให้อยู่กลาง */
+    margin-bottom: 10px; /* ให้เว้นระยะระหว่างวงกลมกับข้อความ */
+}
+
+.info-box-email {
+    text-align: left;
+    width: 100%;
+    max-width: 300px; /* ขนาดสูงสุดของกล่อง */
+    height: 45px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #555353; /* กรอบสำหรับกล่อง */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.info-box-role {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 300px; /* ขนาดสูงสุดของกล่อง */
+    height: 45px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #555353; /* กรอบสำหรับกล่อง */
+    margin-left: 20px;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-family: 'Sarabun', sans-serif;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;           
+}
+
+.icon-email {
+    margin-right: 10px;
+    color: #09ab34; /* สีของไอคอน */
+}
+
+.icon-role {
+    margin-right: 10px;
+    color: #871175; /* สีของไอคอน */
 }

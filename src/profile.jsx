@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/navbar";
 import './profile.css';
-import { FaEnvelope, FaBriefcase, FaCalendarAlt } from "react-icons/fa";
+import { FaEnvelope, FaBriefcase } from "react-icons/fa";
 
 function Profile_Page() {
     const user = {
@@ -13,21 +13,26 @@ function Profile_Page() {
     return (
         <>
             <Navbar />
-            <div className="profile-container">
-                <div className="profile-card">
-                    <div className="profile-header">
-                        <div className="profile-avatar">A</div>
-                        <h2>{user.name}</h2>
-                        <p>{user.role}</p>
+            <div className="bg-history">
+                <div className="profile-container">
+                    <div className="profile-card-empty">
+                        <div className="circle">A</div>
+                        <h3 style={{ color: 'white' }}>{user.name}</h3>
+                        <p style={{ color: 'white' }}>{user.role}</p>
                     </div>
-                    <div className="profile-info">
-                        <div className="info-item">
-                            <FaEnvelope className="icon" /> <strong>อีเมล:</strong> {user.email}
+                    <div className="profile-card">
+                        {/* กล่องข้อมูลอีเมลและบทบาท */}
+                        <div className="info-box-email">
+                            <div className="info-item">
+                                <FaEnvelope className="icon-email" /> <strong>อีเมล:</strong> {user.email}
+                            </div>
                         </div>
-                        <div className="info-item">
-                            <FaBriefcase className="icon" /> <strong>บทบาท:</strong> {user.role}
+                        <div className="info-box-role">
+                            <FaBriefcase className="icon-role" /> <strong>บทบาท:</strong> {user.role}
                         </div>
                     </div>
+                </div>
+                <div className="info-item">
                 </div>
             </div>
         </>

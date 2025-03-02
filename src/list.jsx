@@ -176,6 +176,7 @@ function List_Page() {
                       <option value="แถลงข่าวของเทศบาล">แถลงข่าวของเทศบาล</option>
                       <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น</option>
                       <option value="จัดหน่วยเลือกตั้ง">จัดหน่วยเลือกตั้ง</option>
+                      <option value="อื่นๆ">อื่นๆ</option>
                     </select>
                   </div>
                 </div>
@@ -250,10 +251,12 @@ function List_Page() {
                   <div className="equipment-wrapper">
                     <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
                     <div className='equipment-boxx2 box-margin'>
-                      <div className="checkbox-group">
+                      <div>
                         <label><input type="checkbox" value="เครื่องคอมพิวเตอร์" onChange={handleCheckboxChange} /> เครื่องคอมพิวเตอร์</label>
                         <label><input type="checkbox" value="โปรเจ็กเตอร์" onChange={handleCheckboxChange} /> โปรเจ็กเตอร์</label>
+                        <label><input type="checkbox" value="ไมค์โครโฟน" onChange={handleCheckboxChange} /> ไมค์โครโฟน</label>
                         <label><input type="checkbox" value="ของว่าง" onChange={handleCheckboxChange} /> ของว่าง</label>
+                        <label><input type="checkbox" value="อาหารเที่ยง" onChange={handleCheckboxChange} /> ของว่าง</label>
                       </div>
                     </div>
                   </div>

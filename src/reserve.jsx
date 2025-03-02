@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { RiFileList3Fill } from "react-icons/ri";
 
+
 function Reserve_Page() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -77,15 +78,13 @@ function Reserve_Page() {
     <>
       <Navbar />
       <div className='bg-reserve'>
-        <div className='reserve-container'>
-          <div className='reserve-header'>
-            <RiFileList3Fill />
-            <span>รายการ ห้องประชุม</span>
-          </div>
-          <div style={{ display: "flex" }}>
-            <h6 style={{ marginTop: "20px" }}>แสดง 2 รายการ</h6>
-          </div>
+          <RiFileList3Fill className='icon-reserve' />
+          <span className='head-reserve' style={{ marginTop: "50px", display: "inline-block" }}>รายการ ห้องประชุม</span>
+        <div>
+          <h6 className='text-reserve' style={{ marginTop: "20px" }}>แสดง 2 รายการ</h6>
+        </div>
 
+        <div className='reserve-container'>
           <table className='reserve-table'>
             <thead>
               <tr className='thead-blue-reserve'>
