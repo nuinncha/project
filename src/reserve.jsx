@@ -60,7 +60,7 @@ function Reserve_Page() {
     Swal.fire({
         title: "รายละเอียดของห้องประชุม",
         html: `
-            <img src="${room3}" width="400" height="200" alt="รูปอาคารเฉลิมพระเกียรติ">
+            <img src="${room3}" width="400" height="200" alt="รูปห้องประชุม 1">
             <p></p>
             <table style="width:100%; border-collapse: collapse; border: 2px solid #ddd;">
                 <tr>
@@ -118,27 +118,81 @@ function Reserve_Page() {
   };
 
   const room2_detail = () => {
+
     const booking = {
-      roomName: "Conference Room A",
-      participants: 10,
-      topic: "Project Planning",
-      bookerName: "John Doe",
-      phone: "0812345678",
-      reason: "Weekly Meeting",
-      department: "IT",
-    }
+        roomName: "Conference Room A",
+        participants: 10,
+        topic: "Project Planning",
+        bookerName: "John Doe",
+        phone: "0812345678",
+        reason: "Weekly Meeting",
+        department: "IT",
+        purpose: "Discuss project updates",
+        startDate: "2024-03-01T00:00:00Z",
+        startTime: "09:00 AM",
+        endDate: "2024-03-01T00:00:00Z",
+        endTime: "11:00 AM",
+        equipment: ["Projector", "Microphone"],
+        otherDetails: "Need HDMI cable"
+    };
 
     Swal.fire({
-      title: "รายละเอียดของห้องประชุม",
-      html: `
-        <img src="${room4}" width="400" height="200" alt="รูปอาคารเฉลิมพระเกียรติ">
-        <p></p>
-        <p><strong>ห้อง:</strong> ${booking.roomName}</p>
-        <p><strong>ชื่อห้อง:</strong> ${booking.topic}</p>
-        <p><strong>รายละเอียด:</strong> ${booking.bookerName}</p>
-        <p><strong>อาคาร/สถานที่:</strong> ${booking.phone}</p>
-        <p><strong>จำนวนที่นั่ง:</strong> ${booking.department}</p>
-      `,
+        title: "รายละเอียดของห้องประชุม",
+        html: `
+            <img src="${room4}" width="400" height="200" alt="รูปอาคารเฉลิมพระเกียรติ">
+            <p></p>
+            <table style="width:100%; border-collapse: collapse; border: 2px solid #ddd;">
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">หัวข้อ</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.topic}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ห้อง</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.roomName}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ผู้จอง</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.bookerName}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เบอร์โทร</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.phone}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">แผนก</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.department}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วัตถุประสงค์</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.purpose}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่เริ่ม</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startDate}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาเริ่ม</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startTime}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่สิ้นสุด</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endDate}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาสิ้นสุด</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endTime}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">อุปกรณ์</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.equipment.join(", ") || "ไม่มี"}</td>
+                </tr>
+                <tr>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">รายละเอียดเพิ่มเติม</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.otherDetails || "ไม่มี"}</td>
+                </tr>
+            </table>
+        `,
+        width: "600px", // ปรับขนาด popup
     });
   };
   
