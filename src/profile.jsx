@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import Navbar from "./components/navbar";
 import './profile.css';
 import { FaEnvelope, FaBriefcase } from "react-icons/fa";
 
 function Profile_Page() {
-    const user = {
-        name: "Alice Smith",
-        email: "alice@example.com",
-        role: "employee",
-    };
+
+    const [user, setUser] = useState({ name: "", email: "", role: "" });
+
+    useEffect(() => {
+        const userData = localStorage.getItem("user");
+        if (userData) {
+            setUser(JSON.parse(userData));
+        }
+    }, []);
+
+    // const user = {
+    //     name: "Alice Smith",
+    //     email: "alice@example.com",
+    //     role: "employee",
+    // };
 
     return (
         <>

@@ -12,18 +12,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Home_Page() {
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-
-  //   if (!token) {
-  //     alert("Please log in first.");
-  //     navigate('/');
-  //   }
-  // }, [navigate]);
-
-
-
   return (
     <>
       <Navbar />
@@ -62,10 +50,8 @@ function Home_Page() {
           <FaCalendarAlt className="icon-size" /> &nbsp;&nbsp;
           <span className="text-position">ปฏิทินการจอง</span>
         </div> 
-
         {/* ปฏิทิน */}
         <Calendar />
-
         {/* ปุ่มห้องประชุม */}
         <div>
           <button className="btn-purple">ห้องประชุม 1</button>

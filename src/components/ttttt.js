@@ -13,6 +13,17 @@ import {
 import { Email, Work, CalendarToday } from "@mui/icons-material";
 
 const UserProfile = () => {
+
+    // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+
+  //   if (!token) {
+  //     alert("Please log in first.");
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
+
+  
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
