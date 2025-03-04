@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from "./components/calendar";
+import Calendar2 from "./components/calendar2";
 import "./components/calendar.css";
 import './home.css'
 import Navbar from "./components/navbar";
@@ -23,10 +24,10 @@ function Home_Page() {
         </div>
         <div className="wrapper-home">
           <div className="container">
-            <div class="box-green box1">
+            <div className="box-green box1">
               <LuCalendarDays className="icon-inside-box" />
             </div>
-            <div class="box-brightgreen box2">
+            <div className="box-brightgreen box2">
               <div className="text-dashboard-right">
                 <p className="">จองห้องประชุม</p>
                 <p>0</p>
@@ -34,10 +35,10 @@ function Home_Page() {
               </div>
             </div> &nbsp; &nbsp; &nbsp;
 
-            <div class="box-yellow box3">
+            <div className="box-yellow box3">
               <LuClipboardList className="icon-inside-box" />
             </div>
-            <div class="box-brighyellow box4">
+            <div className="box-brighyellow box4">
               <div className="text-dashboard-right">
                 <p>ห้องประชุม</p>
                 <p>2</p>
@@ -51,7 +52,7 @@ function Home_Page() {
           <span className="text-position">ปฏิทินการจอง</span>
         </div>
         {/* ปฏิทิน */}
-        <Calendar />
+        <Calendar2 />
         {/* ปุ่มห้องประชุม */}
         <div>
           <button className="btn-purple">ห้องประชุม 1</button>

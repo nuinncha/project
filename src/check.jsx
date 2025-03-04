@@ -9,14 +9,15 @@ const API_URL = "http://localhost:3000/bookings";
 function Check_Page() {
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
-  const [userRole, setUserRole] = useState("admin");
+  const [userRole, setUserRole] = useState("");
   const [filters, setFilters] = useState({
     roomName: "",
     status: "",
     startDate: "",
   });
-
+  const token = localStorage.getItem('token'); 
   useEffect(() => {
+    
     const user = JSON.parse(localStorage.getItem('user')); // ดึงข้อมูลผู้ใช้จาก localStorage
     if (!user || user.role !== "admin") {
       // หากไม่มีผู้ใช้หรือไม่ใช่ admin
@@ -29,7 +30,13 @@ function Check_Page() {
       });
     } else {
       setUserRole(user.role); // กำหนด role ของผู้ใช้
-      fetch(API_URL)
+      fetch(API_URL,{
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => setBookings(data))
         .catch((err) => console.error("Error fetching bookings:", err));
@@ -70,7 +77,10 @@ function Check_Page() {
   const updateBookingStatus = (id, status) => {
     fetch(`${API_URL}/${id}/status`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({ status })
     })
       .then(res => res.json())
