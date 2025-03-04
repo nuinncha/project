@@ -4,16 +4,54 @@
   }
 }
 
+/* คอนเทนเนอร์หลัก */
+.wrapper-list {
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  align-items: center; /* จัดกลางแนวตั้ง */
+  padding: 20px; /* เว้นช่องว่างรอบๆ */
+}
 
-/* Layout */
+/* สไตล์การ์ดสำหรับฟอร์ม */
 .container-list {
-    background: transparent !important; /* ลบพื้นหลังจากทุกองค์ประกอบ */
-    max-width: 1200px; /* หรือขนาดที่เหมาะสม */
-    margin-left: 5%; 
-    padding: 20px;
-    top: -10;
-  }
-      
+  background-color: white; /* กำหนดสีพื้นหลังเป็นสีขาว */
+  padding: 20px; /* เพิ่มการเติมภายในการ์ด */
+  border-radius: 10px; /* ทำมุมให้โค้ง */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยเพื่อให้ลึกขึ้น */
+  margin-top: 20px; /* เพิ่มช่องว่างด้านบน */
+  width: 100%;
+  max-width: 1200px; /* จำกัดความกว้าง */
+}
+
+
+/* สไตล์สำหรับอีลีเมนต์ในฟอร์มภายในการ์ด */
+.container-list label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container-list input, .container-list select, .container-list textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container-list .save-btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
   h2, h4 {
     margin-bottom: 15px;
     font-family: 'Sarabun', sans-serif;
@@ -38,11 +76,10 @@
   
   .left, .right {
     flex: 1;
-    min-width: 200px; /* ป้องกันช่องหดเกินไป */
     display: flex;
     flex-direction: column;
-    min-width: 200px; /* ป้องกันช่องหดเกินไป */
     gap: 5px;
+    width: 40%; /* กำหนดความกว้างของแต่ละกล่อง */
   }
   
   label {   
@@ -108,13 +145,6 @@
     font-size: 1.2rem; /* ปรับขนาดไอคอน */
   }
 
-  .wrapper-list {
-    display: flex; /* จัดวางให้อยู่ในบรรทัดเดียวกัน */
-    gap: 20px;  /* ระยะห่างระหว่าง container */
-    align-items: center;
-    margin-left: -40px;
-    margin-top: 10px;  /*ขยับขึ้นบน */
-}
 
 .input-group {
   width: 100;
@@ -122,7 +152,6 @@
   align-items: center;
   gap: 8px; /* ระยะห่างระหว่างกล่องเปล่ากับ input */
   box-sizing: border-box; /* ป้องกันไม่ให้ padding ขยายขนาดเกิน */
-  
 }
 
 .empty-box {
@@ -211,7 +240,4 @@
   resize: vertical; /* ให้ขยายขึ้น-ลงได้ */
 }   
 
-.check-e {
-  
-}
 

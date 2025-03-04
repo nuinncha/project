@@ -51,11 +51,11 @@ function History_Page() {
     return (
         <>
             <Navbar />
-            <div className="bg-history">
-                <div className="history_container">
-                    <div className=".box-history ">
+            <div className="history_container">
+                <div className="">
+                    <div className="">
                         <RiFileHistoryFill className="history_icon" />
-                        <span className="">ประวัติการจอง</span>
+                        <span className="headder-font">ประวัติการจอง</span>
                     </div>
 
                     {/* Table to display booking data */}

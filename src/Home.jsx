@@ -46,10 +46,10 @@ function Home_Page() {
             </div>
           </div>
         </div>
-        <div style={{ marginTop: "15px" }}> &nbsp;&nbsp;&nbsp;
+        <div> &nbsp;&nbsp;&nbsp;
           <FaCalendarAlt className="icon-size" /> &nbsp;&nbsp;
           <span className="text-position">ปฏิทินการจอง</span>
-        </div> 
+        </div>
         {/* ปฏิทิน */}
         <Calendar />
         {/* ปุ่มห้องประชุม */}

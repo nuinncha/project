@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi'; // ไอคอนรูปคน
 import 'bootstrap/dist/css/bootstrap.min.css'; // นำเข้า Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>  
+        
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item"><a className="nav-link" href="/reserve">จองห้องประชุม</a></li>
@@ -40,23 +42,34 @@ function Navbar() {
           </ul>
 
           {/* ตรวจสอบ token เพื่อแสดงเมนูโปรไฟล์ หรือ ปุ่ม Login */}
-          {token ? (
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <FiUser size={20} /> {/* ไอคอนรูปคน */}
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a className="dropdown-item" href="/profile">โปรไฟล์</a></li>
-                <li><a className="dropdown-item" href="/dashboard">ข้อมูล Dashboard</a></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li>
-                  <button className="dropdown-item" onClick={handleLogout}>ออกจากระบบ</button>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <button className="btn btn-primary" onClick={() => navigate('/welcome')}>Login</button>
-          )}
+          <div className="d-flex align-items-center"> 
+            {token ? (
+              <div className="dropdown">
+                <button 
+                  className="btn btn-secondary dropdown-toggle" 
+                  type="button" 
+                  id="profileDropdown" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                  <FiUser size={20} />
+                </button>
+                <ul 
+                  className="dropdown-menu dropdown-menu-end" 
+                  aria-labelledby="profileDropdown" 
+                  style={{ minWidth: "180px", maxWidth: "250px", position: "absolute", zIndex: 1050 }}
+                >
+                  <li><a className="dropdown-item" href="/profile">โปรไฟล์</a></li>
+                  <li><hr className="dropdown-divider" /></li>
+                  <li>
+                    <button className="dropdown-item" onClick={handleLogout}>ออกจากระบบ</button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <button className="btn btn-primary" onClick={() => navigate('/welcome')}>Login</button>
+            )}
+          </div>
         </div>
       </div>
     </nav>

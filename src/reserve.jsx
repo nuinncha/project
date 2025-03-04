@@ -8,6 +8,7 @@ import room4 from './assets/room4.png';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { RiFileList3Fill } from "react-icons/ri";
+import { TfiInfoAlt } from "react-icons/tfi";
 
 
 
@@ -64,52 +65,20 @@ function Reserve_Page() {
             <p></p>
             <table style="width:100%; border-collapse: collapse; border: 2px solid #ddd;">
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">หัวข้อ</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.topic}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ชื่อห้อง</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">ห้องประชุม 1</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ห้อง</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.roomName}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">รายละเอียด</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">ห้องประชุมขนาดเล็ก</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ผู้จอง</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.bookerName}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">อาคาร/สถานที่</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">อาคารเทศบาล</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เบอร์โทร</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.phone}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">แผนก</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.department}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วัตถุประสงค์</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.purpose}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่เริ่ม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startDate}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาเริ่ม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startTime}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่สิ้นสุด</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endDate}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาสิ้นสุด</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endTime}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">อุปกรณ์</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.equipment.join(", ") || "ไม่มี"}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">รายละเอียดเพิ่มเติม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.otherDetails || "ไม่มี"}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">จำนวนที่นั่ง</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">60</td>
                 </tr>
             </table>
         `,
@@ -143,52 +112,20 @@ function Reserve_Page() {
             <p></p>
             <table style="width:100%; border-collapse: collapse; border: 2px solid #ddd;">
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">หัวข้อ</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.topic}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ชื่อห้อง</th>
+                    <td style="padding: 8px; border: 1px text-align: left solid #ddd;">อาคารเฉลิมพระเกียรติ</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ห้อง</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.roomName}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">รายละเอียด</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">ห้องประชุมขนาดใหญ่</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">ผู้จอง</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.bookerName}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">อาคาร/สถานที่</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">อาคารเฉลิมพระเกียรติ</td>
                 </tr>
                 <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เบอร์โทร</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.phone}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">แผนก</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.department}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วัตถุประสงค์</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.purpose}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่เริ่ม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startDate}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาเริ่ม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.startTime}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">วันที่สิ้นสุด</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endDate}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">เวลาสิ้นสุด</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.endTime}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">อุปกรณ์</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.equipment.join(", ") || "ไม่มี"}</td>
-                </tr>
-                <tr>
-                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">รายละเอียดเพิ่มเติม</th>
-                    <td style="padding: 8px; border: 1px solid #ddd;">${booking.otherDetails || "ไม่มี"}</td>
+                    <th style="text-align:left; padding: 8px; border: 1px solid #ddd; background-color: #f8f8f8;">จำนวนที่นั่ง</th>
+                    <td style="padding: 8px; border: 1px solid #ddd;">400</td>
                 </tr>
             </table>
         `,
@@ -223,7 +160,7 @@ function Reserve_Page() {
                 </td>
                 <td className='room-details'>
                   <span className='txtroom'>ห้องประชุม 1</span><br />
-                  <span>ชั้น 3,</span>
+                  <span>ห้องประชุมขนาดเล็ก พร้องสิ่งอำนวยความสะดวกครบครัน</span>
                 </td>
                 <td className='action-buttons'>
                   <button className='button-green' onClick={handleBook1}>จองห้องประชุม</button>
@@ -236,11 +173,11 @@ function Reserve_Page() {
                 </td>
                 <td className='room-details'>
                   <span className='txtroom'>อาคารเฉลิมพระเกียรติ</span><br />
-                  <span>ห้องประชุมใหญ่,</span>
+                  <span>ห้องประชุมใหญ่ เหมาะสำหรับการสัมนาเป็นหมู่คณะ หรือจัดเลี้ยง</span>
                 </td>
                 <td className='action-buttons'>
-                  <button className='button-green' onClick={handleBook2}>จองห้องประชุม</button>
-                  <button className='button-yellow' onClick={room2_detail}>รายละเอียด</button>
+                  <button className='button-green' onClick={handleBook2}>จองห้องประชุม</button>              
+                  <button className='button-yellow' onClick={room2_detail}><TfiInfoAlt className='icon-inside-reserve svg'/>รายละเอียด</button>
                 </td>
               </tr>
             </tbody>
