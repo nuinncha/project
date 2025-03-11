@@ -19,17 +19,16 @@ body {
 
 
 .headder-font {
-    font-size: 1.3em; 
-    margin-left: 10px; 
+    font-size: 1.2em; 
+    margin-left: 5px; 
     color: rgb(5, 5, 5);
 }
 
 .history_icon {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
     color: rgb(5, 4, 4);
-    font-size: 36px;
-    margin-right: 10px;
+    margin-left: 20px;
 }
 
 

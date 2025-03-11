@@ -1,44 +1,68 @@
-import React from "react";
-import Calendar from "./components/calendar";
+import React, { useState, useEffect } from "react";
 import Calendar2 from "./components/calendar2";
-import "./components/calendar.css";
-import './home.css'
+import "./home.css";
 import Navbar from "./components/navbar";
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
 import { FaCalendarAlt } from "react-icons/fa";
-import { LuCalendarDays } from "react-icons/lu";
-import { LuClipboardList } from "react-icons/lu";
+import { LuCalendarDays, LuClipboardList } from "react-icons/lu";
 import { RiDashboardFill } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import moment from "moment";
+import 'moment/locale/th';
+
+
+moment.locale("th"); // ตั้งค่าภาษาไทย
 
 function Home_Page() {
-  const navigate = useNavigate();
+  const [approvedDaysToday, setApprovedDaysToday] = useState(0);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/booking-info")
+      .then((res) => res.json())
+      .then((data) => {
+        const today = moment().format("DD-MM-YYYY"); // หาวันที่ปัจจุบัน
+
+        // กรองเฉพาะการจองที่มีสถานะ "อนุมัติ" และเป็นวันนี้
+        const todayBookings = data.filter((booking) => 
+          booking.status === "อนุมัติ" &&
+          moment(booking.startDate).format("DD-MM-YYYY") === today
+        );
+
+        setApprovedDaysToday(todayBookings.length); // นับจำนวนการจองวันนี้
+      })
+      .catch((error) => {
+        console.error("Error fetching booking data:", error);
+      });
+  }, []);
+
   return (
     <>
       <Navbar />
       <div className="bg-home">
         {/* Dashboard */}
-        <div style={{ marginTop: "10px" }}>&nbsp;&nbsp;
+        <div style={{ marginTop: "10px" }}>
+          &nbsp;&nbsp;
           <RiDashboardFill className="icon-size" /> &nbsp;&nbsp;
           <span className="text-position">Dashboard</span>
         </div>
         <div className="wrapper-home">
           <div className="container">
-            <div className="box-green box1">
+            {/* Box แสดงจำนวนวันจองของวันนี้ */}
+            <div className="box-green">
               <LuCalendarDays className="icon-inside-box" />
             </div>
             <div className="box-brightgreen box2">
               <div className="text-dashboard-right">
-                <p className="">จองห้องประชุม</p>
-                <p>0</p>
-                <p>วัน</p>
+                <p>จองห้องประชุมวันนี้</p>
+                <p>{approvedDaysToday}</p>
+                <p>ครั้ง</p>
               </div>
-            </div> &nbsp; &nbsp; &nbsp;
+            </div>
+            &nbsp; &nbsp; &nbsp; &nbsp; 
 
-            <div className="box-yellow box3">
+            {/* Box แสดงจำนวนห้องประชุมทั้งหมด */}
+            <div className="box-yellow">
               <LuClipboardList className="icon-inside-box" />
             </div>
-            <div className="box-brighyellow box4">
+            <div className="brightyellow">
               <div className="text-dashboard-right">
                 <p>ห้องประชุม</p>
                 <p>2</p>
@@ -47,12 +71,17 @@ function Home_Page() {
             </div>
           </div>
         </div>
-        <div> &nbsp;&nbsp;&nbsp;
+
+        <div>
+          &nbsp;&nbsp;&nbsp;
           <FaCalendarAlt className="icon-size" /> &nbsp;&nbsp;
           <span className="text-position">ปฏิทินการจอง</span>
         </div>
+
+        <p></p>
         {/* ปฏิทิน */}
         <Calendar2 />
+
         {/* ปุ่มห้องประชุม */}
         <div>
           <button className="btn-purple">ห้องประชุม 1</button>
