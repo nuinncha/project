@@ -89,7 +89,7 @@ button {
   border-top-left-radius: 10px;   /* มุมบนขวา */
   border-bottom-left-radius: 10px;/* มุมล่างขวา */
   width: 100px; /* กำหนดขนาดของกล่อง */
-  height: 110px; /* กำหนดขนาดของกล่อง */
+  height: 120px; /* กำหนดขนาดของกล่อง */
 }
 
 .box-brightgreen{
@@ -104,8 +104,8 @@ button {
   padding: 20px;
   border-top-right-radius: 10px;   /* มุมบนขวา */
   border-bottom-right-radius: 10px;/* มุมล่างขวา */
-  width: 200px; /* กำหนดขนาดของกล่อง */
-  height: 110px; /* กำหนดขนาดของกล่อง */
+  width: 250px; /* กำหนดขนาดของกล่อง */
+  height: 120px; /* กำหนดขนาดของกล่อง */
 }
 
 .box-yellow {
@@ -119,7 +119,7 @@ button {
   border-top-left-radius: 10px;   /* มุมบนขวา */
   border-bottom-left-radius: 10px;/* มุมล่างขวา */
   width: 100px; /* กำหนดขนาดของกล่อง */
-  height: 110px; /* กำหนดขนาดของกล่อง */
+  height: 120px; /* กำหนดขนาดของกล่อง */
 }
 
 .brightyellow {
@@ -134,8 +134,8 @@ button {
   padding: 20px;
   border-top-right-radius: 10px;   /* มุมบนขวา */
   border-bottom-right-radius: 10px;/* มุมล่างขวา */
-  width: 200px; /* กำหนดขนาดของกล่อง */
-  height: 110px; /* กำหนดขนาดของกล่อง */
+  width: 250px; /* กำหนดขนาดของกล่อง */
+  height: 120px; /* กำหนดขนาดของกล่อง */
 }
 
 .icon-inside-box {

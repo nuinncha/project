@@ -42,9 +42,9 @@ function Navbar() {
           </ul>
 
           {/* ตรวจสอบ token เพื่อแสดงเมนูโปรไฟล์ หรือ ปุ่ม Login */}
-          <div className="d-flex align-items-center"> 
+          
             {token ? (
-              <div className="dropdown">
+              <div className='dropdown'>
                 <button 
                   className="btn btn-secondary dropdown-toggle" 
                   type="button" 
@@ -69,7 +69,7 @@ function Navbar() {
             ) : (
               <button className="btn btn-primary" onClick={() => navigate('/welcome')}>Login</button>
             )}
-          </div>
+          
         </div>
       </div>
     </nav>
