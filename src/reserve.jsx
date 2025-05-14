@@ -137,8 +137,8 @@ function Reserve_Page() {
   return (
     <>
       <Navbar />
-      <div className='bg-reserve'>
-          <RiFileList3Fill className='icon-reserve' />
+      <div className=''>
+          <RiFileList3Fill className='' />
           <span className='head-reserve' style={{ marginTop: "50px", display: "inline-block" }}>รายการ ห้องประชุม</span>
         <div>
           <h6 className='text-reserve' style={{ marginTop: "20px" }}>แสดง 2 รายการ</h6>

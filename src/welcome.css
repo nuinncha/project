@@ -1,0 +1,116 @@
+.bg-welcome {
+  background-color: #A3C293; 
+}
+
+.welcome-box {
+  display: flex;
+  width: 1000px;       /* จากเดิม 800px -> ขยายให้กว้างขึ้น */
+  height: 600px;       /* จากเดิม 500px -> ขยายให้สูงขึ้น */
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* ฝั่งซ้าย */
+.left-box {
+  flex: 1;
+  background-color: #E8F5E9; /* เขียวอ่อนนุ่มนวล */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.welcome-img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ฝั่งขวา */
+.right-box {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.head-welcome{
+    color: #0e0e0e;
+    font-size: 36px;
+    font-weight: bolder;
+    /* font-family: Helvetica, sans-serif; */
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    width: 500px;
+}
+
+.text-welcome {
+    color: #4d4a4a;
+    margin-top: -5px;
+    font-size: 15px;
+}
+
+.section-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้สูงเต็มจอ */
+    background-color: #f0f0f0; /* เพิ่มพื้นหลังตามต้องการ */
+  }
+  
+ .button1-welcome {
+    width: 100%;         /* ทำให้ input และปุ่มเต็มความกว้างของกล่อง */
+    max-width: 500px;    /* จำกัดความกว้างไม่ให้กว้างเกินไป */
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.button2-welcome {
+    background-color: #4E944F;
+    color: white;
+    border: 1px solid #848789;;
+    width: 100%;         /* ทำให้ input และปุ่มเต็มความกว้างของกล่อง */
+    max-width: 500px;    /* จำกัดความกว้างไม่ให้กว้างเกินไป */
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.text1-welcome {
+    position: relative;
+    margin-right:260px;
+    margin-left: -200px;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.text2-welcome {
+    position: relative;
+    margin-right:230px;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+    margin-left: -200px;
+    font-weight: lighter;
+    font-family: 'Sarabun', sans-serif;
+}
+

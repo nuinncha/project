@@ -1,12 +1,4 @@
-body {
-    font-family: 'Sarabun', sans-serif;
-    background: url('./assets/background.png') no-repeat center center fixed;
-    background-size: cover; /* ทำให้ภาพครอบคลุมพื้นที่ */
-    background-position: center 15%; /* ขยับภาพลงมาที่ 30% ของความสูง */
-    background-attachment: fixed; /* ภาพพื้นหลังจะไม่เลื่อนเมื่อเลื่อนหน้า */
-    margin: 0;
-    padding: 0;
-}
+
 
 .history_container {
     max-width: 1200px; 

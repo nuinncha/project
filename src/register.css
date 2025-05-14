@@ -1,170 +1,73 @@
-.picture {
-    width: 40%;
-    height: 100%;
+.bg-welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
 }
 
-/* ทำให้คอนเทนต์อยู่กลางจอ */
-section {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.welcome-box {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-
-.top1 {
-    margin-top: 50px;
+.left-box {
+  flex: 1;
+  background-color: #000;
 }
 
-.head-login {
-    color: #0e0e0e;
-    font-size: 45px;
-    font-weight: bolder;
-    /* font-family: Helvetica, sans-serif; */
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    margin-top: -10px;
-    width: 500px;
+.welcome-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.text {
-    position: relative;
-    left: 15px;
-    margin-top: -5px;
-    text-align: left;
-    padding: 5px;
-    font-size: 18px;
-    font-weight: lighter;
-    font-family: 'Poppins', sans-serif;
+.right-box {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.text2 {
-    position: relative;
-    left: -3px;
-    margin-top: -5px;
-    text-align: center;
-    padding: 5px;
-    font-size: 14px;
-    font-weight: lighter;
-    font-family: 'Poppins', sans-serif;
-}
-
-.text3 {
-    color: #a3a2a2;
-    position: relative;
-    margin-top: -25px;
-    text-align: center;
-    padding: 5px;
-    font-size: 14px;
-    font-weight: lighter;
-    font-family: 'Poppins', sans-serif;
-}
-
-.text4 {
-    color: #4d4a4a;
-    margin-top: -25px;
-    left: 70px;
+.head-welcome {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .text-welcome {
-    color: #4d4a4a;
-    margin-top: -25px;
-    margin-left: -110px;
+  margin-bottom: 20px;
+  color: #555;
 }
 
-.button1 {
-    background-color: #ffffff; /* Green */
-    width: 90%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #848789;;
-    border-radius: 12px;
-    text-align: left; /* ข้อความในกล่องชิดซ้าย */
-    font-size: 18px;
-    cursor: pointer;
-}
-  
-.button2 {
-    background-color: #03a9f4;
-    color: white;
-    width: 90%;
-    padding: 15px;
-    margin: 25px 0; /* ระยะห่างทั่วไปสำหรับปุ่ม */
-    border: 1px solid #848789;;
-    border-radius: 12px;
-    text-align: center; /* ข้อความในกล่องชิดซ้าย */
-    font-size: 18px;
-    cursor: pointer;
+.input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.button3 {
-    background-color: #ffffff; /* Green */
-    width: 90%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #848789;;
-    border-radius: 12px;
-    text-align: center; /* ข้อความในกล่องชิดซ้าย */
-    font-size: 18px;
-    cursor: pointer;
+.button2-welcome {
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
 
 .account-link {
-    font-family: 'Poppins', sans-serif;
-    display: flex; /* ใช้ flexbox เพื่อจัดข้อความและลิงก์ให้อยู่ในแถวเดียวกัน */
-    justify-content: center; /* จัดให้อยู่ตรงกลาง */
-    align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-    margin-top: -5px; /* เพิ่มระยะห่างด้านบน */
-    font-size: 14px; /* ขนาดตัวอักษร */
-    color: #0b0b0b;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
 }
 
-.img-register {
-    position: absolute;
-    right: 0; /*ให้รูปภาพไปทางขวาสุด*/
-    top: 0px; /*ระยะห่างจากด้านบน*/
-    width: 600px; /*กำหนดขนาดของรูปภาพ*/
-    height: 645px; /*รักษาสัดส่วน*/
-    overflow: hidden;
-    border-top-left-radius: 30px;
-     object-fit: cover; /*ให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
-  }
-
-  .register-box {
-    background-color: #ffffff; /* สีพื้นหลังขาว */
-    padding: 20px; /* การเว้นระยะภายในกล่อง */
-    border-radius: 10px; /* มุมโค้งมน */
-    width: 550px; /* ความกว้างของกล่อง */
-    height: 600px;
-    margin: auto; /* จัดกึ่งกลาง */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
-    margin-top: 20px;
-    display: flex;
-    justify-content: center; /* จัดแนวนอนให้ข้อมูลอยู่ตรงกลาง */
-    align-items: center; /* จัดแนวตั้งให้ข้อมูลอยู่ตรงกลาง */
-    flex-direction: column; /* ทำให้ข้อมูลเรียงในแนวตั้ง */
-    text-align: center;
-  }
-
-  .bg-register {
-    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
-    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
-    background-position: center; /* จัดภาพให้อยู่กลาง */
-    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
-    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
-    height: 100vh; /* ให้สูงเต็มหน้าจอ */
-    width: 100%; /* ให้กว้างเต็มหน้าจอ */
-
-  }
-
-  .bg-register {
-    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
-    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
-    background-position: center; /* จัดภาพให้อยู่กลาง */
-    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
-    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
-    height: 100vh; /* ให้สูงเต็มหน้าจอ */
-  }
-  

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import roombooking from './assets/roombooking.png'
-import './register.css'
-
+// import roombooking from './assets/roombooking.png'
+import cat from './assets/cat.mp4'; // นำเข้าวิดีโอ
+import './welcome.css'
+                                    
 function Welcome_Page() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -41,40 +42,37 @@ function Welcome_Page() {
     }
   };
 
-  return (
-    <section className='bg-register'>
-      <div className="register-box ">
-        <div>
-          <div className="head-login">WELCOME BACK!</div>
-          <div className='text-welcome'>Welcome back! Please enter your details.</div> <br></br>
-
-          <div className="text">Email</div>
-          <input 
-            className="button1" 
-            type="email" 
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+ return (
+    <section className='bg-welcome'>
+      <div className="welcome-box">
+        {/* กล่องซ้าย - วิดีโอ */}
+        <div className="left-box">
+          <video
+            className="welcome-video"
+            src={cat}
+            autoPlay
+            loop
+            muted
+            playsInline
           />
+        </div>
 
-          <div className="text">Password</div>
-          <input 
-            className="button1" 
-            type="password" 
-            placeholder="**********"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        {/* กล่องขวา - ฟอร์ม */}
+        <div className="right-box">
+          <h2 className="head-welcome">WELCOME BACK!</h2>
+          <p className="text-welcome">Welcome back! Please enter your details.</p>
+          
+          <label>Email</label>
+          <input className="input button1-welcome " type="email" placeholder="Enter your email" />
 
-          <div>
-            <button className="button2" onClick={handleSignUp}>
-              Sign up
-            </button>
-          </div>
+          <label>Password</label>
+          <input className="input button1-welcome " type="password" placeholder="**********" />
 
-          <div className="account-link">
-            Don't have an account? <a href="/register">Sign in</a>
-          </div>
+          <button className="button2-welcome" onClick={() => navigate('/')}>
+            Sign in
+          </button>
+
+          <p className="account-link">Don't have an account? <a href="/register">Register</a></p>
         </div>
       </div>
     </section>

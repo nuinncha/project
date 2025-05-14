@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import roombooking from './assets/roombooking.png';
 import './register.css';
 import { useNavigate } from 'react-router-dom';
+import cat from './assets/cat.mp4'; // นำเข้าวิดีโอ
 
 function Register_Page() {
-  // State สำหรับเก็บค่าจาก input
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // ฟังก์ชันส่งข้อมูลไปยังเซิร์ฟเวอร์
   const handleSignup = async () => {
     const userData = { name, email, password };
 
@@ -34,51 +32,62 @@ function Register_Page() {
       console.error("Error signing up:", error);
       alert("Failed to sign up. Please try again.");
     }
-
-
   };
 
   return (
-    <section className='bg-register'>
-      <div className='register-box'>
-        <div>
-          <div className="head-login">GET START NOW</div>
+    <section className='bg-welcome'>
+      <div className="welcome-box">
+        {/* ซ้าย - วิดีโอ */}
+        <div className="left-box">
+          <video
+            className="welcome-video"
+            src={cat}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
 
-          <div className="text">Name</div>
+        {/* ขวา - ฟอร์มสมัคร */}
+        <div className="right-box">
+          <h2 className="head-welcome">GET START NOW</h2>
+          <p className="text-welcome">Create your account to continue.</p>
+
+          <label>Name</label>
           <input
-            className="button1"
+            className="input button1-welcome"
             type="text"
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
-          <div className="text">Email address</div>
+          <label>Email</label>
           <input
-            className="button1"
+            className="input button1-welcome"
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <div className="text">Password</div>
+          <label>Password</label>
           <input
-            className="button1"
+            className="input button1-welcome"
             type="password"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <br />
-          <button className="button2" onClick={handleSignup}>Sign up</button>
+          <button className="button2-welcome" onClick={handleSignup}>
+            Sign up
+          </button>
 
-          <div className='text3'>or</div>
-
-          <div className="account-link">Have an account?
-            <a href="/welcome">Sign in</a>
-          </div>
+          <p className="account-link">
+            Already have an account? <a href="/welcome">Sign in</a>
+          </p>
         </div>
       </div>
     </section>

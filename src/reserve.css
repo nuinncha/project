@@ -1,3 +1,5 @@
+
+
 /* เพิ่มให้ container ของตารางอยู่กึ่งกลาง */
 .reserve-container {
   display: flex;
@@ -124,22 +126,7 @@
   background-color: #ffffff;
 }
 
-.bg-reserve {
-  background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
-  background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
-  background-position: center; /* จัดภาพให้อยู่กลาง */
-  background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
-  margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
-  height: 100vh; /* ให้สูงเต็มหน้าจอ */
-}
 
-.icon-inside-reserve {
-  font-size: 40px;
-  color: white; /* เปลี่ยนสีของไอคอน */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
 
 
 
