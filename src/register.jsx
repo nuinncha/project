@@ -8,9 +8,12 @@ function Register_Page() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
+
+
 
   const handleSignup = async () => {
-    const userData = { name, email, password };
+    const userData = { name, email, password, phone };
 
     try {
       const response = await fetch('http://localhost:3000/register', {
@@ -70,6 +73,14 @@ function Register_Page() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label>Phone</label>
+          <input
+            className="input button1-welcome"
+            type="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
 
           <label>Password</label>

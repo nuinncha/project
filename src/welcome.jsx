@@ -9,8 +9,9 @@ function Welcome_Page() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
   // ฟังก์ชันส่งข้อมูลไปยังเซิร์ฟเวอร์
-  const handleSignUp = async () => {
+  const handleSignIn = async () => {
     const userData = { email, password };
 
     try {
@@ -63,12 +64,12 @@ function Welcome_Page() {
           <p className="text-welcome">Welcome back! Please enter your details.</p>
           
           <label>Email</label>
-          <input className="input button1-welcome " type="email" placeholder="Enter your email" />
+          <input className="input button1-welcome " type="email" placeholder="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)}  />
 
           <label>Password</label>
-          <input className="input button1-welcome " type="password" placeholder="**********" />
+          <input className="input button1-welcome " type="password" placeholder="**********" value={password} onChange={(e)=>setPassword(e.target.value)} />
 
-          <button className="button2-welcome" onClick={() => navigate('/')}>
+          <button className="button2-welcome" onClick={(handleSignIn)}>
             Sign in
           </button>
 

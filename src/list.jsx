@@ -12,20 +12,61 @@ import { PiGitBranchBold } from "react-icons/pi";
 import { FaClock } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import th from 'date-fns/locale/th';
+
+
+// registerLocale("th", th);
+
 
 
 function List_Page() {
 
   const navigate = useNavigate();
-  // const [user, setUser] = useState(null);
-
-  //   useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   const udata = localStorage.getItem('user')
-  //   setUser(JSON.parse(udata));
-
-  // }, []);
-
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const udata = JSON.parse(localStorage.getItem("user"));
+  
+      useEffect(() => {
+          const fetchProfile = async () => {
+              const token = localStorage.getItem("token");
+              console.log("Token:", token);
+  
+              if (!token) {
+                  setError("กรุณาเข้าสู่ระบบ");
+                  setLoading(false);
+                  return;
+              }
+  
+              try {
+                  const response = await fetch("http://localhost:3000/profile", {
+                      method: "GET",
+                      headers: {
+                          "Authorization": `Bearer ${token}`,
+                          "Content-Type": "application/json",
+                      },
+                  });
+  
+                  console.log("Response Status:", response.status);
+  
+                  if (!response.ok) {
+                      throw new Error("ไม่สามารถดึงข้อมูลโปรไฟล์ได้");
+                  }
+  
+                  const data = await response.json();
+                  console.log("User Data:", data);
+                  setUser(data);
+                  setName(data.name);
+                  setPhone(data.phone);
+              } catch (err) {
+                  console.error("Fetch Error:", err.message);
+                  setError(err.message);
+              } finally {
+                  setLoading(false);
+              }
+          };
+  
+          fetchProfile();
+      }, []);
 
   const [formData, setFormData] = useState({
     roomName: localStorage.getItem("room"),
@@ -44,11 +85,15 @@ function List_Page() {
     otherDetails: "",
   });
 
+
+
   // ฟังก์ชันจัดการเปลี่ยนค่าฟอร์ม
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  
 
 
   // ฟังก์ชันสำหรับจัดการ checkbox
@@ -118,7 +163,7 @@ function List_Page() {
                   <label>จำนวนผู้เข้าประชุม</label>
                   <div className="input-group">
                     <div className="empty-box icon-inside-empty"> <TbNumber123 /> </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="participants" type="number" placeholder="1" onChange={handleChange} />
+                    <input className='long-time-input' name="participants" type="number" placeholder="1"  min="1" onChange={handleChange} />
                   </div>
                 </div>
               </div>
@@ -144,7 +189,7 @@ function List_Page() {
                     <div className="empty-box ">
                       <RiUser3Fill />
                     </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="bookerName" onChange={handleChange} type="text" placeholder="" />
+                    <input className='long-time-input' name="bookerName" onChange={handleChange} type="text" placeholder="" value={udata.name}  />
                   </div>
                 </div>
 
@@ -154,7 +199,7 @@ function List_Page() {
                     <div className="empty-box">
                       <FaPhoneAlt />
                     </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="phone" onChange={handleChange} type="text" placeholder="" />
+                    <input className='long-time-input' name="phone" type="text" value={udata.phone} />
                   </div>
                 </div>
               </div>

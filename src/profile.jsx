@@ -139,8 +139,8 @@ function Profile_Page() {
                         </div>
                         <div className="info-box-department">
                             <div className="info-item">
-                                <FaBriefcase className="icon-role" /> <strong>แผนก:</strong>
-                                {editingDepartment ? (
+                                <FaBriefcase className="icon-role" /> <strong>บทบาท:</strong> {user.role}
+                                {/* {editingDepartment ? (
                                     <input
                                         type="text"
                                         value={newDepartment}
@@ -150,7 +150,7 @@ function Profile_Page() {
                                     />
                                 ) : (
                                     <span onClick={() => setEditingDepartment(true)}>{user.department}</span>
-                                )}
+                                )} */}
                             </div>
                         </div>
                         <div className="info-box-phone">
