@@ -148,9 +148,9 @@ function Reserve_Page() {
           <table className='reserve-table'>
             <thead>
               <tr className='thead-blue-reserve'>
-                <th></th>
+                <th className=' th1'></th>
                 <th>รายละเอียด</th>
-                <th></th>
+                <th className='th2'></th>
               </tr>
             </thead>
             <tbody>

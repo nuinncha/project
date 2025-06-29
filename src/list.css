@@ -1,243 +1,71 @@
-@media (max-width: 600px) {
-  .row {
-    flex-direction: column; /* ให้ stack เป็นแนวตั้ง */
-  }
-}
-
-/* คอนเทนเนอร์หลัก */
 .wrapper-list {
   display: flex;
-  justify-content: center; /* จัดกลางแนวนอน */
-  align-items: center; /* จัดกลางแนวตั้ง */
-  padding: 20px; /* เว้นช่องว่างรอบๆ */
+  justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+  align-items: center;
+  min-height: 100vh; /* ให้สูงเต็มจอ */
+  background-color: #f8f9fa; /* สีพื้นหลัง */
+  padding: 20px; /* เพิ่มระยะห่างรอบขอบ */
 }
 
-/* สไตล์การ์ดสำหรับฟอร์ม */
 .container-list {
-  background-color: white; /* กำหนดสีพื้นหลังเป็นสีขาว */
-  padding: 20px; /* เพิ่มการเติมภายในการ์ด */
-  border-radius: 10px; /* ทำมุมให้โค้ง */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยเพื่อให้ลึกขึ้น */
-  margin-top: 20px; /* เพิ่มช่องว่างด้านบน */
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px; /* จำกัดความกว้าง */
+  max-width: 800px; /* กำหนดขนาดสูงสุดเพื่อไม่ให้กว้างเกินไป */
 }
 
-
-/* สไตล์สำหรับอีลีเมนต์ในฟอร์มภายในการ์ด */
-.container-list label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.container-list input, .container-list select, .container-list textarea {
-  width: 100%;
+.left, .right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 100%;
 }
 
-.container-list .save-btn {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
+input, select, textarea {
+  width: 100%;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.save-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
 }
 
-  h2, h4 {
-    margin-bottom: 15px;
-    font-family: 'Sarabun', sans-serif;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .row {
-    background: transparent !important; /* ลบพื้นหลังจากทุกองค์ประกอบ */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 10px;
-  }
-  
-  .left, .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 40%; /* กำหนดความกว้างของแต่ละกล่อง */
-  }
-  
-  label {   
-    margin-bottom: -1px;
-    font-family: 'Sarabun', sans-serif;
-    margin-bottom: 1px;
-    text-align: 50px; /* ทำให้ข้อความชิดซ้าย */
-  }
-
-  .left label, .right label {
-  display: inline-block;
-  width: 150px; /* ปรับความกว้างของ label */
-  text-align: left; /* จัดข้อความชิดซ้าย */
+.save-btn:hover {
+  background: #218838;
 }
-  
-  body {
-    font-family: 'Sarabun', sans-serif;
-    margin: 20px;
-  }
-
-  input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: none;
-  }
-  
-  .row {
-    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้เป็นแถว */
-    align-items: center; /* จัดแนวแนวนอนให้อยู่กลาง */
-  }
-
-  .equipment-box {
-    flex-grow: 1; /* ให้ขยายเต็มพื้นที่ที่เหลือ */
-    height: 50px; /* กำหนดความสูงให้เท่ากับ empty-box */
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-  }
-  
-  .save-btn {
-    background: #28a745;
-    color: #fff;
-    border: none;
-    width: 10%;
-    padding: 13px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: 'Sarabun', sans-serif;
-    margin-top: 10px;
-  }
-  
-  .icon-inside-btn {
-    margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
-    font-size: 1.2rem; /* ปรับขนาดไอคอน */
-  }
-
-
-.input-group {
-  width: 100;
-  display: flex;
-  align-items: center;
-  gap: 8px; /* ระยะห่างระหว่างกล่องเปล่ากับ input */
-  box-sizing: border-box; /* ป้องกันไม่ให้ padding ขยายขนาดเกิน */
-}
-
-.empty-box {
-  background-color: #dedcd9;
-  width: 40px; /* กำหนดขนาดกล่อง */
-  height: 35px;
-  margin-right: -8px; /* ปรับให้ชิด input */
-  display: flex;
-  justify-content: center; /* จัดไอคอนไปตรงกลาง */
-  align-items: center;
-
-}
-
-.icon-inside-empty {
-  font-size: 25px; /* ปรับขนาดไอคอน */
-  top: 30%;
-  left: 30%;
-}
-
-.icon-inside-empty2 {
-  font-size: 19px; /* ปรับขนาดไอคอน */
-  top: 30%;
-  left: 30%;
-}
-
-.select-list {
-  height: 35px; /* ปรับความสูง */
-  width: 95%; /* ทำให้ select กว้างเต็ม container */
-  padding: 8px; /* เพิ่มพื้นที่ภายใน */
-  font-size: 16px; /* ปรับขนาดตัวอักษร */
-  border: 1px solid #ccc;
-}
-
-.box-list {
-  height: 35px; /* ปรับความสูง */
-  width: 95%; /* ทำให้ select กว้างเต็ม container */
-  padding: 8px; /* เพิ่มพื้นที่ภายใน */
-  font-size: 16px; /* ปรับขนาดตัวอักษร */
-  border: 1px solid #ccc;
-}
-
-
-.equipment-wrapper {
-  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงให้ทั้งกล่องเปล่าและ equipment-box อยู่ในแถวเดียวกัน */
-  align-items: center; /* จัดให้อยู่ในระดับเดียวกัน */
-  justify-content: space-between; /* จัดระยะห่างระหว่างกล่อง */
-  width: 97%;
-}
-
-
-
-.equipment-box {
-  flex-grow: 1; /* ให้ `equipment-box` ขยายเต็มที่ */
-  flex: 1; /* ทำให้ทั้งสองกล่องขยายให้มีขนาดเท่ากัน */
-  height: 40px; /* กำหนดความสูงของกล่อง */
-  border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
-  padding: 5px;
-  align-items: center;
-}
-
-.equipment-boxx2 {
-  display: flex;
-  flex-grow: 1; /* ให้ `equipment-box` ขยายเต็มที่ */
-  height: 35px; /* กำหนดความสูงของกล่อง */
-  border: 1px solid #ccc; /* กรอบสำหรับกล่อง */
-  padding: 5px;
-  gap: 10px;     
-}
-
-.long-time-input {
-  width: 500px; /* ปรับขนาดให้กว้างขึ้น */
-  height: 35px;
-}
-
-.long-input {
-  width: 1105px; /* ปรับขนาดให้กว้างขึ้น */
-  height: 35px;
-}
-
-.box-margin {
-  margin-left: 6px;
-}
-
-.details-textarea {
-  height: 100px;
-  resize: vertical; /* ให้ขยายขึ้น-ลงได้ */
-}   
-
-

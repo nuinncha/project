@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import "./profile.css";
-import { FaEnvelope, FaBriefcase, FaUserEdit } from "react-icons/fa";
+import { FaEnvelope, FaBriefcase, FaUserEdit, FaPhone } from "react-icons/fa";
 
 function Profile_Page() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [editingName, setEditingName] = useState(false);
+    const [editingLastName, setEditingLastName] = useState(false);
+    const [editingDepartment, setEditingDepartment] = useState(false);
+    const [editingPhone, setEditingPhone] = useState(false);
     const [newName, setNewName] = useState("");
+    const [newLastName, setNewLastName] = useState("");
+    const [newDepartment, setNewDepartment] = useState("");
+    const [newPhone, setNewPhone] = useState("");
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -40,6 +46,9 @@ function Profile_Page() {
                 console.log("User Data:", data);
                 setUser(data);
                 setNewName(data.name);
+                setNewLastName(data.lastName);
+                setNewDepartment(data.department);
+                setNewPhone(data.phone);
             } catch (err) {
                 console.error("Fetch Error:", err.message);
                 setError(err.message);
@@ -54,7 +63,7 @@ function Profile_Page() {
     const handleSaveName = async () => {
         if (!user) return;
 
-        const updatedUser = { ...user, name: newName };
+        const updatedUser = { ...user, name: newName, lastName: newLastName, department: newDepartment, phone: newPhone };
         setUser(updatedUser); // อัปเดต UI ทันที
 
         try {
@@ -65,19 +74,27 @@ function Profile_Page() {
                     "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name: newName }),
+                body: JSON.stringify({
+                    name: newName,
+                    lastName: newLastName,
+                    department: newDepartment,
+                    phone: newPhone
+                }),
             });
 
             if (!response.ok) {
-                throw new Error("ไม่สามารถอัปเดตชื่อได้");
+                throw new Error("ไม่สามารถอัปเดตข้อมูลได้");
             }
 
-            console.log("ชื่อได้รับการอัปเดตเรียบร้อย");
+            console.log("ข้อมูลได้รับการอัปเดตเรียบร้อย");
         } catch (error) {
-            console.error("Error updating name:", error.message);
+            console.error("Error updating profile:", error.message);
         }
 
         setEditingName(false);
+        setEditingLastName(false);
+        setEditingDepartment(false);
+        setEditingPhone(false);
     };
 
     if (loading) return <p>กำลังโหลดข้อมูล...</p>;
@@ -87,7 +104,7 @@ function Profile_Page() {
     return (
         <>
             <Navbar />
-            <div className="bg-history">
+            <div className="bg-profile">
                 <div className="profile-container">
                     <div className="profile-card-empty">
                         <div className="circle">
@@ -104,7 +121,7 @@ function Profile_Page() {
                             />
                         ) : (
                             <h3 style={{ color: "white" }}>
-                                {newName}{" "}
+                                {newName} {newLastName}
                                 <FaUserEdit
                                     className="edit-icon"
                                     onClick={() => setEditingName(true)}
@@ -120,10 +137,40 @@ function Profile_Page() {
                                 <FaEnvelope className="icon-email" /> <strong>อีเมล:</strong> {user.email}
                             </div>
                         </div>
-                        <div className="info-box-role">
-                            <FaBriefcase className="icon-role" /> <strong>บทบาท:</strong> {user.role}
+                        <div className="info-box-department">
+                            <div className="info-item">
+                                <FaBriefcase className="icon-role" /> <strong>แผนก:</strong>
+                                {editingDepartment ? (
+                                    <input
+                                        type="text"
+                                        value={newDepartment}
+                                        onChange={(e) => setNewDepartment(e.target.value)}
+                                        onBlur={handleSaveName}
+                                        onKeyDown={(e) => e.key === "Enter" && handleSaveName()}
+                                    />
+                                ) : (
+                                    <span onClick={() => setEditingDepartment(true)}>{user.department}</span>
+                                )}
+                            </div>
+                        </div>
+                        <div className="info-box-phone">
+                            <div className="info-item">
+                                <FaPhone className="icon-phone" /> <strong>เบอร์โทร:</strong>
+                                {editingPhone ? (
+                                    <input
+                                        type="text"
+                                        value={newPhone}
+                                        onChange={(e) => setNewPhone(e.target.value)}
+                                        onBlur={handleSaveName}
+                                        onKeyDown={(e) => e.key === "Enter" && handleSaveName()}
+                                    />
+                                ) : (
+                                    <span onClick={() => setEditingPhone(true)}>{user.phone}</span>
+                                )}
+                            </div>
                         </div>
                     </div>
+                    <button onClick={handleSaveName} className="save-btn">บันทึกข้อมูล</button>
                 </div>
             </div>
         </>

@@ -80,7 +80,7 @@ function List_Page() {
         alert("จองห้องสำเร็จ!");
         navigate('/')
       } else {
-        alert("เกิดข้อผิดพลาดในการจองห้อง!");
+        alert("กรุณาเข้าสู่ระบบก่อน!");
       }
     } catch (error) {
       console.error("❌ Error:", error);
@@ -249,14 +249,14 @@ function List_Page() {
                 <div className="">
                   <label>อุปกรณ์</label>
                   <div className="equipment-wrapper">
-                    <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
+                    <div className="empty-box-5 icon-inside-empty2"><PiGitBranchBold /></div>
                     <div className='equipment-boxx2 box-margin'>
                       <div>
                         <label><input type="checkbox" value="เครื่องคอมพิวเตอร์" onChange={handleCheckboxChange} /> เครื่องคอมพิวเตอร์</label>
                         <label><input type="checkbox" value="โปรเจ็กเตอร์" onChange={handleCheckboxChange} /> โปรเจ็กเตอร์</label>
                         <label><input type="checkbox" value="ไมค์โครโฟน" onChange={handleCheckboxChange} /> ไมค์โครโฟน</label>
                         <label><input type="checkbox" value="ของว่าง" onChange={handleCheckboxChange} /> ของว่าง</label>
-                        <label><input type="checkbox" value="อาหารเที่ยง" onChange={handleCheckboxChange} /> ของว่าง</label>
+                        <label><input type="checkbox" value="อาหารเที่ยง" onChange={handleCheckboxChange} /> อาหารเที่ยง</label>
                       </div>
                     </div>
                   </div>

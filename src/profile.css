@@ -1,121 +1,163 @@
-.profile-container {           
+/* profile.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc; /* สีพื้นหลังที่ดูสะอาด */
+    min-height: 100vh; /* ให้มีขนาดอย่างน้อยเต็มหน้าจอ */
+}
+
+/* profile.css */
+
+/* เพิ่มพื้นหลังเป็นภาพ */
+.bg-profile {
     display: flex;
-    flex-direction: column;  
-    align-items: center;     
-    justify-content: flex-start; /* จัดให้ชิดด้านบน */
-    height: 100vh;           
-    text-align: center;      
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    padding-top: 50px; /* ปรับระยะห่างจากด้านบน */
-}
-
-
-
-.profile-card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
-    width: 400px;
-    height: 190px;
-    text-align: center;
-    padding: 30px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.profile-details {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.profile-details p {
-    margin: 10px 0;
+    min-height: 100vh;
+    background-image: url('./assets/your-background-image.jpg'); /* ใส่ที่อยู่ของไฟล์ภาพพื้นหลัง */
+    background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-position: center; /* ทำให้ภาพอยู่ตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
 }
 
 .bg-history {
-    background-image: url('./assets/background.png'); /* ใส่ path ของภาพที่ต้องการใช้ */
-    background-size: cover; /* ปรับให้ภาพครอบคลุมหน้าจอ */
-    background-position: center; /* จัดภาพให้อยู่กลาง */
-    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
-    margin: 0; /* ไม่ให้มี margin พื้นฐานจาก body */
-    height: 100vh; /* ให้สูงเต็มหน้าจอ */
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f4f7fc;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 800px; /* จำกัดขนาดไม่ให้กว้างเกินไป */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูนุ่มนวล */
+    margin: 20px;
+}
 
 .profile-card-empty {
-    background: linear-gradient(135deg, #00aaff 0%, #0099ff 50%, #0088ff 100%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาๆ รอบกล่อง */
-    width: 400px;
-    height: 250px;
-    padding: 30px;
-    margin-top: 50px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    flex-direction: column; /* จัดเรียงแนวตั้ง */
-    align-items: center; /* จัดตรงกลางแนวแกน X */
-    justify-content: center; /* จัดตรงกลางแนวแกน Y */
-        
-    }
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-  .circle {
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* กราดียนสีฟ้าสดใส */
+    color: rgb(14, 1, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+}
+
+h3 {
     font-size: 24px;
-    font-family: 'Sarabun', sans-serif;
     font-weight: bold;
-    width: 80px; /* กำหนดความกว้าง */
-    height: 80px; /* กำหนดความสูง */
-    background-color: rgb(255, 255, 255); /* สีของวงกลม */
-    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-card {
+    margin-top: 30px;
+}
+
+.info-box-email,
+.info-box-department,
+.info-box-phone {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-position: center; /* จัดภาพให้อยู่กลาง */
-    margin-bottom: 10px; /* ให้เว้นระยะระหว่างวงกลมกับข้อความ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.info-box-email {
-    text-align: left;
+.info-box-email input,
+.info-box-department input,
+.info-box-phone input {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     width: 100%;
-    max-width: 300px; /* ขนาดสูงสุดของกล่อง */
-    height: 45px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #555353; /* กรอบสำหรับกล่อง */
-    margin-left: 20px;
-    margin-top: 10px;
-    font-family: 'Sarabun', sans-serif;
-}
-
-.info-box-role {
-    margin-top: 20px;
-    text-align: left;
-    width: 100%;
-    max-width: 300px; /* ขนาดสูงสุดของกล่อง */
-    height: 45px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #555353; /* กรอบสำหรับกล่อง */
-    margin-left: 20px;
-    font-family: 'Sarabun', sans-serif;
+    box-sizing: border-box;
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    font-family: 'Sarabun', sans-serif;
-    margin-bottom: 15px;
     font-size: 16px;
-    color: #333;           
+    color: #333;
 }
 
-.icon-email {
+.icon-email,
+.icon-role,
+.icon-phone {
     margin-right: 10px;
-    color: #09ab34; /* สีของไอคอน */
+    font-size: 18px;
+    color: #007BFF;
 }
 
-.icon-role {
-    margin-right: 10px;
-    color: #871175; /* สีของไอคอน */
+.edit-icon {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+/* เพิ่มการจัดการ whitespace */
+.profile-container {
+    padding: 30px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .circle {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .profile-card {
+        margin-top: 20px;
+    }
+
+    .info-box-email,
+    .info-box-department,
+    .info-box-phone {
+        padding: 12px;
+    }
+
+    .save-btn {
+        padding: 10px;
+    }
 }

@@ -1,5 +1,3 @@
-
-
 /* เพิ่มให้ container ของตารางอยู่กึ่งกลาง */
 .reserve-container {
   display: flex;
@@ -7,126 +5,187 @@
   align-items: center;
   flex-direction: column;
   /* padding: 20px; */
-  
 }
 
+/* พื้นหลัง */ 
+.bg-reserve {
+  background: url('./assets/background.png') no-repeat center center fixed;
+  margin-top: -50px;
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+/* ไอคอนที่อยู่ด้านบน */
 .icon-reserve {
-  font-size: 2rem; /* กำหนดขนาดไอคอน */
-  color: white;
-  margin-top: -10px;
-  margin-left: 30px;
+  font-size: 36px;
+  color: #4A90E2;
+  margin-left: 20px;
 }
 
+/* หัวข้อหน้า */
 .head-reserve {
   font-family: 'Sarabun', sans-serif;
-  font-size: 24px;
-  font-weight: normal;
-  color: white;
-  text-align: left;
-  margin-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
 }
 
+/* ข้อความแสดงจำนวนรายการ */
 .text-reserve {
-  color: white;
-  margin-top: 1000px;
-  margin-left: 30px;
-  font-size: 18px;
   font-family: 'Sarabun', sans-serif;
+  text-align: left;
+  margin-left: 50px;
+  font-size: 18px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+/* ตารางข้อมูลห้องประชุม */
+.reserve-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .reserve-table {
-  width: 100%; /* หรือกำหนดค่าเฉพาะ เช่น max-width: 1200px */
-  max-width: 1200px;  border-collapse: collapse;
-  margin-top: 10px;
-  border-radius: 15px; /* ทำให้มุมโค้ง */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  border-radius: 15px;
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.reserve-table th, .reserve-table td {
-  padding: 15px;
-  text-align: center;
-  
-}
-
-.reserve-table img {
-  width: 150px;
-  height: 100px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.reserve-table .room-details {
-  text-align: left;
-  padding-left: 30px;
-  font-family: 'Sarabun', sans-serif;
-}
-
-.reserve-table .room-details .txtroom {
+/* ส่วนหัวของตาราง */
+.thead-blue-reserve {
+  background-color: #4A90E2;
+  color: white;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Sarabun', sans-serif;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-.reserve-table .action-buttons {
-  text-align: right;
-}
-
-.reserve-table .button-green {
-  background-color: #28a745;
-  border: none;
-  padding: 10px 20px;
+.thead-blue-reserve th {
+  padding: 15px;
   color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
-  font-family: 'Sarabun', sans-serif;
 }
 
-.reserve-table .button-green:hover {
-  background-color: #218838;
+.th1 {
+  border-top-left-radius: 10px;   /* มุมบนขวา */
 }
 
-.reserve-table .button-yellow {
-  background-color: #ffc107;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
-  margin-left: 10px;
+.th2 {
+  border-top-right-radius: 10px;   /* มุมบนขวา */
 }
 
-.icon-inside-reserve svg {
-  font-size: 20px; /* ปรับขนาดไอคอน */
-  gap: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
-
-}
-
-.reserve-table .button-yellow:hover {
-  background-color: #aa8414;
-}
-
-.reserve-table .thead-blue-reserve {
-  background-color: #007bff;
-  color: white;
+/* ข้อมูลในตาราง */
+.reserve-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
   font-size: 16px;
-  font-family: 'Sarabun', sans-serif;
 }
 
-.reserve-table tbody tr:hover {
+.reserve-table tr:hover {
   background-color: #f1f1f1;
 }
 
-.reserve-table tbody tr:nth-child(odd) {
-  background-color: #f9f9f9;
+/* รูปภาพในตาราง */
+.picture {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.reserve-table tbody tr:nth-child(even) {
-  background-color: #ffffff;
+/* รายละเอียดของห้องประชุม */
+.room-details {
+  font-size: 16px;
 }
 
 
+.txtroom {
+  font-weight: bold;
+  color: #333;
+}
 
+.action-buttons {
+  text-align: center;
+}
 
+.button-green {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
 
+.button-green:hover {
+  background-color: #45a049;
+}
+
+.button-yellow {
+  background-color: #ffcc00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.button-yellow:hover {
+  background-color: #e6b800;
+}
+
+/* ไอคอนภายในปุ่ม */
+.icon-inside-reserve {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* ปรับขนาดหน้าจอสำหรับคอมพิวเตอร์ (Desktop) */
+@media screen and (min-width: 1024px) {
+  .reserve-table {
+    width: 100%; /* ทำให้ตารางกว้างเต็มที่ */
+    table-layout: fixed; /* ควบคุมความกว้างของเซลล์ */
+  }
+
+  .head-reserve {
+    font-size: 36px; /* ขยายขนาดหัวข้อ */
+  }
+
+  .reserve-table th, .reserve-table td {
+    padding: 12px; /* เพิ่มช่องว่างในเซลล์ */
+    text-align: center; /* ทำให้ข้อความอยู่ตรงกลาง */
+    border: 1px solid #ddd; /* กำหนดขอบตาราง */
+  }  
+
+  .reserve-container {
+    padding: 0 50px;
+  }
+}
+
+.reserve-table .th1, .reserve-table .th2 {
+  width: 25%; /* กำหนดความกว้างของคอลัมน์ที่ต้องการ */
+}
+
+.reserve-table .room-details {
+  width: 50%; /* เพิ่มความกว้างให้กับรายละเอียดห้อง */
+}
+
+.reserve-table .action-buttons {
+  width: 25%; /* เพิ่มความกว้างให้กับปุ่มการกระทำ */
+}
+
+.picture {
+  width: 90%; /* ให้รูปภาพครอบคลุมพื้นที่ของตาราง */
+  height: 150px; /* กำหนดความสูงคงที่ */
+  object-fit: cover; /* ปรับการครอบภาพให้เต็มพื้นที่ */
+}
