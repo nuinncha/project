@@ -48,7 +48,7 @@ function Home_Page() {
 
         {/* Dashboard Boxes */}
         <div className="wrapper-home">
-          <div className="container">
+          <div className="container-home">
             <div className="box-green">
               <LuCalendarDays className="icon-inside-box" />
             </div>

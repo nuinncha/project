@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import Navbar from "./components/navbar";
 import './list.css'
 import { FiSave } from "react-icons/fi";
@@ -12,69 +12,49 @@ import { PiGitBranchBold } from "react-icons/pi";
 import { FaClock } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+
+import DatePicker, { registerLocale } from 'react-datepicker';
 import th from 'date-fns/locale/th';
+import { format } from 'date-fns';
+import 'react-datepicker/dist/react-datepicker.css';
 
+registerLocale('th', th);
 
-// registerLocale("th", th);
+const formatBuddhistDate = (date) => {
+  if (!date || isNaN(new Date(date))) return '';
+  const gregorianDate = new Date(date);
+  return format(gregorianDate, 'dd MMMM yyyy', { locale: th }).replace(
+    /([0-9]{4})$/,
+    (year) => (parseInt(year) + 543).toString()
+  );
+};
 
-
+const CustomDateInput = forwardRef(({ value, onClick }, ref) => (
+  <input
+    className="long-time-input"
+    onClick={onClick}
+    ref={ref}
+    value={value}
+    readOnly
+  />
+));
 
 function List_Page() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState({});
 
   const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const udata = JSON.parse(localStorage.getItem("user"));
-  
-      useEffect(() => {
-          const fetchProfile = async () => {
-              const token = localStorage.getItem("token");
-              console.log("Token:", token);
-  
-              if (!token) {
-                  setError("กรุณาเข้าสู่ระบบ");
-                  setLoading(false);
-                  return;
-              }
-  
-              try {
-                  const response = await fetch("http://localhost:3000/profile", {
-                      method: "GET",
-                      headers: {
-                          "Authorization": `Bearer ${token}`,
-                          "Content-Type": "application/json",
-                      },
-                  });
-  
-                  console.log("Response Status:", response.status);
-  
-                  if (!response.ok) {
-                      throw new Error("ไม่สามารถดึงข้อมูลโปรไฟล์ได้");
-                  }
-  
-                  const data = await response.json();
-                  console.log("User Data:", data);
-                  setUser(data);
-                  setName(data.name);
-                  setPhone(data.phone);
-              } catch (err) {
-                  console.error("Fetch Error:", err.message);
-                  setError(err.message);
-              } finally {
-                  setLoading(false);
-              }
-          };
-  
-          fetchProfile();
-      }, []);
 
   const [formData, setFormData] = useState({
     roomName: localStorage.getItem("room"),
-    email: JSON.parse(localStorage.getItem("user"))?.email || "", // ดึง email จาก localStorage
+    email: udata?.email || "",
     participants: "",
     topic: "",
-    bookerName: "",
-    phone: "",
+    bookerName: udata?.name || "",
+    phone: udata?.phone || "",
     department: "",
     purpose: "",
     startDate: "",
@@ -85,35 +65,53 @@ function List_Page() {
     otherDetails: "",
   });
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setError("กรุณาเข้าสู่ระบบ");
+        setLoading(false);
+        return;
+      }
 
+      try {
+        const response = await fetch("http://localhost:3000/profile", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
 
-  // ฟังก์ชันจัดการเปลี่ยนค่าฟอร์ม
+        if (!response.ok) throw new Error("ไม่สามารถดึงข้อมูลโปรไฟล์ได้");
+
+        const data = await response.json();
+        setUser(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  
-
-
-  // ฟังก์ชันสำหรับจัดการ checkbox
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      equipment: checked
-        ? [...prev.equipment, value] // ถ้า checked ให้เพิ่มเข้าไป
-        : prev.equipment.filter((item) => item !== value), // ถ้า unchecked ให้ลบออก
+      equipment: checked ? [...prev.equipment, value] : prev.equipment.filter((item) => item !== value),
     }));
   };
 
-  
-
-  // ฟังก์ชันส่งข้อมูลไปยัง API
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("📤 Sending data:", formData); // Debugging
-
     try {
       const response = await fetch("http://localhost:3000/book-room", {
         method: "POST",
@@ -128,210 +126,196 @@ function List_Page() {
         alert("กรุณาเข้าสู่ระบบก่อน!");
       }
     } catch (error) {
-      console.error("❌ Error:", error);
       alert("เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์");
     }
   };
 
-
   return (
     <>
-      <div >
-        <Navbar />
-        <div className='wrapper-list'>
-          <div className='container-list'>
+      <Navbar />
+      <div className='wrapper-list'>
+        <div className='container-list'>
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginTop: "15px" }}>
+              <RiFileEditFill className='icon-size' />&nbsp;&nbsp;
+              <span className="text-position">เพิ่ม การจอง</span>
+              <h5 style={{ marginTop: "15px" }}>รายละเอียดการจอง</h5>
+            </div>
 
-            <form onSubmit={handleSubmit}>
-              <div style={{ marginTop: "15px" }}>
-                <RiFileEditFill className='icon-size' />&nbsp;&nbsp;
-                <span className="text-position">เพิ่ม การจอง</span>
-                <h5 style={{ marginTop: "15px" }}>รายละเอียดการจอง</h5>
+            <div className="row">
+              <div className="left">
+                <label>ชื่อห้อง</label>
+                <div className="input-group">
+                  <div className="empty-box icon-inside-empty2"><RiTodoFill /></div>
+                  <input className='long-time-input' type="text" value={formData.roomName} readOnly />
+                </div>
               </div>
-              {/* ชื่อห้องและจำนวนผู้เข้าร่วม */}
-              <div className="row">
+              <div className="right">
+                <label>จำนวนผู้เข้าประชุม</label>
+                <div className="input-group">
+                  <div className="empty-box icon-inside-empty"><TbNumber123 /></div>
+                  <input className='long-time-input' name="participants" type="number" min="1" onChange={handleChange} />
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="left">
+                <label>หัวข้อ</label>
+                <div className="input-group">
+                  <div className="empty-box"><FaPen /></div>
+                  <input name="topic" className='long-input' type="text" onChange={handleChange} />
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="left">
+                <label>ชื่อผู้จอง</label>
+                <div className="input-group">
+                  <div className="empty-box"><RiUser3Fill /></div>
+                  <input className='long-time-input' name="bookerName" onChange={handleChange} type="text" value={formData.bookerName} />
+                </div>
+              </div>
+              <div className="right">
+                <label>โทรศัพท์</label>
+                <div className="input-group">
+                  <div className="empty-box"><FaPhoneAlt /></div>
+                  <input className='long-time-input' name="phone" type="text" value={formData.phone} />
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="left">
+                <label>ใช้สำหรับ</label>
+                <div className="input-group">
+                  <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
+                  <select className='select-list' name="purpose" onChange={handleChange}>
+                    <option value="">-- โปรดเลือก --</option>
+                    <option value="ประชุมเจ้าหน้าที่">ประชุมเจ้าหน้าที่</option>
+                    <option value="ประชุมสภาเทศบาล">ประชุมสภาเทศบาล</option>
+                    <option value="ประชุมหัวหน้าส่วนราชการ">ประชุมหัวหน้าส่วนราชการ</option>
+                    <option value="ประชาคมหมู่บ้าน">ประชาคมหมู่บ้าน</option>
+                    <option value="ฝึกอบรมบุคลากร">ฝึกอบรมบุคลากร</option>
+                    <option value="อบรมอาสาสมัคร">อบรมอาสาสมัคร</option>
+                    <option value="แถลงข่าวของเทศบาล">แถลงข่าวของเทศบาล</option>
+                    <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น</option>
+                    <option value="จัดหน่วยเลือกตั้ง">จัดหน่วยเลือกตั้ง</option>
+                    <option value="อื่นๆ">อื่นๆ</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="left">
+                <label>แผนกที่ขอใช้</label>
+                <div className="input-group">
+                  <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
+                  <select className='select-list' name="department" onChange={handleChange}>
+                    <option value="">-- โปรดเลือก --</option>
+                    <option value="สำนักปลัด">สำนักปลัด</option>
+                    <option value="กองช่าง">กองช่าง</option>
+                    <option value="กองสาธารณสุข">กองสาธารณสุข</option>
+                    <option value="กองการศึกษา">กองการศึกษา</option>
+                    <option value="กองคลัง">กองคลัง</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <label>วันที่เริ่มต้น/เวลาเริ่มต้น</label>
+              <div className="datetime row">
                 <div className="left">
-                  <label>ชื่อห้อง</label>
                   <div className="input-group">
-                    <div className="empty-box icon-inside-empty2">
-                      <RiTodoFill />
-                    </div> 
-                    <input className='long-time-input' type="text" value={localStorage.getItem("room")}/>
+                    <div className="empty-box"><FaCalendarAlt /></div>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={(date) => {
+                        setStartDate(date);
+                        const isoDate = new Date(date.getFullYear(), date.getMonth(), date.getDate()).toISOString().split('T')[0];
+                        setFormData({ ...formData, startDate: isoDate });
+                      }}
+                      locale="th"
+                      dateFormat="dd MMMM yyyy"
+                      className="long-time-input"
+                      customInput={<CustomDateInput value={formatBuddhistDate(startDate)} />}
+                    />
                   </div>
                 </div>
-
-                <div className="right">
-                  <label>จำนวนผู้เข้าประชุม</label>
+                <div className='right'>
                   <div className="input-group">
-                    <div className="empty-box icon-inside-empty"> <TbNumber123 /> </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="participants" type="number" placeholder="1"  min="1" onChange={handleChange} />
+                    <div className="empty-box"><FaClock /></div>
+                    <input type="time" name="startTime" onChange={handleChange} className="long-time-input" />
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* หัวข้อ */}
-              <div className="row">
+            <div className="row">
+              <label>วันที่สิ้นสุด/เวลาสิ้นสุด</label>
+              <div className="datetime row">
                 <div className="left">
-                  <label>หัวข้อ</label>
                   <div className="input-group">
-                    <div className="empty-box">
-                      <FaPen />
-                    </div> {/* กล่องเปล่า */}
-                    <input name="topic" className='long-input' type="text" placeholder="" onChange={handleChange} />
+                    <div className="empty-box"><FaCalendarAlt /></div>
+                    <DatePicker
+                      selected={formData.endDate ? new Date(formData.endDate) : null}
+                      onChange={(date) => {
+                        const isoDate = new Date(date.getFullYear(), date.getMonth(), date.getDate()).toISOString().split('T')[0];
+                        setFormData({ ...formData, endDate: isoDate });
+                      }}
+                      locale="th"
+                      dateFormat="dd MMMM yyyy"
+                      className="long-time-input"
+                      customInput={<CustomDateInput value={formatBuddhistDate(formData.endDate)} />}
+                    />
                   </div>
                 </div>
-              </div>
-
-              {/* ชื่อผู้จองและโทรศัพท์ */}
-              <div className="row">
-                <div className="left">
-                  <label>ชื่อผู้จอง</label>
+                <div className='right'>
                   <div className="input-group">
-                    <div className="empty-box ">
-                      <RiUser3Fill />
-                    </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="bookerName" onChange={handleChange} type="text" placeholder="" value={udata.name}  />
-                  </div>
-                </div>
-
-                <div className="right">
-                  <label>โทรศัพท์</label>
-                  <div className="input-group">
-                    <div className="empty-box">
-                      <FaPhoneAlt />
-                    </div> {/* กล่องเปล่า */}
-                    <input className='long-time-input' name="phone" type="text" value={udata.phone} />
+                    <div className="empty-box"><FaClock /></div>
+                    <input type="time" name="endTime" onChange={handleChange} className="long-time-input" />
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* ใช้สำหรับ */}
-              <div className="row">
-                <div className="left">
-                  <label>ใช้สำหรับ</label>
-                  <div className="input-group">
-                    <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
-                    <select className='select-list' name="purpose" onChange={handleChange}>
-                      <option value="">-- โปรดเลือก --</option>
-                      <option value=" ประชุมเจ้าหน้าที่"> ประชุมเจ้าหน้าที่</option>
-                      <option value="ประชุมสภาเทศบาล">ประชุมสภาเทศบาล</option>
-                      <option value="ประชุมหัวหน้าส่วนราชการ">ประชุมหัวหน้าส่วนราชการ</option>
-                      <option value="ประชาคมหมู่บ้าน ">ประชาคมหมู่บ้าน </option>
-                      <option value="ฝึกอบรมบุคลากร">ฝึกอบรมบุคลากร</option>
-                      <option value="อบรมอาสาสมัคร ">อบรมอาสาสมัคร </option>
-                      <option value="แถลงข่าวของเทศบาล">แถลงข่าวของเทศบาล</option>
-                      <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น</option>
-                      <option value="จัดหน่วยเลือกตั้ง">จัดหน่วยเลือกตั้ง</option>
-                      <option value="อื่นๆ">อื่นๆ</option>
-                    </select>
+            <div className="row">
+              <label>อุปกรณ์</label>
+              <div className="equipment-wrapper">
+                <div className="empty-box-5 icon-inside-empty2"><PiGitBranchBold /></div>
+                <div className='equipment-boxx2 box-margin'>
+                  <div>
+                    <label><input type="checkbox" value="เครื่องคอมพิวเตอร์" onChange={handleCheckboxChange} /> เครื่องคอมพิวเตอร์</label>
+                    <label><input type="checkbox" value="โปรเจ็กเตอร์" onChange={handleCheckboxChange} /> โปรเจ็กเตอร์</label>
+                    <label><input type="checkbox" value="ไมค์โครโฟน" onChange={handleCheckboxChange} /> ไมค์โครโฟน</label>
+                    <label><input type="checkbox" value="ของว่าง" onChange={handleCheckboxChange} /> ของว่าง</label>
+                    <label><input type="checkbox" value="อาหารเที่ยง" onChange={handleCheckboxChange} /> อาหารเที่ยง</label>
                   </div>
                 </div>
               </div>
+            </div>
 
-
-              {/* แผนกที่ขอใช้ */}
-              <div className="row">
-                <div className="left">
-                  <label>แผนกที่ขอใช้</label>
-                  <div className="input-group">
-                    <div className="empty-box icon-inside-empty2"><PiGitBranchBold /></div>
-                    <select className='select-list' name="department" onChange={handleChange}>
-                      <option value="">-- โปรดเลือก -- </option>
-                      <option value="สำนักปลัด">สำนักปลัด</option>
-                      <option value="กองช่าง">กองช่าง</option>
-                      <option value="กองสาธารณสุข">กองสาธารณสุข</option>
-                      <option value="กองการศึกษา">กองการศึกษา</option>
-                      <option value="กองคลัง">กองคลัง</option>
-                    </select>
-                  </div>
-                </div>
+            <div className="row">
+              <div className="left">
+                <label>อื่นๆ</label>
+                <textarea className='details-textarea' name="otherDetails" onChange={handleChange} placeholder="รายละเอียดเพิ่มเติม"></textarea>
               </div>
+            </div>
 
-              {/* วันที่และเวลา */}
-              <div className="row">
-                <label>วันที่เริ่มต้น/เวลาเริ่มต้น</label>
-                <div className="datetime">
-                  <div className='row'>
-                    <div className="left">
-                      <div className="input-group">
-                        <div className="empty-box"><FaCalendarAlt /></div>
-                        <input type="date" name="startDate" onChange={handleChange} className="long-time-input" />
-                      </div>
-                    </div>
-                    <div className='right'>
-                      <div className="input-group">
-                        <div className="empty-box"><FaClock /></div>
-                        <input type="time" name="startTime" onChange={handleChange} className="long-time-input" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* วันที่และเวลา */}
-              <div className="row">
-                <label>วันที่สิ้นสุด/เวลาสิ้นสุด</label>
-                <div className="datetime">
-                  <div className='row'>
-                    <div className="left">
-                      <div className="input-group">
-                        <div className="empty-box"><FaCalendarAlt /></div>
-                        <input type="date" name="endDate" onChange={handleChange} className="long-time-input" />
-                      </div>
-                    </div>
-                    <div className='right'>
-                      <div className="input-group">
-                        <div className="empty-box"><FaClock /></div>
-                        <input type="time" name="endTime" onChange={handleChange} className="long-time-input" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-
-              {/* อุปกรณ์ */}
-              <div className="row">
-                <div className="">
-                  <label>อุปกรณ์</label>
-                  <div className="equipment-wrapper">
-                    <div className="empty-box-5 icon-inside-empty2"><PiGitBranchBold /></div>
-                    <div className='equipment-boxx2 box-margin'>
-                      <div>
-                        <label><input type="checkbox" value="เครื่องคอมพิวเตอร์" onChange={handleCheckboxChange} /> เครื่องคอมพิวเตอร์</label>
-                        <label><input type="checkbox" value="โปรเจ็กเตอร์" onChange={handleCheckboxChange} /> โปรเจ็กเตอร์</label>
-                        <label><input type="checkbox" value="ไมค์โครโฟน" onChange={handleCheckboxChange} /> ไมค์โครโฟน</label>
-                        <label><input type="checkbox" value="ของว่าง" onChange={handleCheckboxChange} /> ของว่าง</label>
-                        <label><input type="checkbox" value="อาหารเที่ยง" onChange={handleCheckboxChange} /> อาหารเที่ยง</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              {/* อื่นๆ */}
-              <div className="row">
-                <div className="left">
-                  <label>อื่นๆ</label>
-                  <textarea className='details-textarea' name="otherDetails" onChange={handleChange} placeholder="รายละเอียดเพิ่มเติม"></textarea>
-                </div>
-              </div>
-
-              {/* ปุ่มบันทึก */}
-              <div>
-                <button type="submit" className="save-btn">
-                  <FiSave className="icon-inside-btn" />
-                  บันทึก
-                </button>
-              </div>
-
-            </form>
-          </div>
+            <div>
+              <button type="submit" className="save-btn">
+                <FiSave className="icon-inside-btn" />
+                บันทึก
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </>
-  )
-
+  );
 }
 
-export default List_Page 
+export default List_Page;

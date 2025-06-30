@@ -25,7 +25,8 @@
   margin-bottom: 40px;
 }
 
-.container {
+.container-home {
+  /* width: auto; */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -47,7 +48,7 @@
 
 .box-brightgreen, .brightyellow {
   flex: 1;
-  min-width: 180px;
+  min-width: 100px;
 }
 
 .text-dashboard-right {
@@ -101,7 +102,7 @@
 }
 
 .box-brightgreen {
-  width: 150px;         /* ความกว้าง */
+  width: 100px;         /* ความกว้าง */
   height: 150px;        /* ความสูง */
   background-color: 	#aaf092; 
 }
