@@ -1,3 +1,6 @@
+
+
+
 /* เพิ่มให้ container ของตารางอยู่กึ่งกลาง */
 .reserve-container {
   display: flex;
@@ -5,14 +8,6 @@
   align-items: center;
   flex-direction: column;
   /* padding: 20px; */
-}
-
-/* พื้นหลัง */ 
-.bg-reserve {
-  background: url('./assets/background.png') no-repeat center center fixed;
-  margin-top: -50px;
-  padding: 50px 20px;
-  min-height: 100vh;
 }
 
 /* ไอคอนที่อยู่ด้านบน */
@@ -50,23 +45,19 @@
   justify-content: center;
 }
 
-.reserve-table {
-  width: 80%;
+/* .reserve-table {
+  width: 100%;
+  margin-top: 20px;
   border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+
+.reserve-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 20px; /* เพิ่มช่องว่างระหว่างแถว */
 }
 
-/* ส่วนหัวของตาราง */
-.thead-blue-reserve {
-  background-color: #4A90E2;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
 
 .thead-blue-reserve th {
   padding: 15px;
@@ -81,16 +72,30 @@
   border-top-right-radius: 10px;   /* มุมบนขวา */
 }
 
-/* ข้อมูลในตาราง */
-.reserve-table td {
-  padding: 15px;
+/* .reserve-table th, .reserve-table td {
+  padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+} */
+
+.reserve-table th {
+  background-color: #C8E6C9;
+  padding: 14px;
+  text-align: center;
+  color: #1B5E20;
+  font-size: 18px;
+  border-bottom: 2px solid #A5D6A7;
 }
 
+.reserve-table td {
+  vertical-align: middle;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+
 .reserve-table tr:hover {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 
 /* รูปภาพในตาราง */
@@ -106,14 +111,9 @@
   font-size: 16px;
 }
 
-
 .txtroom {
   font-weight: bold;
   color: #333;
-}
-
-.action-buttons {
-  text-align: center;
 }
 
 .button-green {
@@ -150,27 +150,6 @@
   font-size: 18px;
 }
 
-/* ปรับขนาดหน้าจอสำหรับคอมพิวเตอร์ (Desktop) */
-@media screen and (min-width: 1024px) {
-  .reserve-table {
-    width: 100%; /* ทำให้ตารางกว้างเต็มที่ */
-    table-layout: fixed; /* ควบคุมความกว้างของเซลล์ */
-  }
-
-  .head-reserve {
-    font-size: 36px; /* ขยายขนาดหัวข้อ */
-  }
-
-  .reserve-table th, .reserve-table td {
-    padding: 12px; /* เพิ่มช่องว่างในเซลล์ */
-    text-align: center; /* ทำให้ข้อความอยู่ตรงกลาง */
-    border: 1px solid #ddd; /* กำหนดขอบตาราง */
-  }  
-
-  .reserve-container {
-    padding: 0 50px;
-  }
-}
 
 .reserve-table .th1, .reserve-table .th2 {
   width: 25%; /* กำหนดความกว้างของคอลัมน์ที่ต้องการ */
@@ -185,7 +164,7 @@
 }
 
 .picture {
-  width: 90%; /* ให้รูปภาพครอบคลุมพื้นที่ของตาราง */
-  height: 150px; /* กำหนดความสูงคงที่ */
-  object-fit: cover; /* ปรับการครอบภาพให้เต็มพื้นที่ */
+  width: 100px;
+  border-radius: 8px;
 }
+

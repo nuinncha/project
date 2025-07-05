@@ -1,6 +1,6 @@
 .bg-home {
   padding: 30px;
-  background-image: url('./assets/rain.gif'); /* รูปจาก public */
+  background-image: url('./assets/blackcat.jpg'); /* รูปจาก public */
   background-size: cover;                  /* ปรับให้เต็มพื้นที่ */
   background-position: center;             /* จัดให้อยู่ตรงกลาง */
   background-repeat: no-repeat;            /* ไม่วนซ้ำ */
