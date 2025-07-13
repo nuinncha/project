@@ -120,7 +120,7 @@ function Profile_Page() {
                                 autoFocus
                             />
                         ) : (
-                            <h3 style={{ color: "white" }}>
+                            <h3 style={{ color: "green" }}>
                                 {newName} {newLastName}
                                 <FaUserEdit
                                     className="edit-icon"
@@ -129,7 +129,7 @@ function Profile_Page() {
                                 />
                             </h3>
                         )}
-                        <p style={{ color: "white" }}>{user.role}</p>
+                        <p style={{ color: "green" }}>{user.role}</p>
                     </div>
                     <div className="profile-card">
                         <div className="info-box-email">

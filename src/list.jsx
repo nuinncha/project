@@ -150,7 +150,7 @@ const handleSubmit = async (e) => {
   return (
     <>
       <Navbar />
-      <div className="wrapper-list">
+      <div className=" bg-list wrapper-list">
         <div className="container-list">
           <form onSubmit={handleSubmit}>
 

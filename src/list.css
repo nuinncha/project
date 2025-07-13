@@ -1,3 +1,13 @@
+.bg-list {
+  padding: 30px;
+  background-image: url('./assets/wallpeper5.gif'); /* รูปจาก public */
+  background-size: cover;                  /* ปรับให้เต็มพื้นที่ */
+  background-position: center;             /* จัดให้อยู่ตรงกลาง */
+  background-repeat: no-repeat;            /* ไม่วนซ้ำ */
+  min-height: 100vh;                       /* ความสูงเต็มหน้าจอ */
+}
+
+
 .wrapper-list {
   display: flex;
   justify-content: center; /* จัดให้อยู่กึ่งกลาง */

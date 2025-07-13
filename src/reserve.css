@@ -1,20 +1,12 @@
 
-
-
 /* เพิ่มให้ container ของตารางอยู่กึ่งกลาง */
-.reserve-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* padding: 20px; */
-}
-
-/* ไอคอนที่อยู่ด้านบน */
-.icon-reserve {
-  font-size: 36px;
-  color: #4A90E2;
-  margin-left: 20px;
+.container-reserve {
+  background-image: url('./assets/wallpeper5.gif'); /* ใส่ชื่อไฟล์ภาพที่ต้องการ */
+  min-height: 100vh; /* ✅ ให้ container สูงเท่าหน้าจอ */
+  background-color: #E8F5E9; /* ✅ สีพื้นหลังแบบเขียวอ่อน (ปรับได้) */
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
 }
 
 /* หัวข้อหน้า */
@@ -34,49 +26,11 @@
   text-align: left;
   margin-left: 50px;
   font-size: 18px;
-  color: #000000;
+  color: #2c2b2b;
   margin-top: 10px;
+  margin-left: 10px;
+
 }
-
-/* ตารางข้อมูลห้องประชุม */
-.reserve-container {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-/* .reserve-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-} */
-
-
-.reserve-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 20px; /* เพิ่มช่องว่างระหว่างแถว */
-}
-
-
-.thead-blue-reserve th {
-  padding: 15px;
-  color: white;
-}
-
-.th1 {
-  border-top-left-radius: 10px;   /* มุมบนขวา */
-}
-
-.th2 {
-  border-top-right-radius: 10px;   /* มุมบนขวา */
-}
-
-/* .reserve-table th, .reserve-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
-} */
 
 .reserve-table th {
   background-color: #C8E6C9;
@@ -91,19 +45,6 @@
   vertical-align: middle;
   padding: 14px;
   border-radius: 12px;
-}
-
-
-.reserve-table tr:hover {
-  background-color: #ffffff;
-}
-
-/* รูปภาพในตาราง */
-.picture {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 /* รายละเอียดของห้องประชุม */
@@ -163,8 +104,61 @@
   width: 25%; /* เพิ่มความกว้างให้กับปุ่มการกระทำ */
 }
 
-.picture {
-  width: 100px;
-  border-radius: 8px;
+.icon-reserve {
+  font-size: 50px;
+  color: #ffffff;
+  margin-top: 20px; /* ขยับลงล่าง 30px */
+  display: block;
+  text-align: center;
+  
 }
 
+
+
+/* ///////////////////////////////////////////// */
+/* ตารางใหม่: พื้นหลังขาว ขอบโค้ง เงา */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* หัวตาราง */
+.modern-table thead tr {
+  background-color: #C8E6C9;
+  color: #1B5E20;
+  font-weight: bold;
+}
+
+/* ช่องในตาราง */
+.modern-table td, .modern-table th {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+/* ลบเส้นล่างของแถวสุดท้าย */
+.modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ปรับการจัดเรียงปุ่มและข้อความในตาราง */
+.room-details {
+  vertical-align: top;
+}
+
+.action-buttons {
+  vertical-align: middle;
+}
+
+/* ปุ่มให้เต็มความกว้างภายในคอลัมน์ */
+.button-green,
+.button-yellow {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}

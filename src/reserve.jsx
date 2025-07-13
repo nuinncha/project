@@ -65,16 +65,16 @@ function Reserve_Page() {
     <>
       <Navbar />
       <div className='container-reserve' style={{ padding: "40px" }}>
-        <div className='title-section' style={{ textAlign: 'center', color: '#388E3C' }}>
-          <RiFileList3Fill size={28} style={{ marginBottom: '-5px', marginRight: '5px' }} />
-          <span className='head-reserve' style={{ fontSize: '28px', fontWeight: 'bold' }}>รายการห้องประชุม</span>
-          <h6 className='text-reserve' style={{ marginTop: "10px", color: "#4CAF50" }}>แสดง 2 รายการ</h6>
+        <div className='icon-reserve'>
+          <RiFileList3Fill  />
+          <span className='head-reserve'>รายการห้องประชุม</span>
+          <h6 className='text-reserve'>แสดง 2 รายการ</h6>
         </div>
 
-        <div className='reserve-container bg-reserve'>
-          <table className='reserve-table'>
+        <div className='reserve-container'>
+          <table className='reserve-table modern-table'>
             <thead>
-              <tr className='thead-green-reserve' style={{ backgroundColor: '#C8E6C9', color: '#1B5E20' }}>
+              <tr className='thead-green-reserve' style={{ backgroundColor: '#47b34aff', color: '#505e1bff' }}>
                 <th></th>
                 <th>รายละเอียด</th>
                 <th></th>
@@ -123,8 +123,8 @@ const greenBtnStyle = {
 };
 
 const detailBtnStyle = {
-  backgroundColor: "#A5D6A7",
-  color: "#1B5E20",
+  backgroundColor: "#fdc408ff",
+  color: "#ffffffff",
   padding: "8px 16px",
   border: "none",
   borderRadius: "8px",

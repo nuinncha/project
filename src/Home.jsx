@@ -10,7 +10,6 @@ import Navbar from "./components/navbar";
 import Calendar2 from "./components/calendar2";
 import "./components/calendar.css";
 import "./home.css";
-// import แมวดำ from './assets/แมวดำ.png';
 
 
 moment.locale("th");
@@ -49,28 +48,31 @@ function Home_Page() {
         {/* Dashboard Boxes */}
         <div className="wrapper-home">
           <div className="container-home">
-            <div className="box-green">
-              <LuCalendarDays className="icon-inside-box" />
-            </div>
-            <div className="box-brightgreen">
-              <div className="text-dashboard-right">
-                <p>จองห้องประชุมวันนี้</p>
-                <p>{approvedDaysToday}</p>
-                <p>ครั้ง</p>
+            {/* Group 1 */}
+            <div className="box-group">
+              <div className="box-green">
+                <LuCalendarDays className="icon-inside-box" />
+              </div>
+              <div className="box-brightgreen">
+                <div className="text-dashboard-right">
+                  <p>จองห้องประชุมวันนี้</p>
+                  <p className="text-number">{approvedDaysToday}</p>
+                  <p>ครั้ง</p>
+                </div>
               </div>
             </div>
 
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
-            {/* Total Rooms */}
-            <div className="box-yellow">
-              <LuClipboardList className="icon-inside-box" />
-            </div>
-            <div className="brightyellow">
-              <div className="text-dashboard-right">
-                <p>ห้องประชุม</p>
-                <p>2</p>
-                <p>ห้องประชุมทั้งหมด</p>
+            {/* Group 2 */}
+            <div className="box-group">
+              <div className="box-yellow">
+                <LuClipboardList className="icon-inside-box" />
+              </div>
+              <div className="brightyellow">
+                <div className="text-dashboard-right">
+                  <p>ห้องประชุม</p>
+                  <p className="text-number">2</p>
+                  <p>ห้องประชุมทั้งหมด</p>
+                </div>
               </div>
             </div>
           </div>

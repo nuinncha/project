@@ -1,6 +1,6 @@
 .bg-home {
   padding: 30px;
-  background-image: url('./assets/blackcat.jpg'); /* รูปจาก public */
+  background-image: url('./assets/wallpeper5.gif'); /* รูปจาก public */
   background-size: cover;                  /* ปรับให้เต็มพื้นที่ */
   background-position: center;             /* จัดให้อยู่ตรงกลาง */
   background-repeat: no-repeat;            /* ไม่วนซ้ำ */
@@ -15,22 +15,27 @@
 }
 
 .section-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 10px;
+  font-family: 'Sarabun', sans-serif;  /* ฟ้อนต์ภาษาไทยยอดนิยม */
+  font-size: 20px;                     /* ขนาดตัวอักษร */
+  font-weight: bold;                   /* ตัวหนา */
+  color: #ffffff;                      /* สีตัวอักษร */
+  text-align: center;                  /* จัดกึ่งกลาง */
+  margin-top: -20px; /* ขยับขึ้น 20 พิกเซล */
+  margin-left: 10px; /* ขยับตัวหนังสือไปทางขวา 30px */
+  margin-top: 10px;                    /* ระยะห่างด้านบน */
 }
 
 .wrapper-home {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center; /* จัดให้ container อยู่กลางแนวนอน */
+  margin-top: 40px;
 }
 
 .container-home {
-  /* width: auto; */
   display: flex;
+  gap: 20px; /* ระยะห่างระหว่างกลุ่มกล่อง */
   flex-wrap: wrap;
-  gap: 20px;
-  align-items: stretch;
+  justify-content: center; /* ให้กล่องแต่ละกลุ่มชิดกลางใน container */
 }
 
 .box-green, .box-yellow, .box-brightgreen, .brightyellow {
@@ -52,11 +57,16 @@
 }
 
 .text-dashboard-right {
+  font-family: 'Sarabun', sans-serif; /* ฟ้อนต์ภาษาไทยยอดนิยม */
+  color: #ffffff;
+  font-weight: 400; /* ใช้เลข เช่น 400 แทน px */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  font-size: 16px;
+  align-items: flex-end; /* ✅ ชิดขวา */
+  gap: 0px; /* ถ้าต้องการไม่มีช่องว่างระหว่างบรรทัด */
+  font-size: 18px;
+  line-height: 1.2; /* ✅ ลดความสูงระหว่างบรรทัด */
 }
 
 .room-buttons {
@@ -64,7 +74,6 @@
   gap: 20px;
   margin-top: 30px;
   justify-content: center;
-  /* border-radius: 25px; */
 }
 
 .btn-purple {
@@ -72,7 +81,6 @@
   background-color: #9933FF;
   color: white;
   border: 0px solid rgb(255, 255, 255);
-
 }
 
 .btn-blue {
@@ -86,23 +94,81 @@
   width: 130px;         /* ความกว้าง */
   height: 150px;        /* ความสูง */
   background-color: #ffaa00; 
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 0px;
 }
 
 .brightyellow {
-  width: 100px;         /* ความกว้าง */
+  width: 350px;         /* ความกว้าง */
   height: 150px;        /* ความสูง */
   background-color: 	#f8c153; 
+  border-top-right-radius: 15x;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 15px;
+  margin-left: -20px;
   
 }
 
 .box-green {
   width: 130px;         /* ความกว้าง */
   height: 150px;        /* ความสูง */
-  background-color: 	#73f747; 
+  background-color: 	#34b808; 
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 0px;
 }
 
 .box-brightgreen {
-  width: 100px;         /* ความกว้าง */
+  width: 350px;         /* ความกว้าง */
   height: 150px;        /* ความสูง */
-  background-color: 	#aaf092; 
+  background-color: 	#5ed835;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 15px;
+  margin-left: -20px;
+}
+
+.text-position {
+  font-family: 'Sarabun', sans-serif;  /* ฟ้อนต์ภาษาไทยยอดนิยม */
+  font-size: 28px;                     /* ขนาดตัวอักษร */
+  font-weight: bold;                   /* ตัวหนา */
+  color: #ffffff;                      /* สีตัวอักษร */
+  text-align: center;                  /* จัดกึ่งกลาง */
+  margin-top: 40px;                    /* ระยะห่างด้านบน */
+  margin-bottom: 20px;                 /* ระยะห่างด้านล่าง */
+  letter-spacing: 1px;                 /* ระยะห่างระหว่างตัวอักษร */
+}
+
+.icon-size {
+  font-size: 50px;
+  color: #ffffff;
+  margin-top: -20px; /* ขยับขึ้น 20 พิกเซล */
+}  
+
+.icon-inside-box{
+  font-size: 50px;
+  color: #fefeff;
+  margin-top: -20px; /* ขยับขึ้น 20 พิกเซล */
+}
+
+.icon{
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 10px; /* ขยับลงล่าง 30px */
+}
+
+.box-group {
+  display: flex;
+  gap: 10px; /* ระยะห่างระหว่างกล่องซ้าย-ขวาในกลุ่มเดียวกัน */
+  align-items: center;
+}
+
+.text-number {
+  font-size: 30px;
+  font-weight: 20px;
 }

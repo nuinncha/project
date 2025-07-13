@@ -51,7 +51,7 @@ function History_Page() {
     return (
         <>
             <Navbar />
-            <div className="">
+            <div className="bg-history">
                 <div className="">
                     <div className="">
                         <RiFileHistoryFill className="history_icon" />
