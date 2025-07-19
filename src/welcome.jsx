@@ -31,7 +31,7 @@ function Welcome_Page() {
         // 👉 เก็บ Token ลง localStorage
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.userData));
-
+        console.log("TEST USER DATA:",JSON.stringify(result.userData));
         // 👉 เปลี่ยนหน้าไปที่ Home
         navigate('/');
 

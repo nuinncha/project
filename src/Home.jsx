@@ -22,11 +22,13 @@ function Home_Page() {
     fetch("http://localhost:3000/booking-info")
       .then((res) => res.json())
       .then((data) => {
-        const today = moment().format("DD-MM-YYYY");
+        const today = moment().format("YYYY-MM-DD");
+
         const todayBookings = data.filter((booking) =>
           booking.status === "อนุมัติ" &&
-          moment(booking.startDate).format("DD-MM-YYYY") === today
+          moment(booking.startDate).format("YYYY-MM-DD") === today
         );
+
         setApprovedDaysToday(todayBookings.length);
       })
       .catch((error) => {

@@ -59,17 +59,23 @@ function Calendar2() {
         fetch("http://localhost:3000/booking-info")
             .then((res) => res.json())
             .then((data) => {
+                console.log("ดึงข้อมูลสำเร็จ", data)
                 const approvedBookings = data.filter((item) => item.status === "อนุมัติ");
 
                 const formattedEvents = approvedBookings.map((item) => {
-                    const startDateTime = dayjs(`${item.startDate}T${item.startTime}`).toDate();
-                    const endDateTime = dayjs(`${item.endDate}T${item.endTime}`).toDate();
+                    const startDateOnly = dayjs(item.startDate).format("YYYY-MM-DD");
+                    const endDateOnly = dayjs(item.endDate).format("YYYY-MM-DD");
+
+                    const startDateTime = dayjs(`${startDateOnly}T${item.startTime}`).toDate();
+                    const endDateTime = dayjs(`${endDateOnly}T${item.endTime}`).toDate();
 
                     let eventStyle = {};
-                    if (item.roomName === "ห้องประชุม 1") {
-                        eventStyle = { backgroundColor: "#c441aa", border: "0.5px solid #c441aa" };
-                    } else if (item.roomName === "อาคารเฉลิมพระเกียรติ") {
-                        eventStyle = { backgroundColor: "rgb(0, 162, 255)", border: "0.5px solid rgb(0, 162, 255)" };
+                    const room = item.roomName.trim();
+
+                    if (room === "ห้องประชุม 1") {
+                        eventStyle = { backgroundColor: "#9933FF", border: "0.5px solid #fff" };
+                    } else if (room === "อาคารเฉลิมพระเกียรติ") {
+                        eventStyle = { backgroundColor: "#3366FF", border: "0.5px solid #fff" };
                     }
 
                     return {
@@ -78,11 +84,11 @@ function Calendar2() {
                         end: endDateTime,
                         room: item.roomName,
                         booker: item.bookerName,
-                        description: item.description,
+                        description: item.description || "-",
                         style: eventStyle,
                     };
                 });
-
+                console.log("test", formattedEvents);
                 setEvents(formattedEvents);
             })
             .catch((error) => {
@@ -139,7 +145,7 @@ function Calendar2() {
                 className="my-calendar"
                 style={{
                     height: "100vh",
-                    fontFamily: "Sarabun, sans-serif", // ใช้ฟอนต์ไทย
+                    fontFamily: "Sarabun, sans-serif",
                     color: "#333",
                     backgroundColor: "#fff",
                 }}
@@ -147,10 +153,14 @@ function Calendar2() {
                     style: {
                         fontSize: "20px",
                         fontWeight: "bold",
-                        color: date.getDay() === 0 ? "blue" : "black", // เปลี่ยนสีตัวอักษรวันอาทิตย์เป็นสีฟ้า
+                        color: date.getDay() === 0 ? "blue" : "black",
                     },
                 })}
+                eventPropGetter={(event) => ({
+                    style: event.style || {}
+                })}
             />
+
         </div>
     );
 }

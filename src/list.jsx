@@ -45,17 +45,19 @@ function List_Page() {
   const [endDate, setEndDate] = useState(null);
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
+  const [minEndTime, setMinEndTime] = useState("");
+
 
   const [formData, setFormData] = useState({
     roomName: localStorage.getItem("room"),
     email: udata?.email || "",
-    participants: "",
+    participants: "1",
     topic: "",
     bookerName: udata?.name || "",
     phone: udata?.phone || "",
     department: "",
     purpose: "",
-    startDate: "",
+    startDate: "" || format(new Date(), "yyyy-MM-dd"),
     startTime: "",
     endDate: "",
     endTime: "",
@@ -89,12 +91,23 @@ function List_Page() {
     fetchProfile();
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (name === 'startTime') setStartTime(value);
-    if (name === 'endTime') setEndTime(value);
-  };
+const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  if (name === "startTime") {
+    // คำนวณเวลาใหม่ + 1 ชั่วโมง
+    const [hour, minute] = value.split(":").map(Number);
+    const newHour = (hour + 1).toString().padStart(2, "0");
+    const minEnd = `${newHour}:${minute.toString().padStart(2, "0")}`;
+
+    setMinEndTime(minEnd); // ตั้งค่าล็อคเวลา
+  }
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -108,9 +121,10 @@ function List_Page() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+  console.log("Send Data:",formData);
   const start = new Date(startDate);
   const end = new Date(endDate ?? startDate);
+  
 
   const [startHour, startMin] = startTime.split(':').map(Number);
   const [endHour, endMin] = endTime.split(':').map(Number);
@@ -138,8 +152,14 @@ const handleSubmit = async (e) => {
     if (res.ok) {
       alert("จองห้องสำเร็จ!");
       navigate('/');
-    } else {
-      alert("กรุณาเข้าสู่ระบบก่อน!");
+    }else if(res.status === 400){
+      const errorData = await res.json(); // ดึงข้อความจาก server
+      console.error("❌ Error 400:", errorData.message); // สมมติ server ส่ง { message: "บางอย่างผิดพลาด" }
+      alert("ห้องถูกจองแล้วในช่วงเวลานี้!")
+    } 
+    
+    else {
+      alert("กรุณากรอกข้อมูลให้ครบ");
     }
   } catch (err) {
     alert("เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์");
@@ -245,7 +265,7 @@ const handleSubmit = async (e) => {
               </div>
             </div>
 
-            {/* วันที่เริ่มต้น/เวลาม */}
+            {/* วันที่เริ่มต้น/เวลา */}
             <div className="row">
               <label>วันที่เริ่มต้น/เวลาเริ่มต้น</label>
               <div className="datetime row">
@@ -256,10 +276,11 @@ const handleSubmit = async (e) => {
                       selected={startDate}
                       onChange={(date) => {
                         setStartDate(date);
-                        setFormData(prev => ({ ...prev, startDate: date.toISOString().split('T')[0] }));
+                        setFormData(prev => ({...prev,startDate: format(date, 'yyyy-MM-dd') }));
                       }}
                       locale="th"
                       dateFormat="dd MMMM yyyy"
+                      minDate={new Date()}
                       customInput={<CustomDateInput value={formatBuddhistDate(startDate)} />}
                     />
                   </div>
@@ -284,10 +305,11 @@ const handleSubmit = async (e) => {
                       selected={endDate}
                       onChange={(date) => {
                         setEndDate(date);
-                        setFormData(prev => ({ ...prev, endDate: date.toISOString().split('T')[0] }));
+                        setFormData(prev => ({ ...prev, endDate: format(date, 'yyyy-MM-dd') }));
                       }}
                       locale="th"
                       dateFormat="dd MMMM yyyy"
+                      minDate={new Date()}
                       customInput={<CustomDateInput value={formatBuddhistDate(endDate)} />}
                     />
                   </div>
@@ -295,7 +317,7 @@ const handleSubmit = async (e) => {
                 <div className="right">
                   <div className="input-group">
                     <div className="empty-box"><FaClock /></div>
-                    <input type="time" name="endTime" onChange={handleChange} className="long-time-input" />
+                    <input type="time" name="endTime" onChange={handleChange} className="long-time-input"min={minEndTime} />
                   </div>
                 </div>
               </div>
