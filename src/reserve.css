@@ -14,7 +14,7 @@
   font-family: 'Sarabun', sans-serif;
   font-size: 30px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
   display: block;
   margin-top: 10px;
   text-align: center;
@@ -26,7 +26,8 @@
   text-align: left;
   margin-left: 50px;
   font-size: 18px;
-  color: #2c2b2b;
+  color: #ffffff;
+  font-weight: bold;
   margin-top: 10px;
   margin-left: 10px;
 
@@ -162,3 +163,5 @@
   width: 100%;
   margin-bottom: 8px;
 }
+
+ 

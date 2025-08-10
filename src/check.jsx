@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 import './check.css';
 
+
 const API_URL = "http://localhost:3000/bookings";
 
 function Check_Page() {
@@ -115,9 +116,9 @@ function Check_Page() {
   return (
     <>
       <Navbar />
-      <div className='bg-check'>
-        <div className="container-check">
-          <h5>รายการจองทั้งหมด</h5>
+      <div className='container-check'>
+        <div>
+          <h5 className='font-check'>รายการจองทั้งหมด</h5>
           <div className="filters">
             <input type="date" name="startDate" value={filters.startDate} onChange={handleFilterChange} />
             <select name="roomName" value={filters.roomName} onChange={handleFilterChange}>
@@ -127,9 +128,9 @@ function Check_Page() {
             </select>
             <select name="status" value={filters.status} onChange={handleFilterChange}>
               <option value="">ทุกสถานะ</option>
-              <option value="pending">รอตรวจสอบ</option>
-              <option value="confirmed">อนุมัติ</option>
-              <option value="cancelled">ไม่อนุมัติ</option>
+              <option value="รอตรวจสอบ">รอตรวจสอบ</option>
+              <option value="อนุมัติ">อนุมัติ</option>
+              <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
             </select>
           </div>
 

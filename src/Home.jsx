@@ -12,6 +12,7 @@ import "./components/calendar.css";
 import "./home.css";
 
 
+
 moment.locale("th");
 
 function Home_Page() {
@@ -44,7 +45,7 @@ function Home_Page() {
         <div style={{ marginTop: "10px" }}>
           &nbsp;&nbsp;
           <RiDashboardFill className="icon-size" /> &nbsp;&nbsp;
-          <span className="text-position">Dashboard</span>
+          <span className="text-position">ข้อมูลการจอง</span>
         </div>
 
         {/* Dashboard Boxes */}

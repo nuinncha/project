@@ -9,12 +9,14 @@ import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { RiFileList3Fill } from "react-icons/ri";
 import { TfiInfoAlt } from "react-icons/tfi";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 function Reserve_Page() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+
     const udata = localStorage.getItem('user');
     setUser(JSON.parse(udata));
   }, []);
@@ -65,21 +67,22 @@ function Reserve_Page() {
     <>
       <Navbar />
       <div className='container-reserve' style={{ padding: "40px" }}>
-        <div className='icon-reserve'>
-          <RiFileList3Fill  />
-          <span className='head-reserve'>รายการห้องประชุม</span>
+        <div className=''>
+          
+          <span className='head-reserve '> <RiFileList3Fill /> รายการห้องประชุม</span>
           <h6 className='text-reserve'>แสดง 2 รายการ</h6>
         </div>
 
         <div className='reserve-container'>
           <table className='reserve-table modern-table'>
             <thead>
-              <tr className='thead-green-reserve' style={{ backgroundColor: '#47b34aff', color: '#505e1bff' }}>
+              <tr className='thead-green-reserve' style={{ backgroundColor: '#1b5e20', color: '#ffffff' }}>
                 <th></th>
                 <th>รายละเอียด</th>
                 <th></th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td><img src={room1} className='picture' alt="room1" style={{ borderRadius: "10px", width: "150px" }} /></td>
@@ -88,7 +91,7 @@ function Reserve_Page() {
                   <span>ห้องประชุมขนาดเล็ก พร้อมสิ่งอำนวยความสะดวกครบครัน</span>
                 </td>
                 <td className='action-buttons'>
-                  <button className='button-green' onClick={handleBook1} style={greenBtnStyle}>จองห้อง</button>
+                  <button className='button-green' onClick={handleBook1} style={greenBtnStyle}><HiOutlineShoppingCart style={{ marginRight: '5px' }} />จองห้อง</button>
                   <button className='button-yellow' onClick={room1_detail} style={detailBtnStyle}><TfiInfoAlt style={{ marginRight: '5px' }} />รายละเอียด</button>
                 </td>
               </tr>
@@ -100,7 +103,7 @@ function Reserve_Page() {
                   <span>ห้องประชุมใหญ่ เหมาะสำหรับการสัมมนาหรือจัดเลี้ยง</span>
                 </td>
                 <td className='action-buttons'>
-                  <button className='button-green' onClick={handleBook2} style={greenBtnStyle}>จองห้อง</button>
+                  <button className='button-green' onClick={handleBook2} style={greenBtnStyle}><HiOutlineShoppingCart style={{ marginRight: '5px' }} />จองห้อง</button>
                   <button className='button-yellow' onClick={room2_detail} style={detailBtnStyle}><TfiInfoAlt style={{ marginRight: '5px' }} />รายละเอียด</button>
                 </td>
               </tr>
@@ -113,7 +116,7 @@ function Reserve_Page() {
 }
 
 const greenBtnStyle = {
-  backgroundColor: "#4CAF50",
+  backgroundColor: "#47b34aff",
   color: "#fff",
   padding: "8px 16px",
   border: "none",

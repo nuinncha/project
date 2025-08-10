@@ -46,7 +46,7 @@ function List_Page() {
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [minEndTime, setMinEndTime] = useState("");
-
+  const [error, setError] = useState(null);
 
   const [formData, setFormData] = useState({
     roomName: localStorage.getItem("room"),
@@ -67,6 +67,14 @@ function List_Page() {
 
   // ดึงข้อมูลโปรไฟล์ผู้ใช้งาน (หากใช้)
   useEffect(() => {
+
+    const token = localStorage.getItem('token'); // Get token from localStorage
+
+    if (!token) {
+        navigate('/welcome');
+        return;
+    }
+
     const fetchProfile = async () => {
       const token = localStorage.getItem("token");
       if (!token) return;
@@ -90,6 +98,16 @@ function List_Page() {
 
     fetchProfile();
   }, []);
+
+  if (error) return (
+    <>
+        <Navbar />
+        <div className="error-container">
+            <h2>{error}</h2>
+            <p>Please log in to booking booking the room.</p>
+        </div>
+    </>
+  );
 
 const handleChange = (e) => {
   const { name, value } = e.target;
@@ -243,7 +261,7 @@ const handleSubmit = async (e) => {
                     <option value="ฝึกอบรมบุคลากร">ฝึกอบรมบุคลากร</option>
                     <option value="อบรมอาสาสมัคร">อบรมอาสาสมัคร</option>
                     <option value="แถลงข่าวของเทศบาล">แถลงข่าวของเทศบาล</option>
-                    <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุม...</option>
+                    <option value="จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น">จัดประชุมคณะกรรมการการเลือกตั้งท้องถิ่น</option>
                     <option value="จัดหน่วยเลือกตั้ง">จัดหน่วยเลือกตั้ง</option>
                     <option value="อื่นๆ">อื่นๆ</option>
                   </select>
@@ -340,7 +358,7 @@ const handleSubmit = async (e) => {
 
             {/* อื่นๆ */}
             <div className="row">
-              <div className="left">
+              <div className="left-1">
                 <label>อื่นๆ</label>
                 <textarea name="otherDetails" onChange={handleChange} className="details-textarea" placeholder="รายละเอียดเพิ่มเติม"></textarea>
               </div>

@@ -37,6 +37,7 @@
     margin-top: -20px;
   }
 
-.btn-primary {
-    
+.btn-login {
+    background-color: #4E944F;
+    color: #4E944F;
 }

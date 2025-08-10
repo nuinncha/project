@@ -26,6 +26,14 @@
   max-width: 800px; /* กำหนดขนาดสูงสุดเพื่อไม่ให้กว้างเกินไป */
 }
 
+.error-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffcccc;
+    border-radius: 8px;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -78,4 +86,12 @@ textarea {
 
 .save-btn:hover {
   background: #218838;
+}
+
+.left-1 {
+  border: 0.5px solid #aaa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff; /* สีพื้นจางๆ */
 }
