@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import './history.css';
 import { RiFileHistoryFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function History_Page() {
     const [bookingHistory, setBookingHistory] = useState([]);
@@ -14,9 +15,17 @@ function History_Page() {
         const token = localStorage.getItem('token'); // Get token from localStorage
 
         if (!token) {
-            setError("Token not found. Please log in.");
-            setLoading(false);
-            return;
+            Swal.fire({
+                icon: 'warning',
+                title: 'กรุณาเข้าสู่ระบบ',
+                text: 'ระบบจะพาคุณไปหน้าเข้าสู่ระบบ',
+                timer: 1500,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).then(() => {
+                navigate('/welcome');
+            });
+            return; // ไม่ต้องทำ fetch ต่อ
         }
 
         fetch('http://localhost:3000/booking', {
@@ -33,9 +42,9 @@ function History_Page() {
                     setBookingHistory(data);
                 }
             })
-            .catch(err => setError("Failed to fetch booking history"))
+            .catch(() => setError("Failed to fetch booking history"))
             .finally(() => setLoading(false));
-    }, []);
+    }, [navigate]);
 
     if (loading) return <div>Loading...</div>;
     if (error) return (
@@ -74,9 +83,9 @@ function History_Page() {
                                 {bookingHistory.map((booking, index) => (
                                     <tr key={booking._id}>
                                         <td>{index + 1}</td>
-                                        <td>{booking.roomName}</td> {/* เปลี่ยนจาก booking.room เป็น booking.roomName */}
-                                        <td>{new Date(booking.startDate).toLocaleDateString()}</td> {/* แปลงวันที่ให้เป็นรูปแบบที่อ่านได้ */}
-                                        <td>{booking.startTime} - {booking.endTime}</td> {/* ใช้ startTime และ endTime */}
+                                        <td>{booking.roomName}</td>
+                                        <td>{new Date(booking.startDate).toLocaleDateString('th-TH')}</td>
+                                        <td>{booking.startTime} - {booking.endTime}</td>
                                         <td className={`status ${booking.status.toLowerCase()}`}>{booking.status}</td>
                                     </tr>
                                 ))}
